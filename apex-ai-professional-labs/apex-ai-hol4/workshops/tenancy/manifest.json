@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Introduction to APEXlang and Spec-Driven Development",
+  "help": {
+    "email": ""
+  },
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md",
+      "description": "Understand the Module 4 APEXlang comparison exercise."
+    },
+    {
+      "title": "Lab 1: Export and Inspect an Application with APEXlang",
+      "filename": "../../1-introduction-to-apexlang/1-introduction-to-apexlang.md",
+      "description": "Export an existing application and review its .apx source files."
+    },
+    {
+      "title": "Lab 2: Set Up the Artifacts for Spec-Driven Development",
+      "filename": "../../2-setting-up-artifacts-for-sdd/2-setting-up-artifacts-for-sdd.md",
+      "description": "Prepare the TAP specification, prompt, icon constraints, and schema metadata."
+    },
+    {
+      "title": "Lab 3: Generate a TAP Application Blueprint with Scaffolding",
+      "filename": "../../3-generate-tap-with-scaffolding/3-generate-tap-with-scaffolding.md",
+      "description": "Use the SDD artifacts to generate and review a TAP blueprint."
+    },
+    {
+      "title": "Lab 4: Import and Compare the Generated TAP Blueprint",
+      "filename": "../../4-import-generated-app-blueprint/4-import-generated-app-blueprint.md",
+      "description": "Import the comparison app and set it aside before Module 5."
+    }
+  ]
+}
