@@ -32,7 +32,7 @@ Estimated Time: 20 minutes
 2. Download the APEX allowed-icons list. Save it as [apex-fa-icons-allowlist.txt](https://github.com/oracle/apex/blob/26.1/blueprints/prompt/apex-fa-icons-allowlist.txt) in the same folder.
     ![APEX allowed-icons list download page](images/task-02-step-02-icons.png)
 
-3. Download the Module 4 TMS functional specification and save it as [tms_module_04_functional_spec.md]().
+3. Download the Module 4 TMS functional specification and save it as [tms_module_04_functional_spec.md](tms_module_04_functional_spec.md).
 
 
 4. Confirm that all three files are present before you continue.

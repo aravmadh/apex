@@ -20,6 +20,7 @@ Estimated Time: 25 minutes
     - `tap_schema_metadata.md`
     - `blueprint_prompt.md`
     - `apex-fa-icons-allowlist.txt`
+    
     ![TAP SDD project folder with the required input files](images/task-01-step-01-files.png)
 2. Read the functional specification and confirm that it describes the Talent Acquisition Portal, not the Employee Self-Service Portal or HR Analytics App.
 
@@ -39,7 +40,8 @@ Estimated Time: 25 minutes
 
 3. Review each file-write request. Approve it only when the agent creates or updates `tap_application_blueprint.md` in `tap_sdd`.
 
-4. Wait for the agent to finish writing the blueprint.
+4. Wait for the agent to finish writing the blueprint. 
+
     ![Completed TAP Application Blueprint generation](images/task-02-step-04-completion.png)
 
 ## Task 3: Inspect the generated blueprint
