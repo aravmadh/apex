@@ -19,4 +19,4 @@ Estimated Workshop Time: 90 minutes
 
 ## Acknowledgements
 
-- **Last Updated By/Date** - Course team, July 2026
+- **Author** - Aravind Madhavan, Senior Product Manager
