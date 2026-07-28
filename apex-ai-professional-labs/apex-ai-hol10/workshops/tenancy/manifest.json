@@ -1,0 +1,33 @@
+{
+  "workshoptitle": "Page Controls and Components",
+  "help": {
+    "email": ""
+  },
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "filename": "../../introduction/introduction.md",
+      "description": "Configure controls and lists of values for TAP and ESS forms."
+    },
+    {
+      "title": "Lab 1: Create Shared Component LOVs",
+      "filename": "../../01-shared-component-lovs/01-shared-component-lovs.md",
+      "description": "Create reusable lists of values in TAP and ESS."
+    },
+    {
+      "title": "Lab 2: Build the Offer Management Form",
+      "filename": "../../02-offer-management-form/02-offer-management-form.md",
+      "description": "Configure offer salary, band, date, and status controls."
+    },
+    {
+      "title": "Lab 3: Build the Interview Feedback Form",
+      "filename": "../../03-interview-feedback-form/03-interview-feedback-form.md",
+      "description": "Create and link a modal interview-feedback form."
+    },
+    {
+      "title": "Lab 4: Build the ESS Leave Request Form",
+      "filename": "../../04-ess-leave-request-form/04-ess-leave-request-form.md",
+      "description": "Configure the leave form and add a leave-history report."
+    }
+  ]
+}

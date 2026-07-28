@@ -63,4 +63,5 @@ Estimated Time: 15 minutes
 
 ## Acknowledgements
 
-- **Author** - Aravind Madhavan, Senior Product Manager
+ - **Author -** Aravind Madhavan, Senior Product Manager.
+ - **Last Updated By/Date** - Aravind Madhavan, Senior Product Manager, July 2026
