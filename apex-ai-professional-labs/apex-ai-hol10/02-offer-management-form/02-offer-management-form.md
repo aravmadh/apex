@@ -23,13 +23,13 @@ Estimated Time: 5 minutes
 ## Task 2: Configure the offer fields
 
 1. Select the `OFFERED_SALARY` item. Set its type to **Number Field**, which supports automatic formatting. Set **Format Mask** to the following value:
-    ![Create Page Item](images/task-02-step-01-create-page-item.png)
     ```
     <copy>FML999G999G999G999G990D00</copy>
     ```
     ![Offered Salary Page Item](images/task-02-step-01-offered-sal-page-item.png)
 
 2. Create a new item named `PXX_SALARY_BAND_DISPLAY` in the Offer Management form. Set **Type** to **Display Only**.
+    ![Create Page Item](images/task-02-step-01-create-page-item.png)
     ![Salary Band Page Item](images/task-02-step-02-sal-band-page-item.png)
 3. Set the default type to **SQL Query**. Use the following query. If needed, replace `:PXX_REQ_ID` with the requisition item name on your page:
 

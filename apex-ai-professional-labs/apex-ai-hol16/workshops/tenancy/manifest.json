@@ -1,0 +1,62 @@
+{
+  "workshoptitle": "Extending Application Capabilities",
+  "help": {
+    "email": ""
+  },
+  "tutorials": [
+    {
+      "title": "Introduction",
+      "description": "Workshop overview and objectives.",
+      "type": "livelabs",
+      "filename": "../../introduction/introduction.md"
+    },
+    {
+      "title": "Lab 1: ESS Leave Calendar",
+      "description": "Create a native Calendar page that displays the signed-in employee's leave requests.",
+      "type": "livelabs",
+      "filename": "../../01-ess-leave-calendar/01-ess-leave-calendar.md"
+    },
+    {
+      "title": "Lab 2: ESS 30-Day Check-In Survey",
+      "description": "Create a check-in report and form with native Star Rating items.",
+      "type": "livelabs",
+      "filename": "../../02-ess-check-in-survey/02-ess-check-in-survey.md"
+    },
+    {
+      "title": "Lab 3: ESS Email Templates",
+      "description": "Create reusable ESS email templates for leave, onboarding, and probation events.",
+      "type": "livelabs",
+      "filename": "../../03-ess-email-templates/03-ess-email-templates.md"
+    },
+    {
+      "title": "Lab 4: ESS Scheduled Automations",
+      "description": "Create the Task Overdue, Monthly Leave Accrual, and Probation End Alert automations.",
+      "type": "livelabs",
+      "filename": "../../04-ess-automations/04-ess-automations.md"
+    },
+    {
+      "title": "Lab 5: ESS System Logs",
+      "description": "Create an administrator report for automation execution records.",
+      "type": "livelabs",
+      "filename": "../../05-system-logs/05-system-logs.md"
+    },
+    {
+      "title": "Lab 6: TAP Interview Calendar and Signature Capture",
+      "description": "Create an interview calendar and retain Signature Capture for pending offers.",
+      "type": "livelabs",
+      "filename": "../../06-tap-interview-calendar/06-tap-interview-calendar.md"
+    },
+    {
+      "title": "Lab 7: TAP Email Templates",
+      "description": "Create reusable TAP templates for offer and interview notifications.",
+      "type": "livelabs",
+      "filename": "../../07-tap-email-templates/07-tap-email-templates.md"
+    },
+    {
+      "title": "Lab 8: TAP Scheduled Automations and Translation",
+      "description": "Create TAP automations and review the application translation workflow.",
+      "type": "livelabs",
+      "filename": "../../08-tap-automations/08-tap-automations.md"
+    }
+  ]
+}

@@ -23,6 +23,7 @@ Estimated Time: 5 minutes
 2. Create a dynamic LOV named `TMS_INTERVIEWERS.NAME`. Choose **SQL Query** as the source type. The query returns a display value (`d`) and a return value (`r`):
     ![LOV wizard Name](images/task-01-step-02-create-lov-wizard-name.png)
     ![LOV Name](images/task-01-step-02-create-lov-name.png)
+    
     ```sql
     <copy>SELECT first_name || ' ' || last_name d,
            employee_id r
