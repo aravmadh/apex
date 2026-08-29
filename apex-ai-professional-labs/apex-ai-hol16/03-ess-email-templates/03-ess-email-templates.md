@@ -25,23 +25,23 @@ Estimated Time: 10 minutes
 ## Task 2: Create the ESS templates
 
 1. In ESS, select **Shared Components**, then select **Email Templates** and **Create Email Template**
-![](images/task-02-step-01-shared-components.png)
-![](images/task-02-step-01-email-template.png)
-![](images/task-02-step-01-create-email-template-03.png)
+    ![Task 2: Shared components](images/task-02-step-01-shared-components.png)
+    ![Task 2: Email template](images/task-02-step-01-email-template.png)
+    ![Task 2: Create email template](images/task-02-step-01-create-email-template-03.png)
 
-2. Create each template below. Enter its name and subject before pasting its HTML and plain-text bodies then click **Create Email Template**, before starting the next template. 
+2. Create each template below. Enter its name and subject. Add the HTML and plain-text bodies, then select **Create Email Template** before starting the next template.
 
     1. **Leave Approved**
 
         - **Name:** Leave Approved
-        - **Subject:** Your leave request has been approved
+        - **Subject:** HR approved your leave request
 
         **HTML Format > Body**
 
         ```html
         <copy><p>Hello <strong>#EMPLOYEE_NAME#</strong>,</p>
 
-        <p>Your <strong>#LEAVE_TYPE#</strong> leave from <strong>#START_DATE#</strong> to <strong>#END_DATE#</strong> has been <span style="color:#10b981;font-weight:bold">approved</span>.</p>
+        <p>HR approved your <strong>#LEAVE_TYPE#</strong> leave from <strong>#START_DATE#</strong> to <strong>#END_DATE#</strong>.</p>
 
         <p>Please enjoy your time off and remember to hand over any critical tasks in advance.</p>
 
@@ -53,7 +53,7 @@ Estimated Time: 10 minutes
         ```text
         <copy>Hello #EMPLOYEE_NAME#,
 
-        Your #LEAVE_TYPE# leave from #START_DATE# to #END_DATE# has been APPROVED.
+        HR approved your #LEAVE_TYPE# leave from #START_DATE# to #END_DATE#.
 
         Please enjoy your time off and remember to hand over any critical tasks in advance.
 
@@ -63,14 +63,14 @@ Estimated Time: 10 minutes
     2. **Leave Rejected**
 
         - **Name:** Leave Rejected
-        - **Subject:** Your leave request was not approved
+        - **Subject:** HR could not approve your leave request
 
         **HTML Format > Body**
 
         ```html
         <copy><p>Hello <strong>#EMPLOYEE_NAME#</strong>,</p>
 
-        <p>Unfortunately your recent leave request could not be approved.</p>
+        <p>HR could not approve your recent leave request.</p>
 
         <p><em>Reason:</em> #REJECTION_REASON#</p>
 
@@ -82,7 +82,7 @@ Estimated Time: 10 minutes
         ```text
         <copy>Hello #EMPLOYEE_NAME#,
 
-        Unfortunately your recent leave request could not be approved.
+        HR could not approve your recent leave request.
 
         Reason: #REJECTION_REASON#
 
@@ -124,7 +124,7 @@ Estimated Time: 10 minutes
         ```html
         <copy><h2 style="margin-bottom:0">Welcome to Acme Corp, #EMPLOYEE_NAME#!</h2>
 
-        <p>We are excited for your first day on <strong>#START_DATE#</strong>.</p>
+        <p>We look forward to your first day on <strong>#START_DATE#</strong>.</p>
 
         <ul>
                 <li><strong>Department:</strong> #DEPT_NAME#</li>
@@ -143,7 +143,7 @@ Estimated Time: 10 minutes
         ```text
         <copy>WELCOME TO ACME CORP, #EMPLOYEE_NAME#!
 
-        We are excited for your first day on #START_DATE#.
+        We look forward to your first day on #START_DATE#.
 
         Department: #DEPT_NAME#
         Manager: #MANAGER_NAME#
@@ -169,7 +169,7 @@ Estimated Time: 10 minutes
         Hire Date: <strong>#HIRE_DATE#</strong><br>
         Probation End Date: <strong>#PROBATION_END#</strong></p>
 
-        <p>The employee's probation period ends in <strong>7 days</strong>. Please schedule the confirmation meeting and update the system with the outcome.</p>
+        <p>The probation period ends in <strong>7 days</strong>. Schedule the confirmation meeting and update the system with the outcome.</p>
 
         <p>HR Team</p></copy>
         ```
@@ -183,23 +183,23 @@ Estimated Time: 10 minutes
         Hire Date: #HIRE_DATE#
         Probation End Date: #PROBATION_END#
 
-        The employee's probation period ends in 7 days.
+        The probation period ends in 7 days.
         Please schedule the confirmation meeting and update the system.
 
         HR Team</copy>
         ```
-   ![](images/task-02-step-02-enter-details.png)
-   ![](images/task-02-step-02-enter-details-02.png)
+    ![Task 2: Email template details](images/task-02-step-02-enter-details.png)
+    ![Task 2: Email template content](images/task-02-step-02-enter-details-02.png)
 
-> **Note:** 
-> The screenshots represent only Task 2 > Step 2 > **Leave Approved**. You need to repeat the same steps for **Leave Rejected**, **Task Overdue Notification**, **Welcome to Acme Corp**, and **Probation Alert**.
+> **Note:**
+> The screenshots show **Leave Approved** only. Repeat the steps for the other templates.
 
 
 3. Return to **Email Templates** and confirm that all five static identifiers appear.
-![](images/task-02-step-03-check-templates-exists.png)
+    ![Task 2: Verify email templates](images/task-02-step-03-check-templates-exists.png)
 
 4. The static identifier is what you reference with `p_template_static_id` in `APEX_MAIL.SEND` or select in a native **Send E-Mail** action.
-![](images/task-02-step-04-sample-api-usage.png)
+    ![Task 2: Sample API usage](images/task-02-step-04-sample-api-usage.png)
 
 ## Acknowledgements
 

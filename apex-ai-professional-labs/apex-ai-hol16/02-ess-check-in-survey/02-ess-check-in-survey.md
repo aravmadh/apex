@@ -29,39 +29,39 @@ Estimated Time: 10 minutes
     created_at TIMESTAMP DEFAULT SYSTIMESTAMP);
     </copy>
     ```
-    ![](images/task-01-step-01-sql-commands.png)
-    ![](images/task-01-step-01-run-ddl.png)
+    ![Task 1: SQL commands](images/task-01-step-01-sql-commands.png)
+    ![Task 1: Run SQL DDL](images/task-01-step-01-run-ddl.png)
 
 2. Confirm that `TMS_EMPLOYEE_CHECKINS` appears in Object Browser.
-![](images/task-01-step-02-object-browser.png)
-![](images/task-01-step-02-check-table.png)
+    ![Task 1: Object browser](images/task-01-step-02-object-browser.png)
+    ![Task 1: Check table](images/task-01-step-02-check-table.png)
 
 ## Task 2: Create the report and form
 
 1. In ESS App Builder, select **Create Page**, then select **Interactive Report with Form**.
-![](images/task-02-step-01-create-page.png)
-![](images/task-02-step-02-ir-form.png)
+    ![Task 2: Create page](images/task-02-step-01-create-page.png)
+    ![Task 2: Interactive Report form](images/task-02-step-02-ir-form.png)
 
-2. Name the report page **My Check-In History** and the form page as **Employee Check-In**. Select `TMS_EMPLOYEE_CHECKINS` as the table.
-![](images/task-02-step-02-page-config.png)
+2. Name the report page **My Check-In History** and the form page **Employee Check-In**. Select `TMS_EMPLOYEE_CHECKINS` as the table.
+    ![Task 2: Report and form configuration](images/task-02-step-02-page-config.png)
 
-3. Run the **My Check-In History** page and click on `Create` button on the right of the Interactive Report to open **Employee Check-In** form.
-![](images/task-02-step-03-run-page.png)
+3. Run **My Check-In History**. Click **Create** to open the **Employee Check-In** form.
+    ![Task 2: Run page](images/task-02-step-03-run-page.png)
 
 ## Task 3: Populate the employee ID and configure ratings in Employee Check-In form
 
 1. Select the `EMPLOYEE_ID` item. Set **Type** to **Hidden**. Under **Source**, clear any **Static Value**.
-    ![](images/task-03-step-01-hidden-emp-id.png)
+    ![Task 3: Hidden Employee ID](images/task-03-step-01-hidden-emp-id.png)
 
 
-2. Under **Default**, select **SQL Query (returning single value)** and enter:
+2. Under **Default**, select **SQL Query (returning single value)**. Enter:
 
     ```sql
     <copy>SELECT employee_id
       FROM tms_employees
      WHERE UPPER(email) = UPPER(:APP_USER)</copy>
     ```
-    ![](images/task-03-step-02-hidden-emp-id-def-val.png)
+    ![Task 3: Hidden Employee ID Default Value](images/task-03-step-02-hidden-emp-id-def-val.png)
 
 
 
@@ -73,25 +73,25 @@ Estimated Time: 10 minutes
     | `PXX_MANAGER_SUPPORT_RATING` | Manager Support |
     | `PXX_ONBOARDING_RATING` | Onboarding Process |
 
-    For each Star Rating item, configure the below settings:
+    For each Star Rating item, configure these settings:
 
     - Set **Number of Stars** to `5`.
-    - Toggle off `Use Defauts`.
+    - Turn off **Use Defaults**.
     - Set **Show Value** to **Yes**. APEX displays the selected value, such as `3 / 5`.
     - Set **Show Clear Button** to **No**. This setting is optional.
     - Set **Value Required** to **Yes**.
 
     APEX renders the Star Rating item as SVG stars and submits a numeric value from `1` through `5`.
-    ![](images/task-03-step-03-set-names-configure-settings.png)
+    ![Task 3: Item names and settings](images/task-03-step-03-set-names-configure-settings.png)
 
 4. Keep `COMMENTS` as a Textarea and set its maximum length to `2000`.
-![](images/task-03-step-04-comments.png)
+    ![Task 3: Comments](images/task-03-step-04-comments.png)
 
-5. Change `PX_CREATED_AT` to Hidden, as it will be automatically populated with the default timestamp when a row is inserted.
-![](images/task-03-step-05-created-at-hidden.png)
+5. Change `PX_CREATED_AT` to Hidden. APEX populates it with the default timestamp when a row is inserted.
+    ![Task 3: Created at hidden](images/task-03-step-05-created-at-hidden.png)
 6. Save and run the form. Submit one check-in as the signed-in employee. Confirm that it appears in **My Check-In History**.
-![](images/task-03-step-06-create-checkin.png)
-![](images/task-03-step-06-show-checkin.png)
+    ![Task 3: Create check-in record](images/task-03-step-06-create-checkin.png)
+    ![Task 3: Check-in form](images/task-03-step-06-show-checkin.png)
 
 ## Acknowledgements
 

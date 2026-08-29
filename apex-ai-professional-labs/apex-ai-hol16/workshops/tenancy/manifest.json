@@ -41,8 +41,8 @@
       "filename": "../../05-system-logs/05-system-logs.md"
     },
     {
-      "title": "Lab 6: TAP Interview Calendar and Signature Capture",
-      "description": "Create an interview calendar and retain Signature Capture for pending offers.",
+      "title": "Lab 6: TAP Interview Calendar",
+      "description": "Create an interview calendar that links events to Interview Feedback.",
       "type": "livelabs",
       "filename": "../../06-tap-interview-calendar/06-tap-interview-calendar.md"
     },
@@ -53,8 +53,8 @@
       "filename": "../../07-tap-email-templates/07-tap-email-templates.md"
     },
     {
-      "title": "Lab 8: TAP Scheduled Automations and Translation",
-      "description": "Create TAP automations and review the application translation workflow.",
+      "title": "Lab 8: TAP Scheduled Automations",
+      "description": "Create TAP automations for interview reminders and expiring offers.",
       "type": "livelabs",
       "filename": "../../08-tap-automations/08-tap-automations.md"
     }

@@ -1,24 +1,22 @@
-# Create the TAP Interview Calendar and Capture Offer Signatures
+# Create the TAP Interview Calendar
 
 ## Introduction
 
-Create a native Calendar page for interviewers. Retain Signature Capture on the Offer Management Form. The calendar filters interviews by the signed-in interviewer. The form stores a hiring manager signature before offer approval.
+Create a native Calendar page for interviewers. The calendar filters interviews by the signed-in interviewer and links events to the Interview Feedback page.
 
 ### Objectives
 
 - Create the TAP Interview Calendar.
 - Link calendar events to the Interview Feedback page.
-- Configure the approved Signature Capture plug-in on the Offer Management Form.
 
 Estimated Time: 5 minutes
 
 ## Task 1: Create the Interview Calendar
 
-1. In TAP App Builder, select **Create Page**, then select **Component** and **Calendar**. Name the page **Interview Calendar**.
+1. In TAP App Builder, select **Create Page**, then select **Calendar Component**.
+    ![Task 1: Select calendar page](images/task-01-step-01-select-calendar-page.png)
 
-2. Enable navigation. Set **Hiring Process** as the navigation parent and select the `fa-calendar` icon.
-
-3. Select **Local Database** and **SQL Query**. Enter:
+2. Name the page **Interview Calendar** and select **Local Database** and **SQL Query**.  Enter:
 
     ```sql
     <copy>SELECT i.stage_id AS event_id,
@@ -33,34 +31,21 @@ Estimated Time: 5 minutes
       JOIN tms_employees e ON e.employee_id = i.interviewer_id
      WHERE UPPER(e.email) = UPPER(:APP_USER)</copy>
     ```
+    ![Task 1: Calendar page configuration](images/task-01-step-02-calendar-page-details.png)
+
+3. Enable navigation. Set **Hiring Process** as the navigation parent and select the `fa-calendar` icon.
+    ![Task 1: Navigation icon](images/task-01-step-03-navigation-icon.png)
 
 4. Map `EVENT_TITLE`, `START_DATE`, and `END_DATE` to the Calendar settings.
+    ![Task 1: Calendar column mapping](images/task-01-step-04-calendar-page-details.png)
 
 5. In the Calendar attributes, configure the **View / Edit Link** as the Event Click link to page `13`, **Interview Feedback**. Set `P13_CANDIDATE_ID` to `&CANDIDATE_ID.`. Set `P13_SCHEDULED_DATE` to `&START_DATE.`.
+    ![Task 1: Calendar event link attributes](images/task-01-step-05-page-attr.png)
+    ![Task 1: Calendar event link target](images/task-01-step-05-page-attr-det.png)
 
 6. Save and run the page. Confirm that each interviewer sees only their assigned interviews.
+    ![Task 1: Final page](images/task-01-step-06-final-page.png)
 
-    > **Screenshot placeholder:** TAP Interview Calendar with an event link to Interview Feedback.
-
-## Task 2: Configure Signature Capture on the Offer Management Form
-
-1. In TAP, open the **Offer Management Form** in Page Designer. Confirm that the approved **Signature Capture** plug-in is available as a page-item type. If needed, obtain the approved plug-in export from the course materials.
-
-2. In SQL Workshop, add a BLOB column if the offers table does not already have one:
-
-    ```sql
-    <copy>ALTER TABLE tms_offers ADD (signature_blob BLOB);</copy>
-    ```
-
-3. Create `PXX_HIRING_MANAGER_SIGNATURE` below the `STATUS` item. Set its type to **Signature Capture** and its label to **Hiring Manager Signature**.
-
-4. Configure the plug-in source and storage attributes to store the captured signature in `SIGNATURE_BLOB`.
-
-5. Apply the `IS_HIRING_MANAGER` authorization scheme. Add a server-side condition so the item renders only when the offer status is `Pending Approval`.
-
-6. Save and run the page as a hiring manager. Confirm that the item appears only for pending offers.
-
-    > **Screenshot placeholder:** Signature Capture item on a pending offer in the TAP Offer Management Form.
 
 ## Acknowledgements
 

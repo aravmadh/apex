@@ -15,8 +15,8 @@ Estimated Time: 5 minutes
 ## Task 1: Create the System Logs report
 
 1. In ESS App Builder, select **Create Page**, then select **Interactive Report** and **SQL Query**.
-![](images/task-01-step-01-create-ir-page.png)
-![](images/task-01-step-01-create-ir-page-details.png)
+    ![Task 1: Create Interactive Report page](images/task-01-step-01-create-ir-page.png)
+    ![Task 1: Create Interactive Report page details](images/task-01-step-01-create-ir-page-details.png)
 
 2. Name the page **System Logs**. Add it to the **Admin** navigation group. Create the group if it does not already exist.
     Enter the following query:
@@ -35,17 +35,17 @@ Estimated Time: 5 minutes
     ```
 
 3. In Page Designer, apply the `IS_HR_ADMIN` authorization scheme to the page.
-![](images/task-01-step-03-apply-authorization.png)
+    ![Task 1: Apply authorization](images/task-01-step-03-apply-authorization.png)
 
 4. Select the Interactive Report region and expand columns. Hide `AUTOMATION_ID`. Change the heading for `ELAPSED_SECONDS` to **Elapsed (s)** and apply the number format mask `999G990.0`.
-![](images/task-01-step-04-automation-id-col.png)
-![](images/task-01-step-04-timestamp-format-col.png)
-![](images/task-01-step-04-elapsed-time-col.png)
+    ![Task 1: Automation ID Column](images/task-01-step-04-automation-id-col.png)
+    ![Task 1: Timestamp format Column](images/task-01-step-04-timestamp-format-col.png)
+    ![Task 1: Elapsed time Column](images/task-01-step-04-elapsed-time-col.png)
 
 
 ## Task 2: Add an optional leave-accrual audit report
 
-1. If the application already contains `TMS_AUDIT_LOG`, add a second Interactive Report region named **Leave Accrual Audit**. Use the below query.
+1. If the application contains `TMS_AUDIT_LOG`, add a second Interactive Report region named **Leave Accrual Audit**. Use this query.
 
     ```sql
     <copy>
@@ -59,13 +59,13 @@ Estimated Time: 5 minutes
      ORDER BY changed_at DESC
      </copy>
     ```
-    ![](images/task-02-step-01-add-new-report.png)
+    ![Task 2: Add new report](images/task-02-step-01-add-new-report.png)
 
-3. Hide `LOG_ID`. Truncate the displayed `NEW_VALUES` text to a suitable length.
-![](images/task-02-step-03-log-id-col.png)
+2. Hide `LOG_ID`. Truncate the displayed `NEW_VALUES` text to a suitable length.
+    ![Task 2: Log ID Column](images/task-02-step-03-log-id-col.png)
 
-4. Run the page. Confirm that the newest automation runs appear first and that **Elapsed (s)** shows the calculated duration.
-![](images/task-02-step-04-page-render.png)
+3. Run the page. Confirm that the newest automation runs appear first and that **Elapsed (s)** shows the calculated duration.
+    ![Task 2: Page render](images/task-02-step-04-page-render.png)
 
 ## Acknowledgements
 
