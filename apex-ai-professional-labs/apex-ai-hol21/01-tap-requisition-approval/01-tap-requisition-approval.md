@@ -200,15 +200,27 @@ Estimated Time: 45 minutes
 
 ## Task 4: Add task and monitoring pages
 
-1. Create a TAP **Unified Task List** page named `My Approvals`. Set **Task List Context** to **My Tasks** and add the page to the navigation menu.
+1. In App Builder, click **Create Page** and select **Unified Task List**. Set the page name to `My Approvals` and **Report Context** to **My Tasks**. Enable navigation, then create the page.
 
-2. Create a TAP **Unified Task List** page named `Tasks Initiated by Me`. Set **Task List Context** to **Initiated by Me** and add the page to the navigation menu.
+    ![My Approvals Unified Task List page configuration](images/task-04-step-01-unified-task-list.png)
 
-2. Create a TAP **Workflow Console** page named `Workflow Console`. Add a navigation entry and protect it with authorization scheme `IS_TA_ADMIN`.
+2. Create a second **Unified Task List** page. Set its name to `Tasks Initiated by Me` and **Report Context** to **Initiated by Me**. Enable navigation, then create the page.
 
-3. Open the existing TAP Job Requisition Form and select **Processing**. Add a Workflow process after the Form DML process. Set **Workflow** to `Approve Job Requisition` and **Operation** to **Start**. Map `P_REQUISITION_ID` to page item `REQ_ID`.
+    ![Tasks Initiated by Me Unified Task List page configuration](images/task-04-step-02-unified-task-list-initiated-by-me.png)
 
-4. Add a server-side condition so the process runs only when the requisition status is `Submitted`.
+3. Click **Create Page** and select **Workflow Console**. Name the page `Workflow Console` and choose the required **Report Context**. Enable navigation. After page creation, apply authorization scheme `IS_TA_ADMIN` in Page Designer.
+
+    ![Workflow Console page definition and report context](images/task-04-step-03-wf-console-det.png)
+
+4. Open the TAP Job Requisition Form in Page Designer and select **Processing**. Create a **Workflow** page process after the Form DML process. Set **Workflow** to `Approve Job Requisition` and **Operation** to **Start**. Map `P_REQUISITION_ID` to page item `PXX_REQ_ID`.
+
+    ![Workflow page process created after Form DML](images/task-04-step-04-add-wf-process.png)
+    ![Approve Job Requisition Workflow process settings](images/task-04-step-04-add-wf-process-02.png)
+    ![Workflow process parameter mapping for requisition ID](images/task-04-step-04-add-param.png)
+
+5. Add a server-side condition to the Workflow process. Run the process only when the Create button is pressed and `PXX_STATUS` equals `Open`.
+
+    ![Workflow process server-side condition](images/task-04-step-05-server-side.png)
 
 ## Task 5: Test both approval routes
 
