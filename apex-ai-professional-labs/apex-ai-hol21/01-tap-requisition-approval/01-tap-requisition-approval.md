@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create a TAP workflow that routes submitted requisitions according to the requested headcount. Requisitions for more than three people go to an HR administrator; all others go to the department head. The approver's decision updates the requisition status.
+Create a TAP workflow that routes submitted requisitions by requested headcount. Requisitions for more than three people go to an HR administrator. All other requisitions go to the department head. The task outcome updates the requisition status.
 
 Estimated Time: 45 minutes
 
@@ -14,8 +14,8 @@ Estimated Time: 45 minutes
 
 ## Task 1: Create the Task definition
 
-1. In TAP, open **Shared Components**, select **Task Definitions**, and click **Create**. Create the HR administration task definition with these values:
-![](images/task-01-step-01-task-definitions.png)
+1. In TAP, open **Shared Components**, select **Task Definitions**, and click **Create**. Create the HR administration task definition. Use these values:
+    ![Task Definitions page with the Create button](images/task-01-step-01-task-definitions-create.png)
 
     **Requisition HR Admin Review**
 
@@ -27,16 +27,16 @@ Estimated Time: 45 minutes
     | Priority | Medium |
     | Subject | `Approve Requisition &REQ_ID. for &HEADCOUNT. headcount` |
     
-    ![](images/task-01-step-01-task-definitions-details.png)
-- Set `Deadline` as **Due on Type = Expression** and **Due On = SYSDATE + 2**
-    ![](images/task-01-step-01-task-definitions-expression-add-participants.png)
-- click Add Participant and configure the below
+    ![HR Admin Review task definition details](images/task-01-step-01-task-definitions-details.png)
+    - Set **Due On Type** to **Expression** and set **Due On** to `SYSDATE + 2`.
+        ![Task deadline expression and Add Participant controls](images/task-01-step-01-task-definitions-expression-add-participants.png)
+    - Click **Add Participant** and configure the participant as follows:
    | Participant Type | Identity Type | Value Type | SQL Query |
     | --- | --- | --- | --- |
     | Potential Owner | Authorization Scheme |  |  IS_TA_ADMIN |
     
-    ![](images/task-01-step-01-task-definitions-add-participants-details.png)
-- Add the below task parameters. Use the static IDs shown so the subject substitutions resolve. Task parameters are String values and have readable labels.
+        ![HR Admin Potential Owner participant configuration](images/task-01-step-01-task-definitions-add-participants-details.png)
+    - Add the following task parameters. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
 
     | Static ID | Label | Required | Visible |
     | --- | --- | --- | --- |
@@ -45,9 +45,9 @@ Estimated Time: 45 minutes
     | `P_JOB_TITLE` | Job Title | Yes | Yes |
     | `P_DEPARTMENT_NAME` | Department Name | Yes | Yes |
     
-    ![](images/task-01-step-01-task-definitions-add-parameters.png)
+        ![HR Admin Review task parameter definitions](images/task-01-step-01-task-definitions-add-parameters.png)
 
-- Keep **Initiator Can Complete** off. Click on **Create Task Details Page** and then save the task definition.
+    - Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
 
      **Requisition Department Head Review**
 
@@ -59,15 +59,15 @@ Estimated Time: 45 minutes
     | Priority | Medium |
     | Subject | `Approve Requisition &REQ_ID. for &HEADCOUNT. headcount` |
 
-    ![](images/task-01-step-01-task-definitions-dep-hr-add.png)
-- Click **Create**. On the Task Definition page, click **Add Participant** and configure the Department Head Potential Owner as follows:
+    ![Department Head Review task definition details](images/task-01-step-01-task-definitions-dep-hr-add.png)
+    - Click **Create**. On the Task Definition page, click **Add Participant** and configure the Department Head Potential Owner as follows:
 
     | Participant Type | Identity Type | Value Type | SQL Query |
     | --- | --- | --- | --- |
     | Potential Owner | User | SQL Query | `SELECT e.email FROM tms_employees e JOIN tms_departments d ON d.manager_id = e.employee_id WHERE d.dept_id = (SELECT r.dept_id FROM tms_job_requisitions r WHERE r.req_id = :APEX$TASK_PK)` |
 
-    ![](images/task-01-step-01-task-definitions-dep-add-participants.png)
-- Add the same task parameters to this definition. Use the static IDs shown so the subject substitutions resolve. Task parameters are String values and have readable labels.
+        ![Department Head Potential Owner SQL Query configuration](images/task-01-step-01-task-definitions-dep-add-participants.png)
+    - Add the same task parameters to this definition. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
 
     | Static ID | Label | Required | Visible |
     | --- | --- | --- | --- |
@@ -76,10 +76,10 @@ Estimated Time: 45 minutes
     | `P_JOB_TITLE` | Job Title | Yes | Yes |
     | `P_DEPARTMENT_NAME` | Department Name | Yes | Yes |
 
-    ![](images/task-01-step-01-task-definitions-dep-add-parameters.png)
--  Keep **Initiator Can Complete** off. Click on **Create Task Details Page** and then save the task definition.
-![](images/task-01-step-01-task-definitions-dep-create-task-details.png)
-![](images/task-01-step-01-task-definitions-created.png)
+        ![Department Head Review task parameter definitions](images/task-01-step-01-task-definitions-dep-add-parameters.png)
+    - Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
+        ![Department Head Task Details page creation](images/task-01-step-01-task-definitions-dep-create-task-details.png)
+        ![Created Department Head Review task definition](images/task-01-step-01-task-definitions-created.png)
 
 ## Task 2: Create the requisition workflow
 
@@ -91,8 +91,8 @@ Estimated Time: 45 minutes
     | --- | --- | --- | --- | --- |
     | `P_REQUISITION_ID` | Requisition ID | NUMBER | In | Yes |
 
-    ![](images/task-02-step-02-wf-parameter.png)
-3. Create these workflow variables. Use the `V_` prefix only for version variables whose values can change during the workflow. Add the label shown for each variable.
+    ![Workflow parameter configuration](images/task-02-step-02-wf-parameter.png)
+3. Create these workflow variables. Use the `V_` prefix for values that can change at runtime. Add the label shown for each variable.
 
     | Static ID | Label | Data Type |
     | --- | --- | --- |
@@ -102,9 +102,9 @@ Estimated Time: 45 minutes
     | `V_JOB_TITLE` | Job Title | VARCHAR2 |
     | `V_DEPARTMENT_NAME` | Department Name | VARCHAR2 |
 
-    ![](images/task-02-step-03-add-wf-variables.png)
+    ![Workflow variable definitions](images/task-02-step-03-add-wf-variables.png)
 
-4. In the Workflow Designer, add a **Workflow Start** activity named `Start`. After it, add an **Execute Code** activity named `Load Requisition Details` and enter:
+4. In the Workflow Designer, add a **Workflow Start** activity named `Start`. Add an **Execute Code** activity named `Load Requisition Details`. Enter:
 
     ```sql
     <copy>
@@ -126,25 +126,25 @@ Estimated Time: 45 minutes
     END;
     </copy>
     ```
-    ![](images/task-02-step-04-add-wf-start-activity.png)
+    ![Workflow Start and Load Requisition Details activities](images/task-02-step-04-add-wf-start-activity.png)
 
 ## Task 3: Route and complete the approval
 
-1. Add a **Switch** activity named `Headcount Review Route` after **Load Requisition Details**. Use the below sql to create **True/False** path
+1. Add a **Switch** activity named `Headcount Review Route` after **Load Requisition Details**. Set the switch type to **True False**. Use this SQL query for the condition:
 
-   ``` sql
-   <copy>
-   SELECT CASE
-         WHEN headcount > 3 THEN 'TRUE'
-         ELSE 'FALSE'
-       END
-        FROM tms_job_requisitions
-        WHERE req_id = :P_REQUISITION_ID
-   </copy>
-   ```
-    ![](images/task-03-step-01-add-if-els-switch.png)
+    ```sql
+    <copy>
+    SELECT CASE
+             WHEN headcount > 3 THEN 'TRUE'
+             ELSE 'FALSE'
+           END
+      FROM tms_job_requisitions
+     WHERE req_id = :P_REQUISITION_ID
+    </copy>
+    ```
+    ![Headcount Review Route switch configuration](images/task-03-step-01-add-if-els-switch.png)
 
-2. On the first route, add a **Human Task - Create** activity named `HR Admin Review`. Select task definition `Requisition HR Admin Review`. Set **Details Primary Key Item** to `P_REQUISITION_ID`. Map Outcome to `TASK_OUTCOME`.
+2. On the first route, add a **Human Task - Create** activity named `HR Admin Review`. Select task definition `Requisition HR Admin Review`. Set **Details Primary Key Item** to `P_REQUISITION_ID`. Map the outcome to `TASK_OUTCOME`.
 
     |Parameters| Value Type | Variable |
     |----|----|----| 
@@ -153,9 +153,9 @@ Estimated Time: 45 minutes
     `Job Title` | Item | `V_JOB_TITLE`,
     `Department Name` | Item | `V_DEPARTMENT_NAME`. 
 
-    ![](images/task-03-step-02-hr-admin-review.png)
+    ![HR Admin Review Human Task activity configuration](images/task-03-step-02-hr-admin-review.png)
 
-3. On the second route, add `Requisition Department Head Review` using task definition `Requisition Department Head Review`. Set **Details Primary Key Item** to `P_REQUISITION_ID` Map Outcome to `TASK_OUTCOME`. 
+3. On the second route, add `Requisition Department Head Review`. Select task definition `Requisition Department Head Review`. Set **Details Primary Key Item** to `P_REQUISITION_ID`. Map the outcome to `TASK_OUTCOME`.
 
     Use the same parameter and result mappings.
 
@@ -166,14 +166,14 @@ Estimated Time: 45 minutes
     `Job Title` | Item | `V_JOB_TITLE`,
     `Department Name` | Item | `V_DEPARTMENT_NAME`. 
 
-    ![](images/task-03-step-03-dep-head-review.png)
+    ![Department Head Review Human Task activity configuration](images/task-03-step-03-dep-head-review.png)
 
-4. Name the connectors from the `Headcount Review Route` by clicking on the conector as `HR Admin` and condition true and clicking on the connector for false condtion and name it as `Department Head`.
+4. Configure the connections from `Headcount Review Route`. Set the True connection to `HR Admin` and the False connection to `Department Head`.
 
-    ![](images/task-03-step-04-true-connector-hr-admin.png)
-    ![](images/task-03-step-04-false-connector-dept-head.png)
+    ![True connection to the HR Admin Review activity](images/task-03-step-04-true-connector-hr-admin.png)
+    ![False connection to the Department Head Review activity](images/task-03-step-04-false-connector-dept-head.png)
 
-5. Connect both Human Task activities to an **Execute Code** activity named `Update Requisition Status`. Enter:
+5. Connect both Human Task activities to an **Execute Code** activity named `Update Requisition Status`. Enter this code:
 
     ```sql
     <copy>
@@ -189,14 +189,14 @@ Estimated Time: 45 minutes
     </copy>
     ```
 
-    ![](images/task-03-step-05-update-req-status.png)
+    ![Update Requisition Status Execute Code activity](images/task-03-step-05-update-req-status.png)
 
-6. Create a Workflow Participant and add the workflow owner as `sofia.garcia@acme.example.`
-![](images/task-03-step-06-wf-owner.png)
+6. Create a workflow participant and set the workflow owner to `sofia.garcia@acme.example`.
+    ![Workflow participant configuration for the workflow owner](images/task-03-step-06-wf-owner.png)
 
-7. Add a **Workflow End** activity named `End`, set its end state to **Completed**, and connect it after **Update Requisition Status**. Save, validate, and activate the workflow version.
-![](images/task-03-step-06-wf-end.png)
-![](images/task-03-step-06-wf-activate.png)
+7. Add a **Workflow End** activity named `End`. Set its end state to **Completed**. Connect it after **Update Requisition Status**, then save and activate the workflow version.
+    ![Workflow End activity configuration](images/task-03-step-06-wf-end.png)
+    ![Activated workflow version](images/task-03-step-06-wf-activate.png)
 
 ## Task 4: Add task and monitoring pages
 
@@ -206,19 +206,19 @@ Estimated Time: 45 minutes
 
 2. Create a TAP **Workflow Console** page named `Workflow Console`. Add a navigation entry and protect it with authorization scheme `IS_TA_ADMIN`.
 
-3. Open the existing TAP Job Requisition Form and select **Processing**. After the existing Form DML process, create a Workflow process with **Workflow** set to `Approve Job Requisition` and **Operation** set to **Start**. Map `P_REQUISITION_ID` to the existing `REQ_ID` page item.
+3. Open the existing TAP Job Requisition Form and select **Processing**. Add a Workflow process after the Form DML process. Set **Workflow** to `Approve Job Requisition` and **Operation** to **Start**. Map `P_REQUISITION_ID` to page item `REQ_ID`.
 
 4. Add a server-side condition so the process runs only when the requisition status is `Submitted`.
 
 ## Task 5: Test both approval routes
 
-1. Run TAP and submit a requisition with headcount `2`. Sign in as that department's department head, open **My Approvals**, open the `Requisition Department Head Review` task, and click **Approve**.
+1. Run TAP and submit a requisition with headcount `2`. Sign in as the department head for that department. Open **My Approvals**, then approve the `Requisition Department Head Review` task.
 
-2. Return to the requisition and confirm its status is `Open`. As `sofia.garcia@acme.example`, open **Workflow Console** and confirm the instance is completed.
+2. Return to the requisition and confirm status `Open`. Sign in as `sofia.garcia@acme.example`. Open **Workflow Console** and confirm that the instance completed.
 
-3. Submit another requisition with headcount `5`. Sign in as a TA administrator who is a potential owner, open **My Approvals**, and claim `Requisition HR Admin Review` if required. Approve or reject it.
+3. Submit another requisition with headcount `5`. Sign in as a TA administrator who can own the task. Open **My Approvals** and claim `Requisition HR Admin Review` if required. Approve or reject the task.
 
-4. Verify an approval sets `TMS_JOB_REQUISITIONS.STATUS` to `Open` and a rejection sets it to `Rejected`. Confirm the workflow instance is completed in **Workflow Console**.
+4. Verify that approval sets `TMS_JOB_REQUISITIONS.STATUS` to `Open`. Verify that rejection sets it to `Rejected`. Confirm that the workflow instance completed in **Workflow Console**.
 
 ## Acknowledgements
 
