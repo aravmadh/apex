@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create email templates for offer and interview events. Each template has a static identifier. TAP automations use the identifier and placeholders to send messages from each query row.
+Create email templates for offer and interview events. Each template includes an HTML Format and a Plain Text Format. Its static identifier lets automations and `APEX_MAIL` refer to the template, while placeholders supply row-specific values.
 
 ### Objectives
 

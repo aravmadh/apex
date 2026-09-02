@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create three scheduled automations in ESS. Each automation runs actions in the background. When a query returns rows, actions can use the current-row columns.
+Create three scheduled automations in ESS. Automations run a sequential set of actions when query results identify data to process. The actions can use columns from the current query row.
 
 ### Objectives
 

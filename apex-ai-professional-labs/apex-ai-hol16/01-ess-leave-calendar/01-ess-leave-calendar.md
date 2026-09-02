@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create a native APEX Calendar page in ESS. The calendar shows leave requests for the signed-in employee. CSS classes distinguish request statuses.
+Create a Calendar page in ESS. A Calendar region displays leave requests for the signed-in employee. The CSS Class column applies a different style to each request status.
 
 ### Objectives
 

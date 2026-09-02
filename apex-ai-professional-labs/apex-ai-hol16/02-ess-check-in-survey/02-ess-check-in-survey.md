@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Build a check-in survey for employees who have completed their first 30 days. The form stores each employee rating and comment. Native Star Rating items collect three required scores from one through five.
+Build a check-in survey for employees who have completed their first 30 days. The form stores each employee rating and comment. Star Rating items display five stars that users can click to set a numeric value.
 
 ### Objectives
 
@@ -81,13 +81,13 @@ Estimated Time: 10 minutes
     - Set **Show Clear Button** to **No**. This setting is optional.
     - Set **Value Required** to **Yes**.
 
-    APEX renders the Star Rating item as SVG stars and submits a numeric value from `1` through `5`.
+    A Star Rating item displays stars that users can click to set a numeric value from `1` through `5`.
     ![Task 3: Item names and settings](images/task-03-step-03-set-names-configure-settings.png)
 
 4. Keep `COMMENTS` as a Textarea and set its maximum length to `2000`.
     ![Task 3: Comments](images/task-03-step-04-comments.png)
 
-5. Change `PX_CREATED_AT` to Hidden. APEX populates it with the default timestamp when a row is inserted.
+5. Change `PX_CREATED_AT` to Hidden. APEX assigns the default timestamp when a user inserts a row.
     ![Task 3: Created at hidden](images/task-03-step-05-created-at-hidden.png)
 6. Save and run the form. Submit one check-in as the signed-in employee. Confirm that it appears in **My Check-In History**.
     ![Task 3: Create check-in record](images/task-03-step-06-create-checkin.png)

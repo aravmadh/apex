@@ -1,0 +1,29 @@
+{
+    "workshoptitle": "Workflow and Business Process Automation",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Workshop overview and objectives.",
+            "type": "livelabs",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "TAP Requisition Approval Workflow",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../01-tap-requisition-approval/01-tap-requisition-approval.md"
+        },
+        {
+            "title": "ESS Employee Onboarding Workflow",
+            "description": "",
+            "type": "livelabs",
+            "filename": "../../02-ess-employee-onboarding/02-ess-employee-onboarding.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Template to link to Need Help lab at the end of workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle-livelabs/common/main/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

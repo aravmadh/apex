@@ -1,6 +1,6 @@
 # LiveLabs Workshop Validation – apex-ai-hol16
 
-Generated on 2026-08-29T12:45:58.890935+00:00
+Generated on 2026-08-29T12:52:28.831092+00:00
 
 ## Structure Check
 - ✅ Required folders and workshop variants present.
@@ -17,9 +17,8 @@ Generated on 2026-08-29T12:45:58.890935+00:00
 
 ### 02-ess-check-in-survey/02-ess-check-in-survey.md
 - ✅ LiveLabs formatting checks passed.
-- ✍️ Lanham score: 3/5
+- ✍️ Lanham score: 4/5
   - 3 sentence(s) exceed 20 words; tighten wording.
-  - Passive voice detected in 1 instance(s).
 
 ### 03-ess-email-templates/03-ess-email-templates.md
 - ✅ LiveLabs formatting checks passed.

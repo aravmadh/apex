@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create a native Calendar page for interviewers. The calendar filters interviews by the signed-in interviewer and links events to the Interview Feedback page.
+Create a Calendar page for interviewers. The Calendar region filters interviews by the signed-in interviewer and links existing events to the Interview Feedback page.
 
 ### Objectives
 
@@ -13,7 +13,7 @@ Estimated Time: 5 minutes
 
 ## Task 1: Create the Interview Calendar
 
-1. In TAP App Builder, select **Create Page**, then select **Calendar Component**.
+1. In TAP App Builder, select **Create Page**, then select **Component** and **Calendar**.
     ![Task 1: Select calendar page](images/task-01-step-01-select-calendar-page.png)
 
 2. Name the page **Interview Calendar** and select **Local Database** and **SQL Query**.  Enter:
@@ -36,10 +36,10 @@ Estimated Time: 5 minutes
 3. Enable navigation. Set **Hiring Process** as the navigation parent and select the `fa-calendar` icon.
     ![Task 1: Navigation icon](images/task-01-step-03-navigation-icon.png)
 
-4. Map `EVENT_TITLE`, `START_DATE`, and `END_DATE` to the Calendar settings.
+4. Map `EVENT_TITLE` to **Display Column**. Map `START_DATE` and `END_DATE` to the Calendar date columns. Map `EVENT_ID` to **Primary Key Column**.
     ![Task 1: Calendar column mapping](images/task-01-step-04-calendar-page-details.png)
 
-5. In the Calendar attributes, configure the **View / Edit Link** as the Event Click link to page `13`, **Interview Feedback**. Set `P13_CANDIDATE_ID` to `&CANDIDATE_ID.`. Set `P13_SCHEDULED_DATE` to `&START_DATE.`.
+5. In the Calendar attributes, configure the **View/Edit Link** to page `13`, **Interview Feedback**. Set `P13_CANDIDATE_ID` to `&CANDIDATE_ID.`. Set `P13_SCHEDULED_DATE` to `&START_DATE.`.
     ![Task 1: Calendar event link attributes](images/task-01-step-05-page-attr.png)
     ![Task 1: Calendar event link target](images/task-01-step-05-page-attr-det.png)
 

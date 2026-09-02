@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create an administrator-only Interactive Report that reads the APEX automation log. The page gives HR administrators a concise view of recent automation runs.
+Create an administrator-only Interactive Report based on the APEX automation log. An Interactive Report is searchable and customizable. The page lets HR administrators review recent automation runs.
 
 ### Objectives
 
