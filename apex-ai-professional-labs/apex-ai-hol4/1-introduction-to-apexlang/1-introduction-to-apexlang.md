@@ -22,21 +22,21 @@ Estimated Time: 15 minutes
 2. Download and install the version that matches your operating system (Windows, macOS, or Linux).
     ![Visual Studio Code installer selection](images/task-01-step-01-vscode-select-installer.png)
 
-### Install the SQL Developer Extension
+### Install Oracle SQL Developer for VS Code
 
-1. In the Visual Studio Code **Extensions** marketplace, search for **SQL Developer** and install the extension.
-    ![SQL Developer extension in the Visual Studio Code marketplace](images/task-01-step-02-sql-developer.png)
+1. In the Visual Studio Code **Extensions** marketplace, search for **Oracle SQL Developer for VS Code** and install the extension.
+    ![Oracle SQL Developer for VS Code extension in the Visual Studio Code marketplace](images/task-01-step-02-sql-developer.png)
 
-2. Open the **SQL Developer** extension from the VS Code sidebar. Create a database connection with your APEX Workspace schema credentials.
+2. Open the **Connections** navigator in Oracle SQL Developer for VS Code. Create a database connection for a schema associated with your APEX workspace.
     ![SQL Developer database connection setup](images/task-01-step-02-sql-developer-connection.png)
 
 
-## Task 2: Export the application using SQL Developer Extension
+## Task 2: Export the application using Oracle SQL Developer for VS Code
 
-1. In the SQL Developer extension, expand the database connection and then **APEX**. Right-click the **APEXToGo** app from Module 3 and select **Export**.
+1. In the **Connections** navigator, expand the database connection and the **APEX** application node. Right-click the **APEXToGo** app from Module 3 and select **Export…**.
     ![Export action for the APEXToGo application](images/task-02-step-01-export-application.png)
 
-2. Select `applications` folder in your Module 4 workspace as the destination and click **Apply**
+2. Select the `applications` folder in your Module 4 workspace as the destination and click **Apply**.
     ![Application export destination folder](images/task-02-step-02-export-path.png)
 
 3. Wait for the export to complete and check if the application folder appears under `applications`.
@@ -46,7 +46,7 @@ Estimated Time: 15 minutes
 
 1. In Visual Studio Code, expand the exported application folder.
 
-2. Expand the **Deployments** folder and open **default.json**.
+2. Expand the `deployments` folder and open `default.json`.
    * This file stores the exported APEX app's **Application ID**.
    * To create a new app during import, enter a new **Application ID** and save the file.
    * If you keep the **Application ID**, import replaces the existing app in your workspace.

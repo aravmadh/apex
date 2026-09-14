@@ -36,7 +36,7 @@ Estimated Time: 5 minutes
 3. Enable navigation. Set **Hiring Process** as the navigation parent and select the `fa-calendar` icon.
     ![Task 1: Navigation icon](images/task-01-step-03-navigation-icon.png)
 
-4. Map `EVENT_TITLE` to **Display Column**. Map `START_DATE` and `END_DATE` to the Calendar date columns. Map `EVENT_ID` to **Primary Key Column**.
+4. Map `EVENT_TITLE` to **Display Column**. Map `START_DATE` and `END_DATE` to the Calendar date columns. Leave **Primary Key Column** unselected.
     ![Task 1: Calendar column mapping](images/task-01-step-04-calendar-page-details.png)
 
 5. In the Calendar attributes, configure the **View/Edit Link** to page `13`, **Interview Feedback**. Set `P13_CANDIDATE_ID` to `&CANDIDATE_ID.`. Set `P13_SCHEDULED_DATE` to `&START_DATE.`.

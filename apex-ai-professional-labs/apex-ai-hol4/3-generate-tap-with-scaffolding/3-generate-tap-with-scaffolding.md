@@ -17,7 +17,7 @@ Estimated Time: 25 minutes
 1. In the `tap_sdd` folder, verify that these files are present:
 
     - `tms_module_04_functional_spec.md`
-    - `tap_schema_metadata.md`
+    - `artifacts/tap_schema_metadata.md`
     - `blueprint_prompt.md`
     - `apex-fa-icons-allowlist.txt`
     
@@ -33,7 +33,7 @@ Estimated Time: 25 minutes
 2. Submit the following prompt:
 
     ```
-    <copy>Use tap_schema_metadata.md for the database schema, tms_module_04_functional_spec.md for business context, and apex-fa-icons-allowlist.txt for icon choices. Generate a complete Application Blueprint that follows blueprint_prompt.md exactly. Use only allowlisted APEX icons. Save the final blueprint as tap_generated_blueprint.md.
+    <copy>Use artifacts/tap_schema_metadata.md for the database schema, tms_module_04_functional_spec.md for business context, and apex-fa-icons-allowlist.txt for icon choices. Generate a complete Application Blueprint that follows blueprint_prompt.md exactly. Use only allowlisted APEX icons. Save the final blueprint as tap_application_blueprint.md.
     </copy>
     ```
     ![Blueprint-generation prompt in the coding agent](images/task-02-step-02-prompt.png)

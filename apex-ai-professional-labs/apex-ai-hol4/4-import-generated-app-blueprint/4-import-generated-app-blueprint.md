@@ -20,9 +20,9 @@ Estimated Time: 30 minutes
 2. Upload `tap_application_blueprint.md` from your `tap_sdd` project.
     ![Application Blueprint upload selection](images/task-01-step-02-upload.png)
 
-3. Select **Application Blueprint** as the file type, then select **Next**.
+3. Select **Application Blueprint** as the file type. Verify the file character set, then select **Next**.
 
-4. Review the import summary and select **Import Application**.
+4. Select the default **Generative AI Service** for the application and the **Parsing Schema**. Enter a new, unique application ID outside the reserved range `3000` through `9000`, then select **Import Application**.
     ![Application Blueprint import summary](images/task-01-step-04-import-summary.png)
 
 

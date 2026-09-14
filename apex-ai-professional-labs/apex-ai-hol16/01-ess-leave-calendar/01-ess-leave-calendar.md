@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Create a Calendar page in ESS. A Calendar region displays leave requests for the signed-in employee. The CSS Class column applies a different style to each request status.
+Create a Calendar page in ESS. A Calendar region displays leave requests for the signed-in employee. The **CSS Class** setting applies a different style to each request status.
 
 ### Objectives
 
@@ -53,10 +53,10 @@ Estimated Time: 10 minutes
     ![Task 2: Calendar CSS settings, part 1](images/task-02-step-01-add-css-01.png)
     ![Task 2: Calendar CSS settings, part 2](images/task-02-step-01-add-css-02.png)
 
-2. Select the Calendar region. In its attributes, set **CSS Class Column** to **CSS_CLASS**.
+2. Select the Calendar region. On the **Attributes** tab, set **CSS Class** to `CSS_CLASS`.
     ![Task 2: Select CSS class](images/task-02-step-02-select-css-class.png)
 
-3. Create an **Event Click** link in the Calendar region attributes. Target the existing **Leave Request** page. Pass `EVENT_ID` to its leave-request item.
+3. In the Calendar region **Attributes**, select **View / Edit Link**. Target page `5`, **Leave Request**, and set `P5_REQUEST_ID` to `&EVENT_ID.`.
     ![Task 2: Create event](images/task-02-step-03-create-event.png)
     ![Task 2: Edit event](images/task-02-step-03-edit-event.png)
 

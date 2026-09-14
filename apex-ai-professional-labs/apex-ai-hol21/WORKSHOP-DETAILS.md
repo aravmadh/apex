@@ -1,6 +1,6 @@
 # Workshop Details
 
-Estimated Time: 5 minutes
+Estimated Time: 3 hours 45 minutes
 
 ## Short Description
 
@@ -8,7 +8,7 @@ Build routed and parallel Oracle APEX workflows that automate requisition approv
 
 ## Long Description
 
-Business processes often require people to review, approve, and complete work before the next step can begin. In this workshop, you use Oracle APEX Workflow and Human Tasks to make those decisions visible, actionable, and auditable.
+Business processes often require people to review, approve, and complete work before the next step can begin. In this workshop, you use Oracle APEX workflows, task definitions, **Human Task - Create** activities, **Unified Task List** pages, and **Workflow Console** pages to make those decisions visible, actionable, and auditable.
 
 In TAP, you route submitted job requisitions by headcount and update their status after approval or rejection. In ESS, you create parallel onboarding tasks for HR and the employee's department manager, then send a welcome email only after both tasks are complete.
 

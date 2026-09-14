@@ -15,14 +15,14 @@ Estimated Time: 20 minutes
 
 ## Task 1: Create the TAP SDD project folder
 
-1. Create a local folder named `tap_sdd`.
+1. Create a local folder named `tap_sdd` and an `artifacts` subfolder inside it.
 
 2. Use the following names for the files you will collect:
 
     - `tms_module_04_functional_spec.md`
     - `blueprint_prompt.md`
     - `apex-fa-icons-allowlist.txt`
-    - `tap_schema_metadata.md`
+    - `artifacts/tap_schema_metadata.md`
 
 ## Task 2: Download the blueprint artifacts
 
@@ -48,7 +48,7 @@ Estimated Time: 20 minutes
 3. Include the shared `TMS_EMPLOYEES` table.
     ![Shared TMS_EMPLOYEES table selected for metadata generation](images/task-03-step-03-select-shared-table.png)
 
-4. Click **Describe**, download the result, and save it in the `artifacts` folder as `tap_schema_metadata.md`.
+4. Click **Describe**, download the result, and save it as `artifacts/tap_schema_metadata.md`.
     ![Download action for generated schema metadata](images/task-03-step-04-describe-download.png)
 
 ## Task 4: Set up your coding agent
@@ -59,13 +59,13 @@ Estimated Time: 20 minutes
 2. VS Code may limit access to your project folder. If it does, click the `Restricted Mode` icon in the lower-left corner. Click **Trust**, then close the window.
     ![Visual Studio Code workspace trust prompt](images/task-04-step-03-access-folder.png)
 
-3. Click the Extensions icon in the VS Code sidebar, search for Codex, and click Install, as shown below.
-    ![Codex extension in the Visual Studio Code marketplace](images/task-04-step-02-coding-agent.png)
+3. Click the Extensions icon in the VS Code sidebar, search for the **Codex IDE extension**, and click **Install**, as shown below.
+    ![Codex IDE extension in the Visual Studio Code marketplace](images/task-04-step-02-coding-agent.png)
 
-4. Click the Codex icon in the VS Code sidebar after you install the extension. Sign in with your ChatGPT account or OpenAI API key.
+4. Click the Codex icon in the VS Code sidebar after you install the extension. Select **Sign in with ChatGPT** and complete the browser sign-in flow. Alternatively, select **Use API key** and enter an OpenAI API key.
     ![Codex sign-in options in Visual Studio Code](images/task-04-step-04-sign-in.png)
 
-> Note: This step is mandatory. You will not be able to continue with the remaining labs in this module unless you complete it. Also, please note that the free version of ChatGPT is not supported. For more information, refer to the instructions provided on the Visual Studio Marketplace for Codex Extension.
+> Note: Codex access is required for the remaining labs in this module. ChatGPT availability depends on the account; review the current Codex access requirements before you begin.
 
 ## Acknowledgements
 

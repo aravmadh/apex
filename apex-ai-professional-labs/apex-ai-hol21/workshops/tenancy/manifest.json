@@ -10,13 +10,13 @@
         },
         {
             "title": "TAP Requisition Approval Workflow",
-            "description": "",
+            "description": "Route requisitions by headcount through approval tasks, then monitor the workflow in a Unified Task List and Workflow Console.",
             "type": "livelabs",
             "filename": "../../01-tap-requisition-approval/01-tap-requisition-approval.md"
         },
         {
             "title": "ESS Employee Onboarding Workflow",
-            "description": "",
+            "description": "Create parallel onboarding tasks and send the welcome email only after both Human Task activities complete.",
             "type": "livelabs",
             "filename": "../../02-ess-employee-onboarding/02-ess-employee-onboarding.md"
         },

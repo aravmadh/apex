@@ -23,12 +23,12 @@ Estimated Time: 5 minutes
 
 ## Task 2: Create the TAP templates
 
-1. Create each template below. Enter the name, static identifier, and subject. Add the HTML and plain-text bodies, select **Create Template**, and repeat for the next template.
+1. Create each template below. Enter the name, static ID, and subject. Add the HTML and plain-text bodies, select **Create Email Template**, and repeat for the next template.
 
     1. **Offer Sent**
 
         - **Name:** Offer Sent
-        - **Static Identifier:** `OFFER_SENT`
+        - **Static ID:** `offer-sent` (Auto-Generated)
         - **Subject:** Offer of Employment - #JOB_TITLE#
 
         **HTML Format > Body**
@@ -38,7 +38,7 @@ Estimated Time: 5 minutes
 
         <p>Dear <strong>#CANDIDATE_NAME#</strong>,</p>
 
-        <p>We offer you the position of <strong>#JOB_TITLE#</strong> with a salary of <strong>#OFFERED_SALARY#</strong>. Your proposed start date is <strong>#START_DATE#</strong>.</p>
+        <p>We are pleased to offer you the position of <strong>#JOB_TITLE#</strong> with a salary of <strong>#OFFERED_SALARY#</strong>. Your proposed start date is <strong>#START_DATE#</strong>.</p>
 
         <p>Please review and accept the attached offer by <strong>#EXPIRY_DATE#</strong>.</p>
 
@@ -54,7 +54,7 @@ Estimated Time: 5 minutes
 
         Dear #CANDIDATE_NAME#,
 
-        We offer you the position of #JOB_TITLE# with a salary of #OFFERED_SALARY#.
+        We are pleased to offer you the position of #JOB_TITLE# with a salary of #OFFERED_SALARY#.
 
         Your proposed start date is #START_DATE#.
 
@@ -70,7 +70,7 @@ Estimated Time: 5 minutes
     2. **Offer Accepted**
 
         - **Name:** Offer Accepted
-        - **Static Identifier:** `OFFER_ACCEPTED`
+        - **Static ID:** `offer-accepted` (Auto-Generated)
         - **Subject:** Offer accepted by #CANDIDATE_NAME#
 
         **HTML Format > Body**
@@ -102,7 +102,7 @@ Estimated Time: 5 minutes
     3. **Interview Reminder**
 
         - **Name:** Interview Reminder
-        - **Static Identifier:** `INTERVIEW_REMINDER`
+        - **Static ID:** `interview-reminder` (Auto-Generated)
         - **Subject:** Interview tomorrow: #CANDIDATE_NAME#
 
         **HTML Format > Body**
@@ -137,12 +137,12 @@ Estimated Time: 5 minutes
     ![Task 2: Interview Reminder template, part 1](images/task-02-step-01-interview-reminder-01.png)
     ![Task 2: Interview Reminder template, part 2](images/task-02-step-01-interview-reminder-02.png)
 
-2. Return to **Email Templates** and confirm that `OFFER_SENT`, `OFFER_ACCEPTED`, and `INTERVIEW_REMINDER` appear in the list.
+2. Return to **Email Templates** and confirm that `offer-sent`, `offer-accepted`, and `interview-reminder` appear in the **Static ID** column.
     ![Task 2: Email templates](images/task-02-step-02-email-templates.png)
 
-3. Use `OFFER_SENT` after you generate an offer. Use `OFFER_ACCEPTED` when a candidate accepts an offer. Lab 8 uses `INTERVIEW_REMINDER`.
+3. Use `offer-sent` after you generate an offer. Use `offer-accepted` when a candidate accepts an offer. Lab 8 uses the **Interview Reminder** email template.
 
-4. In PL/SQL business logic, reference a template by its static identifier, such as `p_template_static_id => 'OFFER_SENT'` in `APEX_MAIL.SEND`.
+4. In PL/SQL business logic, reference a template by its static ID, such as `p_template_static_id => 'offer-sent'` in `APEX_MAIL.SEND`.
 
 ## Acknowledgements
 

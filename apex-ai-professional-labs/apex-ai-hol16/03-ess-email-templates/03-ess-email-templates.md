@@ -29,11 +29,12 @@ Estimated Time: 10 minutes
     ![Task 2: Email template](images/task-02-step-01-email-template.png)
     ![Task 2: Create email template](images/task-02-step-01-create-email-template-03.png)
 
-2. Create each template below. Enter its name and subject. Add the HTML and plain-text bodies, then select **Create Email Template** before starting the next template.
+2. Create each template below. Enter its name, static ID, and subject. Add the HTML and plain-text bodies, then select **Create Email Template** before starting the next template.
 
     1. **Leave Approved**
 
         - **Name:** Leave Approved
+        - **Static ID:** `leave-approved` (Auto-Generated)
         - **Subject:** HR approved your leave request
 
         **HTML Format > Body**
@@ -63,6 +64,7 @@ Estimated Time: 10 minutes
     2. **Leave Rejected**
 
         - **Name:** Leave Rejected
+        - **Static ID:** `leave-rejected` (Auto-Generated)
         - **Subject:** HR could not approve your leave request
 
         **HTML Format > Body**
@@ -92,6 +94,7 @@ Estimated Time: 10 minutes
     3. **Task Overdue Notification**
 
         - **Name:** Task Overdue Notification
+        - **Static ID:** `task-overdue-notification` (Auto-Generated)
         - **Subject:** Action needed: Overdue onboarding task
 
         **HTML Format > Body**
@@ -117,6 +120,7 @@ Estimated Time: 10 minutes
     4. **Welcome to Acme Corp**
 
         - **Name:** Welcome to Acme Corp
+        - **Static ID:** `welcome-to-acme-corp` (Auto-Generated)
         - **Subject:** Welcome to Acme Corp, #EMPLOYEE_NAME#!
 
         **HTML Format > Body**
@@ -158,6 +162,7 @@ Estimated Time: 10 minutes
     5. **Probation Alert**
 
         - **Name:** Probation Alert
+        - **Static ID:** `probation-alert` (Auto-Generated)
         - **Subject:** Probation ends soon for #EMPLOYEE_NAME#
 
         **HTML Format > Body**

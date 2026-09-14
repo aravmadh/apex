@@ -19,7 +19,7 @@ Estimated Time: 5 minutes
     ![Task 1: Automations](images/task-01-step-01-automations.png)
     ![Task 1: Create automation](images/task-01-step-01-automations-create.png)
 
-2. Name the automation **Interview Reminder**. Schedule it daily at `07:00 UTC`. Select a query source. Enable processing for each result row.
+2. Name the automation **Interview Reminder**. Select **Scheduled**, **Query**, **Custom**, **Daily**, and an interval of `1`. Set **Execution Time** to `07:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=7;BYMINUTE=0` in the database server time zone.
     ![Task 1: Interview Reminder settings](images/task-01-step-02-automations-details.png)
 
 3. Enter this query:
@@ -43,7 +43,7 @@ Estimated Time: 5 minutes
     ```
     ![Task 1: Automations query](images/task-01-step-03-automations-query.png)
 
-4. Add a **Send E-Mail** action. Set **To** to `&INTERVIEWER_EMAIL.`. Select `INTERVIEW_REMINDER`. In the placeholder grid, set these values:
+4. Add a **Send E-Mail** action. Set **From** to `&APP_EMAIL.` and **To** to `&INTERVIEWER_EMAIL.`. Select the **Interview Reminder** email template. In the placeholder grid, set these values:
 
     | Placeholder | Value |
     | --- | --- |
@@ -56,12 +56,12 @@ Estimated Time: 5 minutes
     ![Task 1: Send email action](images/task-01-step-04-send-email-action.png)
     ![Task 1: Send email placeholders](images/task-01-step-04-send-email-placeholders.png)
 
-5. Save, select **Run Now**, and set the schedule to **Active**.
+5. Set the schedule to **Active**, then select **Save and Run**.
     ![Task 1: Set active run](images/task-01-step-05-set-active-run.png)
 
 ## Task 2: Create Offer Expiry Alert
 
-1. Create a second scheduled automation named **Offer Expiry Alert**. Schedule it daily at `08:00 UTC`.
+1. Create a second scheduled automation named **Offer Expiry Alert**. Select **Query**, **Custom**, **Daily**, and an interval of `1`. Set **Execution Time** to `08:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=8;BYMINUTE=0` in the database server time zone.
     ![Task 2: Create automation](images/task-02-step-01-create-automation.png)
     ![Task 2: Offer Expiry Alert settings](images/task-02-step-01-automation-details.png)
 
@@ -82,7 +82,7 @@ Estimated Time: 5 minutes
     ```
     ![Task 2: Automation query](images/task-02-step-02-automation-query.png)
 
-3. Add a **Send E-Mail** action without a template. Set **To** to `&RECRUITER_EMAIL.`. Use **Offer expiring soon: &CANDIDATE_NAME.** as the subject.
+3. Add a **Send E-Mail** action without a template. Set **From** to `&APP_EMAIL.` and **To** to `&RECRUITER_EMAIL.`. Use **Offer expiring soon: &CANDIDATE_NAME.** as the subject.
      Use this plain-text body:
 
     ```text
@@ -97,14 +97,14 @@ Estimated Time: 5 minutes
     ![Task 2: Edit action](images/task-02-step-03-edit-action.png)
     ![Task 2: Send email action](images/task-02-step-03-send-email-action.png)
 
-4. Save, run, and activate the automation.
+4. Set the schedule to **Active**, then select **Save and Run**.
     ![Task 2: Set active run](images/task-02-step-04-set-active-run.png)
     ![Task 2: All automations](images/task-02-step-04-all-automations.png)
 
 
 ## Task 3: Review logs
 
-1. Open **Shared Components**, select **Automations**, then select **Execution Log**. After each **Run Now**, confirm that the status is **Succeeded**. Review the timestamp, successful rows, error rows, and messages.
+1. Open **Shared Components**, select **Automations**, then select **Execution Log**. After each **Save and Run**, confirm that the status is **Succeeded**. Review the timestamp, successful rows, error rows, and messages.
     ![Task 3: Execution log](images/task-03-step-01-execution-log.png)
 
 

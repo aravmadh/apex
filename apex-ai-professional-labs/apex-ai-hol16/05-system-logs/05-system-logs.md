@@ -37,7 +37,7 @@ Estimated Time: 5 minutes
 3. In Page Designer, apply the `IS_HR_ADMIN` authorization scheme to the page.
     ![Task 1: Apply authorization](images/task-01-step-03-apply-authorization.png)
 
-4. Select the Interactive Report region and expand columns. Hide `AUTOMATION_ID`. Change the heading for `ELAPSED_SECONDS` to **Elapsed (s)** and apply the number format mask `999G990.0`.
+4. Select the Interactive Report region and expand columns. Hide `AUTOMATION_ID`. Change the heading for `ELAPSED_SECONDS` to **Elapsed (s)** and apply the number format mask `999G999G999G999G990D00`.
     ![Task 1: Automation ID Column](images/task-01-step-04-automation-id-col.png)
     ![Task 1: Timestamp format Column](images/task-01-step-04-timestamp-format-col.png)
     ![Task 1: Elapsed time Column](images/task-01-step-04-elapsed-time-col.png)

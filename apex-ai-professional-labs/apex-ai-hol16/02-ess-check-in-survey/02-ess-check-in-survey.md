@@ -38,7 +38,7 @@ Estimated Time: 10 minutes
 
 ## Task 2: Create the report and form
 
-1. In ESS App Builder, select **Create Page**, then select **Interactive Report with Form**.
+1. In ESS App Builder, select **Create Page**, then select **Component** and **Interactive Report**. Enable **Include Form Page**.
     ![Task 2: Create page](images/task-02-step-01-create-page.png)
     ![Task 2: Interactive Report form](images/task-02-step-02-ir-form.png)
 
@@ -50,7 +50,7 @@ Estimated Time: 10 minutes
 
 ## Task 3: Populate the employee ID and configure ratings in Employee Check-In form
 
-1. Select the `EMPLOYEE_ID` item. Set **Type** to **Hidden**. Under **Source**, clear any **Static Value**.
+1. Select the `PXX_EMPLOYEE_ID` page item for the `EMPLOYEE_ID` form column. Set **Type** to **Hidden**. Under **Source**, clear any **Static Value**.
     ![Task 3: Hidden Employee ID](images/task-03-step-01-hidden-emp-id.png)
 
 
@@ -84,10 +84,10 @@ Estimated Time: 10 minutes
     A Star Rating item displays stars that users can click to set a numeric value from `1` through `5`.
     ![Task 3: Item names and settings](images/task-03-step-03-set-names-configure-settings.png)
 
-4. Keep `COMMENTS` as a Textarea and set its maximum length to `2000`.
+4. Keep `PXX_COMMENTS` as a Textarea and set its maximum length to `2000`.
     ![Task 3: Comments](images/task-03-step-04-comments.png)
 
-5. Change `PX_CREATED_AT` to Hidden. APEX assigns the default timestamp when a user inserts a row.
+5. Change `PXX_CREATED_AT` to Hidden. APEX assigns the default timestamp when a user inserts a row.
     ![Task 3: Created at hidden](images/task-03-step-05-created-at-hidden.png)
 6. Save and run the form. Submit one check-in as the signed-in employee. Confirm that it appears in **My Check-In History**.
     ![Task 3: Create check-in record](images/task-03-step-06-create-checkin.png)

@@ -20,7 +20,7 @@ Estimated Time: 10 minutes
     ![Task 1: Create automation](images/task-01-step-01-automations-create.png)
 
 
-2. Set **Name** to **Task Overdue**. Select **Query** as the source type. Schedule it daily at `08:00 UTC`.
+2. Set **Name** to **Task Overdue**. Select **Scheduled**, **Query**, **Custom**, **Daily**, and an interval of `1`. Set **Execution Time** to `08:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=08;BYMINUTE=00` in the database server time zone.
     ![Task 1: Task overdue automation](images/task-01-step-02-task-overdue-automation.png)
 
 
@@ -43,19 +43,21 @@ Estimated Time: 10 minutes
     ```
     ![Task 1: Task overdue SQL query](images/task-01-step-03-task-overdue-sql-query.png)
 
-4. Add an **Execute Code** action to mark the current task as overdue:
+4. Add an **Execute Code** action named **Update Task** to mark the current task as overdue:
 
     ```sql
     <copy>
+        BEGIN
         UPDATE tms_onboarding_tasks
             SET status = 'Overdue'
             WHERE task_id = :TASK_ID;
+        END;
     </copy>
     ```
     ![Task 1: Task overdue add action](images/task-01-step-04-task-overdue-add-action-01.png)
     ![Task 1: Task overdue update task action](images/task-01-step-04-task-overdue-update-task-action-02.png)
 
-5. Add a **Send E-Mail** action. Set **To** to `&EMPLOYEE_EMAIL.`. Select `TASK_OVERDUE`. In the placeholder grid, set these values:
+5. Add a **Send E-Mail** action. Set **From** to `&APP_EMAIL.` and **To** to `&EMPLOYEE_EMAIL.`. Select the **Task Overdue Notification** email template. In the placeholder grid, set these values:
 
     | Placeholder | Value |
     | --- | --- |
@@ -72,7 +74,7 @@ Estimated Time: 10 minutes
 
 ## Task 2: Create Monthly Leave Accrual
 
-1. Create a second scheduled automation named **Monthly Leave Accrual**. Select **On Demand**. You change it to **Scheduled** in the next step.
+1. Create a second automation named **Monthly Leave Accrual**. Select **On Demand** and **Query**. You change it to **Scheduled** in the next step.
     ![Task 2: Monthly leave accrual](images/task-02-step-01-monthly-leave-accrual.png)
 
 2. Set **Source Type** to **SQL Query**. Enter:
@@ -92,7 +94,7 @@ Estimated Time: 10 minutes
     ```
     ![Task 2: Monthly leave accrual schedule](images/task-02-step-03-monthly-leave-accrual-schedule.png)
 
-4. Add an **Execute Code** action. This example uses the `MAX_LEAVE_DAYS` application setting and leave type ID `1`. Create or adjust them to match your application.
+4. Add an **Execute Code** action named **Merge Leave Balances**. This example uses the `MAX_LEAVE_DAYS` application setting and leave type ID `1`. Create or adjust them to match your application.
 
     ```sql
     <copy>
@@ -128,7 +130,7 @@ Estimated Time: 10 minutes
 
 ## Task 3: Create Probation End Alert
 
-1. Create a scheduled automation named **Probation End Alert**. Schedule it daily at `07:00 UTC`.
+1. Create a scheduled automation named **Probation End Alert**. Select **Query**, **Custom**, **Daily**, and an interval of `1`. Set **Execution Time** to `07:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=7;BYMINUTE=0` in the database server time zone.
     ![Task 3: Probation end alert](images/task-03-step-01-probation-end-alert.png)
 
 2. Set **Source Type** to **SQL Query**. Enter:
@@ -147,7 +149,13 @@ Estimated Time: 10 minutes
     ```
     ![Task 3: Probation end alert SQL query](images/task-03-step-02-probation-end-alert-sql-query.png)
 
-3. Add a **Send E-Mail** action. Set **To** to the value of the `SUPPORT_EMAIL` application setting. Select `PROBATION_ALERT`. Map `EMPLOYEE_NAME`, `HIRE_DATE`, and `PROBATION_END` in the placeholder grid.
+3. Add a **Send E-Mail** action named **Send Probation Alert**. Set **From** to `&APP_EMAIL.` and **To** to `apex_app_setting.get_value('SUPPORT_EMAIL')`. Select the **Probation Alert** email template. In the placeholder grid, map these values:
+
+    | Placeholder | Column or Value |
+    | --- | --- |
+    | `EMPLOYEE_NAME` | `&EMPLOYEE_NAME.` |
+    | `HIRE_DATE` | `&HIRE_DATE.` |
+    | `PROBATION_END` | `&PROBATION_END.` |
     ![Task 3: Probation alert email action, part 1](images/task-03-step-03-probation-end-alert-send-email-action-01.png)
     ![Task 3: Probation alert email action, part 2](images/task-03-step-03-probation-end-alert-send-email-action-02.png)
     ![Task 3: Probation alert email action, part 3](images/task-03-step-03-probation-end-alert-send-email-action-03.png)
