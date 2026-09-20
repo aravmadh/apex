@@ -1,0 +1,53 @@
+{
+    "workshoptitle": "Building Mobile-Friendly Apps",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Workshop context, prerequisites, and objectives.",
+            "type": "livelabs",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Enable PWA on ESS",
+            "description": "Enable and install ESS as a Progressive Web App.",
+            "type": "livelabs",
+            "filename": "../../01-enable-ess-pwa/01-enable-ess-pwa.md"
+        },
+        {
+            "title": "Lab 2: Add PWA Enhancements",
+            "description": "Add shortcuts, screenshots, sharing, and location capture.",
+            "type": "livelabs",
+            "filename": "../../02-add-pwa-enhancements/02-add-pwa-enhancements.md"
+        },
+        {
+            "title": "Lab 3: Test Persistent Authentication",
+            "description": "Test the explicit APEX persistent-authentication experience.",
+            "type": "livelabs",
+            "filename": "../../03-test-persistent-authentication/03-test-persistent-authentication.md"
+        },
+        {
+            "title": "Lab 4: Enable Push Notifications",
+            "description": "Enable opt-in push notifications and employee topic preferences.",
+            "type": "livelabs",
+            "filename": "../../04-enable-push-notifications/04-enable-push-notifications.md"
+        },
+        {
+            "title": "Lab 5: Optimize Key ESS Pages",
+            "description": "Test and improve ESS at mobile viewport widths.",
+            "type": "livelabs",
+            "filename": "../../05-optimize-mobile-pages/05-optimize-mobile-pages.md"
+        },
+        {
+            "title": "Lab 6: Review APEXToGo Patterns",
+            "description": "Compare an instructor-provided reference app without copying its assets.",
+            "type": "livelabs",
+            "filename": "../../06-review-apextogo-patterns/06-review-apextogo-patterns.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Template to link to Need Help lab at the end of workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle-livelabs/common/main/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}
