@@ -1,4 +1,4 @@
-# Import and Compare the Generated TAP Blueprint
+# Lab 4: Import and Compare the Generated TAP Blueprint
 
 ## Introduction
 

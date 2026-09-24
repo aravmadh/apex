@@ -1,4 +1,4 @@
-# TAP Requisition Approval Workflow
+# Lab 1: TAP Requisition Approval Workflow
 
 ## Introduction
 

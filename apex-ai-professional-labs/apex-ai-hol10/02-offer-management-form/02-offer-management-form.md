@@ -1,4 +1,4 @@
-# Build the Offer Management Form
+# Lab 2: Build the Offer Management Form
 
 ## Introduction
 

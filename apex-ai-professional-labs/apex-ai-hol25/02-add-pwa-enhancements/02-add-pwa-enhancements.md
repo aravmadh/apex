@@ -1,4 +1,4 @@
-# Add PWA Enhancements
+# Lab 2: Add PWA Enhancements
 
 ## Introduction
 

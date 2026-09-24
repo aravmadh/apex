@@ -1,4 +1,4 @@
-# Enable PWA on ESS
+# Lab 1: Enable PWA on ESS
 
 ## Introduction
 

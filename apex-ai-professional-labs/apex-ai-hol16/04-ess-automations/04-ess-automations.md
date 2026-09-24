@@ -1,4 +1,4 @@
-# Create ESS Scheduled Automations
+# Lab 4: Create ESS Scheduled Automations
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Optimize Key ESS Pages
+# Lab 5: Optimize Key ESS Pages
 
 ## Introduction
 

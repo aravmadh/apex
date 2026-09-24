@@ -1,4 +1,4 @@
-# Create the ESS 30-Day Check-In Survey
+# Lab 2: Create the ESS 30-Day Check-In Survey
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Create the ESS Leave Calendar
+# Lab 1: Create the ESS Leave Calendar
 
 ## Introduction
 

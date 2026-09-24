@@ -1,4 +1,4 @@
-# Create the TAP Interview Calendar
+# Lab 6: Create the TAP Interview Calendar
 
 ## Introduction
 

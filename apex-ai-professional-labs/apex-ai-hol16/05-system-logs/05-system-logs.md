@@ -1,4 +1,4 @@
-# Create the ESS System Logs Page
+# Lab 5: Create the ESS System Logs Page
 
 ## Introduction
 

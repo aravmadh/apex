@@ -1,4 +1,4 @@
-# Set Up the Artifacts for Spec-Driven Development
+# Lab 2: Set Up the Artifacts for Spec-Driven Development
 
 ## Introduction
 

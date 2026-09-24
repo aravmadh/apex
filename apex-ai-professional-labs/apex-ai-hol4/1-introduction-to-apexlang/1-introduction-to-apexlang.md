@@ -1,4 +1,4 @@
-# Export and Inspect an Application with APEXlang
+# Lab 1: Export and Inspect an Application with APEXlang
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Create ESS Email Templates
+# Lab 3: Create ESS Email Templates
 
 ## Introduction
 

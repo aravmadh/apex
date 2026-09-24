@@ -1,4 +1,4 @@
-# Create Shared Lists of Values
+# Lab 1: Create Shared Lists of Values
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# ESS Employee Onboarding Workflow
+# Lab 02: ESS Employee Onboarding Workflow
 
 ## Introduction
 

@@ -1,4 +1,4 @@
-# Create TAP Scheduled Automations
+# Lab 8: Create TAP Scheduled Automations
 
 ## Introduction
 

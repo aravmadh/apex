@@ -1,4 +1,4 @@
-# Test Persistent Authentication
+# Lab 3: Test Persistent Authentication
 
 ## Introduction
 

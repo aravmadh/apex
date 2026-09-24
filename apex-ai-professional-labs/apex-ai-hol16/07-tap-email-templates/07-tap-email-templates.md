@@ -1,4 +1,4 @@
-# Create TAP Email Templates
+# Lab 7: Create TAP Email Templates
 
 ## Introduction
 

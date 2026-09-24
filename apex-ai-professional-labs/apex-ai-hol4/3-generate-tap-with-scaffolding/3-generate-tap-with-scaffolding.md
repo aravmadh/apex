@@ -1,4 +1,4 @@
-# Generate a TAP Application Blueprint with Scaffolding
+# Lab 3: Generate a TAP Application Blueprint with Scaffolding
 
 ## Introduction
 

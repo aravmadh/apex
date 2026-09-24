@@ -1,4 +1,4 @@
-# Review APEXToGo Patterns
+# Lab 6: Review APEXToGo Patterns
 
 ## Introduction
 
