@@ -4,7 +4,7 @@
 
 The Offers page from Module 5 needs consistent dates, values, and offer statuses. Configure the form and add a Display Only salary-band item. In Oracle APEX, a Display Only item displays non-enterable text.
 
-Estimated Time: 5 minutes
+Estimated Workshop Time: 5 minutes
 
 ### Objectives
 
@@ -14,7 +14,7 @@ Estimated Time: 5 minutes
 
 ## Task 1: Open the Offer Management form
 
-1. In TAP App Builder, open the **Offers** page created from the `TMS_OFFERS` table in Module 5.
+1. In TAP App Builder, open the **Offer Management form** page created from the `TMS_OFFERS` table in Module 5.
     ![Page Designer](images/task-01-step-01-page-designer.png)
 
 2. In Page Designer, select the Offer Management form region.

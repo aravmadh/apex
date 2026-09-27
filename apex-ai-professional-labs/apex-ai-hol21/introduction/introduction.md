@@ -6,12 +6,7 @@ Data now flows through TAP and ESS, and AI can assist with decisions. This modul
 
 You create a routed requisition-approval workflow in TAP and a parallel employee-onboarding workflow in ESS. Both workflows use native APEX task definitions, workflow parameters and variables, **Human Task - Create** activities, **Unified Task List** pages, and **Workflow Console** pages.
 
-### Prerequisites
-
-- Complete the earlier TAP and ESS modules, including the Job Requisition form, employee data, authorization schemes, and email templates.
-- Have access to the TAP and ESS applications as the users and roles identified in the labs.
-- Have a department with one manager whose employee record has a valid email address, and active employees for testing.
-- Ensure that each TAP workflow instance receives `TMS_JOB_REQUISITIONS.REQ_ID` as its **Requisition ID** parameter.
+Estimated Workshop Time: 3 hours 45 minutes
 
 ### Objectives
 
@@ -20,7 +15,12 @@ You create a routed requisition-approval workflow in TAP and a parallel employee
 - Create an ESS onboarding workflow that waits for two **Human Task - Create** activities in a **Parallel Flow**.
 - Monitor workflow instances and diagnose their state in a **Workflow Console**.
 
-Estimated Workshop Time: 3 hours 45 minutes
+### Prerequisites
+
+- Complete the earlier TAP and ESS modules, including the Job Requisition form, employee data, authorization schemes, and email templates.
+- Have access to the TAP and ESS applications as the users and roles identified in the labs.
+- Have a department with one manager whose employee record has a valid email address, and active employees for testing.
+- Ensure that each TAP workflow instance receives `TMS_JOB_REQUISITIONS.REQ_ID` as its **Requisition ID** parameter.
 
 ## Acknowledgements
 

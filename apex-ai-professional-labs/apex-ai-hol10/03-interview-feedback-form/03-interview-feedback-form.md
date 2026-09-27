@@ -4,7 +4,7 @@
 
 Recruiters and hiring managers need a focused form to capture interview feedback. Create a modal Interview Feedback page, configure its page items, and link it from the Interview Schedule interactive grid. A modal dialog displays above the calling page; when it closes, the calling page becomes active again.
 
-Estimated Time: 5 minutes
+Estimated Workshop Time: 5 minutes
 
 ### Objectives
 

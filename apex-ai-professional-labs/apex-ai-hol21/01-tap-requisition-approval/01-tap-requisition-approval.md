@@ -4,7 +4,7 @@
 
 Create a TAP workflow that routes submitted requisitions by requested headcount. Requisitions for more than three people go to an HR administrator. All other requisitions go to the department head. The task outcome updates the requisition status.
 
-Estimated Time: 45 minutes
+Estimated Workshop Time: 45 minutes
 
 ### Objectives
 
@@ -14,8 +14,9 @@ Estimated Time: 45 minutes
 
 ## Task 1: Create the task definitions
 
-1. In TAP, open **Shared Components**, select **Task Definitions**, and click **Create**. Create the HR administration task definition. Use these values:
+1. In TAP, open **Shared Components**, select **Task Definitions**, and click **Create**. Create the HR administration task definition with these values:
 
+    ![Task Definitions page in Shared Components](images/task-01-step-01-task-definitions.png)
     ![Task Definitions page with the Create button](images/task-01-step-01-task-definitions-create.png)
 
     **Requisition HR Admin Review**
@@ -29,18 +30,18 @@ Estimated Time: 45 minutes
 
     ![HR Admin Review task definition details](images/task-01-step-01-task-definitions-details.png)
 
-- Set **Due On Type** to **Expression** and set **Due On** to `SYSDATE + 2`.
-    ![Task deadline expression and Add Participant controls](images/task-01-step-01-task-definitions-expression-add-participants.png)
+2. Set **Due On Type** to **Expression** and set **Due On** to `SYSDATE + 2`.
+    ![Task deadline expression and Add Participant controls](images/task-01-step-02-task-definitions-expression-add-participants.png)
 
-- Click **Add Participant** and configure the participant as follows:
+3. Click **Add Participant** and configure the participant as follows:
 
     | Participant Type | Identity Type | Value Type | Value |
     | --- | --- | --- | --- |
     | Potential Owner | Authorization Scheme |  |  IS_TA_ADMIN |
 
-    ![HR Admin Potential Owner participant configuration](images/task-01-step-01-task-definitions-add-participants-details.png)
+    ![HR Admin Potential Owner participant configuration](images/task-01-step-03-task-definitions-add-participants-details.png)
 
-- Add the following task parameters. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
+4. Add the following task parameters. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
 
     | Static ID | Label | Required | Visible |
     | --- | --- | --- | --- |
@@ -49,11 +50,11 @@ Estimated Time: 45 minutes
     | `P_JOB_TITLE` | Job Title | Yes | Yes |
     | `P_DEPARTMENT_NAME` | Department Name | Yes | Yes |
 
-    ![HR Admin Review task parameter definitions](images/task-01-step-01-task-definitions-add-parameters.png)
+    ![HR Admin Review task parameter definitions](images/task-01-step-04-task-definitions-add-parameters.png)
 
-- Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
+5. Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
 
-    **Requisition Department Head Review**
+6. Create the `Requisition Department Head Review` task definition with these values, then click **Create**:
 
     | Field | Value |
     | --- | --- |
@@ -62,17 +63,17 @@ Estimated Time: 45 minutes
     | Priority | Medium |
     | Subject | `Approve Requisition &REQ_ID. for &HEADCOUNT. headcount` |
 
-    ![Department Head Review task definition details](images/task-01-step-01-task-definitions-dep-hr-add.png)
+    ![Department Head Review task definition details](images/task-01-step-06-task-definitions-dep-hr-add.png)
 
-- Click **Create**. On the Task Definition page, click **Add Participant** and configure the Department Head Potential Owner as follows:
+7. On the Task Definition page, click **Add Participant** and configure the Department Head Potential Owner as follows:
 
     | Participant Type | Identity Type | Value Type | SQL Query |
     | --- | --- | --- | --- |
     | Potential Owner | User | SQL Query | `SELECT e.email FROM tms_employees e JOIN tms_departments d ON d.manager_id = e.employee_id WHERE d.dept_id = (SELECT r.dept_id FROM tms_job_requisitions r WHERE r.req_id = :APEX$TASK_PK)` |
 
-    ![Department Head Potential Owner SQL Query configuration](images/task-01-step-01-task-definitions-dep-add-participants.png)
+    ![Department Head Potential Owner SQL Query configuration](images/task-01-step-07-task-definitions-dep-add-participants.png)
 
-- Add the same task parameters to this definition. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
+8. Add the same task parameters to this definition. The static IDs support the subject substitutions. Set each parameter data type to **String** and provide a readable label.
 
     | Static ID | Label | Required | Visible |
     | --- | --- | --- | --- |
@@ -81,11 +82,11 @@ Estimated Time: 45 minutes
     | `P_JOB_TITLE` | Job Title | Yes | Yes |
     | `P_DEPARTMENT_NAME` | Department Name | Yes | Yes |
 
-    ![Department Head Review task parameter definitions](images/task-01-step-01-task-definitions-dep-add-parameters.png)
+    ![Department Head Review task parameter definitions](images/task-01-step-08-task-definitions-dep-add-parameters.png)
 
-- Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
-    ![Department Head Task Details page creation](images/task-01-step-01-task-definitions-dep-create-task-details.png)
-    ![Created Department Head Review task definition](images/task-01-step-01-task-definitions-created.png)
+9. Keep **Initiator Can Complete** off. Click **Create Task Details Page**, then save the task definition.
+    ![Department Head Task Details page creation](images/task-01-step-09-task-definitions-dep-create-task-details.png)
+    ![Created Department Head Review task definition](images/task-01-step-09-task-definitions-created.png)
 
 ## Task 2: Create the requisition workflow
 

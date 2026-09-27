@@ -1,10 +1,10 @@
-# Lab 02: ESS Employee Onboarding Workflow
+# Lab 2: ESS Employee Onboarding Workflow
 
 ## Introduction
 
 Create an ESS onboarding workflow with parallel HR document and department orientation tasks. APEX continues after both **Human Task - Create** activities complete. It then sends the new employee a welcome email.
 
-Estimated Time: 45 minutes
+Estimated Workshop Time: 45 minutes
 
 ### Objectives
 

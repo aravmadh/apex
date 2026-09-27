@@ -4,7 +4,7 @@
 
 Employees need a clear form to request leave and review prior requests. Build the ESS Leave Request form and add a leave-history report.
 
-Estimated Time: 5 minutes.
+Estimated Workshop Time: 5 minutes
 
 ### Objectives
 

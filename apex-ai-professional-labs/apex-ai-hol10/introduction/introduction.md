@@ -6,13 +6,13 @@ TAP and ESS already include report pages, but their forms still use the page ite
 
 In TAP, you configure the Offer Management form and create an Interview Feedback form. In ESS, you create a Leave Request form and a leave-history report.
 
+Estimated Workshop Time: 20 minutes
+
 ### Objectives
 
 - Create reusable LOVs in TAP and ESS.
 - Configure page items for offers and interview feedback.
 - Build an ESS Leave Request form with a leave-history report.
-
-Estimated Workshop Time: 20 minutes
 
 ## Acknowledgements
 
