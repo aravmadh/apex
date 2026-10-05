@@ -15,14 +15,14 @@ Estimated Time: 20 minutes
 
 ## Task 1: Create the TAP SDD project folder
 
-1. Create a local folder named `tap_sdd` and an `artifacts` subfolder inside it.
+1. Create a local folder named `tap_sdd`.
 
 2. Use the following names for the files you will collect:
 
     - `tms_module_04_functional_spec.md`
     - `blueprint_prompt.md`
     - `apex-fa-icons-allowlist.txt`
-    - `artifacts/tap_schema_metadata.md`
+    - `tap_schema_metadata.md`
 
 ## Task 2: Download the blueprint artifacts
 
@@ -32,7 +32,7 @@ Estimated Time: 20 minutes
 2. Download the APEX allowed-icons list. Save it as [apex-fa-icons-allowlist.txt](https://github.com/oracle/apex/blob/26.1/blueprints/prompt/apex-fa-icons-allowlist.txt) in the same folder.
     ![APEX allowed-icons list download page](images/task-02-step-02-icons.png)
 
-3. Download the Module 4 TMS functional specification and save it as [tms_module_04_functional_spec.md](tms_module_04_functional_spec.md).
+3. Download the Module 4 [TMS functional specification](tms_module_04_functional_spec.md) and save it as `tms_module_04_functional_spec.md`.
 
 
 4. Confirm that all three files are present before you continue.
@@ -48,7 +48,7 @@ Estimated Time: 20 minutes
 3. Include the shared `TMS_EMPLOYEES` table.
     ![Shared TMS_EMPLOYEES table selected for metadata generation](images/task-03-step-03-select-shared-table.png)
 
-4. Click **Describe**, download the result, and save it as `artifacts/tap_schema_metadata.md`.
+4. Click **Describe**, download the result, and save it as `tap_schema_metadata.md`.
     ![Download action for generated schema metadata](images/task-03-step-04-describe-download.png)
 
 ## Task 4: Set up your coding agent

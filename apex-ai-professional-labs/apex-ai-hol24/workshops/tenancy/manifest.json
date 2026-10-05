@@ -1,0 +1,41 @@
+{
+    "workshoptitle": "Managing Applications Using APEXlang",
+    "help": "livelabs-help-db_us@oracle.com",
+    "tutorials": [
+        {
+            "title": "Introduction",
+            "description": "Confirm versions, existing apps, and the selected page import workflow.",
+            "type": "livelabs",
+            "filename": "../../introduction/introduction.md"
+        },
+        {
+            "title": "Lab 1: Add Bulk Validations and Make TAP Buttons More Prominent",
+            "description": "Add bulk validations, edit buttons across TAP, and import the updated pages.",
+            "type": "livelabs",
+            "filename": "../../01-update-tap/01-update-tap.md"
+        },
+        {
+            "title": "Lab 2: Export ESS and Inspect Its Source",
+            "description": "Export the existing ESS application and inspect its APEXlang source.",
+            "type": "livelabs",
+            "filename": "../../02-export-ess/02-export-ess.md"
+        },
+        {
+            "title": "Lab 3: Add Bulk Validations and Make ESS Buttons More Prominent",
+            "description": "Add bulk validations, edit buttons across ESS, and import the updated pages.",
+            "type": "livelabs",
+            "filename": "../../03-update-ess/03-update-ess.md"
+        },
+        {
+            "title": "Lab 4: Optional Application Updates",
+            "description": "Try extra prompts and optional SQLcl selected file imports for TAP and ESS.",
+            "type": "livelabs",
+            "filename": "../../04-optional-experiments/04-optional-experiments.md"
+        },
+        {
+            "title": "Need Help?",
+            "description": "Find help with the workshop.",
+            "filename": "https://raw.githubusercontent.com/oracle-livelabs/common/main/labs/need-help/need-help-freetier.md"
+        }
+    ]
+}

@@ -17,6 +17,12 @@ In this module, take a short detour. Use APEXlang and Spec-Driven Development (S
 
 Estimated Workshop Time: 90 minutes
 
+### Prerequisites
+
+- Have access to a database that supports direct connections from Oracle SQL Developer for VS Code.
+
+> **Free Developer Tier:** Direct database connections from Oracle SQL Developer for VS Code are not supported for Oracle APEX Free Developer Tier workspaces. If you are using this tier, you can skip the hands-on labs in this module and continue with Module 5.
+
 ## Acknowledgements
 
  - **Author -** Aravind Madhavan, Senior Product Manager.

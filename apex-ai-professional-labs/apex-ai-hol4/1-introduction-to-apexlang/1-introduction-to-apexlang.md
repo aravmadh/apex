@@ -14,6 +14,8 @@ Estimated Time: 15 minutes
 
 ## Task 1: Prerequisites
 
+> **Free Developer Tier:** Direct database connections from Oracle SQL Developer for VS Code are not supported for Oracle APEX Free Developer Tier workspaces. If you are using this tier, you can skip this lab.
+
 ### Install Visual Studio Code on Your Local Machine
 
 1. Open a web browser and navigate to the Visual Studio Code download page: `https://code.visualstudio.com/Download`.
@@ -36,7 +38,7 @@ Estimated Time: 15 minutes
 1. In the **Connections** navigator, expand the database connection and the **APEX** application node. Right-click the **APEXToGo** app from Module 3 and select **Export…**.
     ![Export action for the APEXToGo application](images/task-02-step-01-export-application.png)
 
-2. Select the `applications` folder in your Module 4 workspace as the destination and click **Apply**.
+2. Create and select the `applications` folder in your local workspace as the destination and click **Apply**.
     ![Application export destination folder](images/task-02-step-02-export-path.png)
 
 3. Wait for the export to complete and check if the application folder appears under `applications`.
@@ -47,17 +49,16 @@ Estimated Time: 15 minutes
 1. In Visual Studio Code, expand the exported application folder.
 
 2. Expand the `deployments` folder and open `default.json`.
-   * This file stores the exported APEX app's **Application ID**.
-   * To create a new app during import, enter a new **Application ID** and save the file.
-   * If you keep the **Application ID**, import replaces the existing app in your workspace.
-    ![Deployments folder and default application configuration](images/task-03-step-01-deployments.png)
-    
-3. Expand the **pages** folder and open **p00001-welcome-page.apx**.
+    - This file stores the exported APEX app's **Application ID**.
+    - To create a new app during import, enter a new **Application ID** and save the file.
+    - If you keep the **Application ID**, import replaces the existing app in your workspace.
+        ![Deployments folder and default application configuration](images/task-03-step-01-deployments.png)
 
-   * This file shows the page definition in a readable format.
-   * Inspect **regions**, **buttons**, and other APEX components to see how the page works.
-   * Explore the other folders and pages to see how the project works.
-    ![APEXlang page components in a page definition file](images/task-03-step-02-components.png)
+3. Expand the **pages** folder and open **p00001-welcome-page.apx**.
+    - This file shows the page definition in a readable format.
+    - Inspect **regions**, **buttons**, and other APEX components to see how the page works.
+    - Explore the other folders and pages to see how the project works.
+        ![APEXlang page components in a page definition file](images/task-03-step-02-components.png)
 
 4. Keep this project open. In later modules, export the Wizard-built TAP to this format after you learn the core APEX components.
 

@@ -17,7 +17,7 @@ Estimated Workshop Time: 5 minutes
 1. In TAP App Builder, open the **Offer Management form** page created from the `TMS_OFFERS` table in Module 5.
     ![Page Designer](images/task-01-step-01-page-designer.png)
 
-2. In Page Designer, select the Offer Management form region.
+2. In the left pane, select the Offer Management form region.
     ![Offer Management Region](images/task-01-step-02-offer-managment-region.png)
 
 ## Task 2: Configure the offer fields

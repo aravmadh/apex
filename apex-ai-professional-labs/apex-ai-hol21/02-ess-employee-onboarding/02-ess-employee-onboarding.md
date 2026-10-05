@@ -223,7 +223,7 @@ Estimated Workshop Time: 45 minutes
 
 ## Task 5: Test parallel completion
 
-1. Run ESS as an HR administrator. Open **Start Employee Onboarding**, select an employee, and click **Start Onboarding**.
+1. Sign in as an HR administrator ex:- `priya.nair@acme.example.com`. Open **Start Employee Onboarding**, select an employee, and click **Start Onboarding**.
 
 2. Open **My Workflow Tasks**. Confirm that both tasks exist. Complete only **HR Documents**. Confirm that the workflow remains active and the welcome email was not sent.
 

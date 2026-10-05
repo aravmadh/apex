@@ -17,7 +17,7 @@ Estimated Time: 30 minutes
 1. In APEX, open **App Builder** and select **Import**.
     ![Import option in Oracle APEX App Builder](images/task-01-step-01-import.png)
 
-2. Upload `tap_application_blueprint.md` from your `tap_sdd` project.
+2. Upload `tap_generated_blueprint.md` from your `tap_sdd` project.
     ![Application Blueprint upload selection](images/task-01-step-02-upload.png)
 
 3. Select **Application Blueprint** as the file type. Verify the file character set, then select **Next**.
