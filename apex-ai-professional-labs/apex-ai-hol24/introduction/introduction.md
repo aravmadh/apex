@@ -10,15 +10,15 @@ In Module 23, you exported the Talent Acquisition Portal (TAP) in APEXlang forma
 
 Acme Corp wants more prominent buttons and clearer validation checks on form submissions across both applications. Use Codex to edit the exported page files and review the differences. First import one page, then import the complete application to apply the remaining changes. Oracle APEX 26.2 adds selected file import to this workflow.
 
+Estimated Workshop Time: 60 minutes
+
 ### Objectives
 
-In this module, you will learn how to:
+In this workshop, you will learn how to:
 
 - Add bulk validations to existing applications.
 - Edit buttons across the applications.
 - Import the pages that you updated.
-
-Estimated Workshop Time: 60 minutes
 
 ### Prerequisites
 

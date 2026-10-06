@@ -10,6 +10,8 @@ Estimated Workshop Time: 20 minutes
 
 ### Objectives
 
+In this workshop, you will learn how to:
+
 - Create reusable LOVs in TAP and ESS.
 - Configure page items for offers and interview feedback.
 - Build an ESS Leave Request form with a leave-history report.

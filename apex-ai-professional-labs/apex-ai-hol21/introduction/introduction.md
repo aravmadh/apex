@@ -10,6 +10,8 @@ Estimated Workshop Time: 3 hours 45 minutes
 
 ### Objectives
 
+In this workshop, you will learn how to:
+
 - Route a TAP requisition to the HR administrator or department head based on headcount.
 - Start and complete approval tasks from a Unified Task List.
 - Create an ESS onboarding workflow that waits for two **Human Task - Create** activities in a **Parallel Flow**.

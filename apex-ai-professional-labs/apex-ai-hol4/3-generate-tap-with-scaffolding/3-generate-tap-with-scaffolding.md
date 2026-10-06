@@ -4,13 +4,15 @@
 
 You now have the business requirements, schema details, and generation rules in one folder. Use them to generate a blueprint for a TAP comparison app.
 
+Estimated Workshop Time: 25 minutes
+
 ### Objectives
+
+In this lab, you will learn how to:
 
 - Review the TAP source files before you generate the blueprint.
 - Prompt a coding agent to create a constrained blueprint.
 - Inspect the blueprint for a TAP-focused page layout.
-
-Estimated Time: 25 minutes
 
 ## Task 1: Review the inputs before generation
 
@@ -20,8 +22,9 @@ Estimated Time: 25 minutes
     - `tap_schema_metadata.md`
     - `blueprint_prompt.md`
     - `apex-fa-icons-allowlist.txt`
-    
+
     ![TAP SDD project folder with the required input files](images/task-01-step-01-files.png)
+
 2. Read the functional specification and confirm that it describes the Talent Acquisition Portal, not the Employee Self-Service Portal or HR Analytics App.
 
 3. Review the schema metadata and confirm that it includes every table and column used by the app.
@@ -40,7 +43,7 @@ Estimated Time: 25 minutes
 
 3. Review each file-write request. Approve it only when the agent creates or updates `tap_generated_blueprint.md` in `tap_sdd`.
 
-4. Wait for the agent to finish writing the blueprint. 
+4. Wait for the agent to finish writing the blueprint.
 
     ![Completed TAP Application Blueprint generation](images/task-02-step-04-completion.png)
 
@@ -49,7 +52,7 @@ Estimated Time: 25 minutes
 1. Open `tap_generated_blueprint.md`.
 
 2. Confirm that the blueprint names the app `Talent Acquisition Portal` and includes only TAP pages and components.
-    ![Generated TAP Application Blueprint file](images/task-03-step-03-gen-bp.png)
+    ![Generated TAP Application Blueprint file](images/task-03-step-02-gen-bp.png)
 
 ## Task 4: Enable REST for Your Schema
 
@@ -57,14 +60,18 @@ Estimated Time: 25 minutes
 
 1. In APEX, open **SQL Workshop**, then select **RESTful Services**.
     ![RESTful Services option in SQL Workshop](images/task-04-step-01-rest.png)
+
 2. Click **Register Schema** with **ORDS (Oracle REST Data Services)**.
     ![Register Schema action for ORDS](images/task-04-step-02-register.png)
 
-3. APEX fills in the **Schema Alias**. Change it only if needed. Turn off **Install Sample Service**, then click **Save Schema Attributes**.
+3. APEX fills in the **Schema Alias**.
+
+    - Change it only if needed.
+
+    - Turn off **Install Sample Service**, then click **Save Schema Attributes**.
     ![ORDS schema registration settings](images/task-04-step-03-schema.png)
 
-> **Note:** Complete this step before you import the app from the blueprint.
-
+    - **Note:** Complete this step before you import the app from the blueprint.
 
 ## Acknowledgements
 

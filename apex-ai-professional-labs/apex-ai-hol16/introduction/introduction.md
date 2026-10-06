@@ -6,13 +6,15 @@ ESS and TAP are fully styled and ready to use. This module extends both applicat
 
 ESS is the primary application. You create a leave calendar, a 30-Day Check-In survey, email templates, scheduled automations, and an administrator System Logs page. In TAP, you create an interview calendar, create email templates, and automate interview and offer notifications.
 
+Estimated Workshop Time: 60 minutes
+
 ### Objectives
+
+In this workshop, you will learn how to:
 
 - Create native Calendar pages in ESS and TAP.
 - Build the ESS 30-Day Check-In survey with native Star Rating items.
 - Create scheduled automations, email templates, and an ESS automation log report.
-
-Estimated Workshop Time: 60 minutes
 
 ## Acknowledgements
 

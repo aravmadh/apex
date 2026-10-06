@@ -4,18 +4,24 @@
 
 Build a check-in survey for employees who have completed their first 30 days. The form stores each employee rating and comment. Star Rating items display five stars that users can click to set a numeric value.
 
+Estimated Workshop Time: 10 minutes
+
 ### Objectives
+
+In this lab, you will learn how to:
 
 - Create the `TMS_EMPLOYEE_CHECKINS` table.
 - Create an Interactive Report and form for check-in records.
 - Populate the employee ID from the signed-in user.
 - Configure three native Star Rating items.
 
-Estimated Time: 10 minutes
-
 ## Task 1: Create the check-in table
 
-1. In SQL Workshop, select **SQL Commands**. Run the following statement:
+1. In **SQL Workshop**, select **SQL Commands**.
+
+    ![Task 1: SQL commands](images/task-01-step-01-sql-commands.png)
+
+2. Paste and run the following statement:
 
     ```sql
     <copy>
@@ -29,41 +35,56 @@ Estimated Time: 10 minutes
     created_at TIMESTAMP DEFAULT SYSTIMESTAMP);
     </copy>
     ```
-    ![Task 1: SQL commands](images/task-01-step-01-sql-commands.png)
-    ![Task 1: Run SQL DDL](images/task-01-step-01-run-ddl.png)
 
-2. Confirm that `TMS_EMPLOYEE_CHECKINS` appears in Object Browser.
-    ![Task 1: Object browser](images/task-01-step-02-object-browser.png)
-    ![Task 1: Check table](images/task-01-step-02-check-table.png)
+    ![Task 1: Run SQL DDL](images/task-01-step-02-run-ddl.png)
+
+3. Open **Object Browser**.
+
+    ![Task 1: Object browser](images/task-01-step-03-object-browser.png)
+
+4. Confirm that `TMS_EMPLOYEE_CHECKINS` appears in the table list.
+
+    ![Task 1: Check table](images/task-01-step-04-check-table.png)
 
 ## Task 2: Create the report and form
 
-1. In ESS App Builder, select **Create Page**, then select **Component** and **Interactive Report**. Enable **Include Form Page**.
+1. In ESS **App Builder**, select **Create Page**.
+
     ![Task 2: Create page](images/task-02-step-01-create-page.png)
+
+2. Select **Component**, then **Interactive Report**, and enable **Include Form Page**.
+
     ![Task 2: Interactive Report form](images/task-02-step-02-ir-form.png)
 
-2. Name the report page **My Check-In History** and the form page **Employee Check-In**. Select `TMS_EMPLOYEE_CHECKINS` as the table.
-    ![Task 2: Report and form configuration](images/task-02-step-02-page-config.png)
+3. Name the report page **My Check-In History** and the form page **Employee Check-In**.
 
-3. Run **My Check-In History**. Click **Create** to open the **Employee Check-In** form.
-    ![Task 2: Run page](images/task-02-step-03-run-page.png)
+    - Select `TMS_EMPLOYEE_CHECKINS` as the table.
+    ![Task 2: Report and form configuration](images/task-02-step-03-page-config.png)
+
+4. Run **My Check-In History**.
+
+    - Click **Create** to open the **Employee Check-In** form.
+    ![Task 2: Run page](images/task-02-step-04-run-page.png)
 
 ## Task 3: Populate the employee ID and configure ratings in Employee Check-In form
 
-1. Select the `PXX_EMPLOYEE_ID` page item for the `EMPLOYEE_ID` form column. Set **Type** to **Hidden**. Under **Source**, clear any **Static Value**.
+1. Select the `PXX_EMPLOYEE_ID` page item for the `EMPLOYEE_ID` form column.
+
+    - Set **Type** to **Hidden**.
+
+    - Under **Source**, clear any **Static Value**.
     ![Task 3: Hidden Employee ID](images/task-03-step-01-hidden-emp-id.png)
 
+2. Under **Default**, select **SQL Query (returning single value)**.
 
-2. Under **Default**, select **SQL Query (returning single value)**. Enter:
+    - Enter:
 
-    ```sql
-    <copy>SELECT employee_id
-      FROM tms_employees
-     WHERE UPPER(email) = UPPER(:APP_USER)</copy>
-    ```
+        ```sql
+        <copy>SELECT employee_id
+          FROM tms_employees
+         WHERE UPPER(email) = UPPER(:APP_USER)</copy>
+        ```
     ![Task 3: Hidden Employee ID Default Value](images/task-03-step-02-hidden-emp-id-def-val.png)
-
-
 
 3. For each item in the table, select **Star Rating** from the **Type** list.
 
@@ -73,7 +94,7 @@ Estimated Time: 10 minutes
     | `PXX_MANAGER_SUPPORT_RATING` | Manager Support |
     | `PXX_ONBOARDING_RATING` | Onboarding Process |
 
-    For each Star Rating item, configure these settings:
+    For each **Star Rating** item, configure these settings:
 
     - Set **Number of Stars** to `5`.
     - Turn off **Use Defaults**.
@@ -81,17 +102,22 @@ Estimated Time: 10 minutes
     - Set **Show Clear Button** to **No**. This setting is optional.
     - Set **Value Required** to **Yes**.
 
-    A Star Rating item displays stars that users can click to set a numeric value from `1` through `5`.
+    A **Star Rating** item displays stars that users can click to set a numeric value from `1` through `5`.
     ![Task 3: Item names and settings](images/task-03-step-03-set-names-configure-settings.png)
 
-4. Keep `PXX_COMMENTS` as a Textarea and set its maximum length to `2000`.
+4. Keep `PXX_COMMENTS` as a **Textarea** and set its maximum length to `2000`.
     ![Task 3: Comments](images/task-03-step-04-comments.png)
 
-5. Change `PXX_CREATED_AT` to Hidden. APEX assigns the default timestamp when a user inserts a row.
+5. Change `PXX_CREATED_AT` to **Hidden**. APEX assigns the default timestamp when a user inserts a row.
     ![Task 3: Created at hidden](images/task-03-step-05-created-at-hidden.png)
-6. Save and run the form. Submit one check-in as the signed-in employee. Confirm that it appears in **My Check-In History**.
+
+6. Save and run the **Employee Check-In** form. Submit one check-in as the signed-in employee.
+
     ![Task 3: Create check-in record](images/task-03-step-06-create-checkin.png)
-    ![Task 3: Check-in form](images/task-03-step-06-show-checkin.png)
+
+7. Confirm that the submitted check-in appears in **My Check-In History**.
+
+    ![Task 3: Check-in form](images/task-03-step-07-show-checkin.png)
 
 ## Acknowledgements
 

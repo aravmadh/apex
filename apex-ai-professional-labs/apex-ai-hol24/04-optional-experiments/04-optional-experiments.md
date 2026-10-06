@@ -4,13 +4,15 @@
 
 You have added bulk validations and improved button prominence in TAP and ESS. You can also try the prompts below to explore other changes. Use one prompt at a time, review the edited source, and import only the affected files.
 
+Estimated Workshop Time: 15 minutes (choose an experiment; outside the core workshop)
+
 ### Objectives
+
+In this lab, you will learn how to:
 
 - Explore more validations and page improvements with short prompts.
 - Review the scope and behavior of each change.
 - Try single-file and multiple-file imports with SQLcl as an alternative.
-
-Estimated Time: 15 minutes (choose an experiment; outside the core workshop)
 
 ### Prerequisites
 
@@ -18,7 +20,7 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
 
 ## Task 1: Try More Prompts in TAP
 
-1. Open the TAP project in Codex. Choose one prompt below.
+1. Open the TAP project in **Codex**. Choose one prompt below.
 
     **Explore the application:**
 
@@ -52,33 +54,47 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     </copy>
     ```
 
-2. Review the changed files. Preserve existing business rules, component identifiers, and button actions. If Codex adds a shared dependency, import that dependency before the page.
+2. Review the changed files. Preserve existing business rules, component identifiers, and button actions.
+
+    - If **Codex** adds a shared dependency, import that dependency before the page.
 
 3. Import the affected files through **Import File** and test the result. Extend this pattern to other page-level improvements in TAP.
 
 ## Task 2: Try Selected File Imports for TAP with SQLcl
 
-1. Use a SQLcl version that supports APEXlang selected file import. Connect to the parsing schema for the development workspace using the setup from Module 23. Confirm the TAP target in `deployments/default.json`.
+1. Use a SQLcl version that supports APEXlang selected file import. Connect to the parsing schema for the development workspace using the setup from Module 23.
 
-2. At the SQLcl prompt, change to your TAP project directory. Replace the sample path and filenames with your project path and changed page filenames. The filenames illustrate the syntax; they are not fixed course page names.
+    - Confirm the TAP target in `deployments/default.json`.
+
+2. At the SQLcl prompt, change to the TAP project directory. Replace the sample path with your project path.
 
     ```text
     cd /path/to/tap-project
+    ```
+
+3. Validate the project and resolve reported errors before import.
+
+    ```text
     apex validate -input .
+    ```
+
+4. Import one changed page. Replace the illustrative filename with your actual changed page filename.
+
+    ```text
     apex import -files pages/p00010-candidate-form.apx
     ```
 
-3. To import several changed files in one command, list their paths after `-files`, separated by spaces:
+5. To import several changed files in one command, list their paths after `-files`, separated by spaces:
 
     ```text
     apex import -files pages/p00010-candidate-form.apx pages/p00011-requisition-form.apx pages/p00012-offer-form.apx
     ```
 
-4. Wait for success and repeat the relevant runtime checks. Paths after `-files` are relative to the current SQLcl directory. Reimporting these pages is optional. The VS Code tasks in Lab 1 complete the TAP exercise.
+6. Wait for success and repeat the relevant runtime checks. Paths after `-files` are relative to the current SQLcl directory. Reimporting these pages is optional. The VS Code tasks in Lab 1 complete the TAP exercise.
 
 ## Task 3: Try More Prompts in ESS
 
-1. Open the ESS project in Codex. Choose one prompt below.
+1. Open the ESS project in **Codex**. Choose one prompt below.
 
     **Explore the application:**
 
@@ -112,29 +128,43 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     </copy>
     ```
 
-2. Review the edits and preserve existing leave rules, onboarding logic, and authorization checks. If a prompt affects an interactive grid, review its row validations separately from page-item validations.
+2. Review the edits and preserve existing leave rules, onboarding logic, and authorization checks.
 
-3. Import the affected files through **Import File** and test the result. Use this workflow for other page-level improvements in ESS as well.
+    - If a prompt affects an interactive grid, review its row validations separately from page-item validations.
+
+3. Import the affected files through **Import File** and test the result.
+
+    - Use this workflow for other page-level improvements in ESS as well.
 
 ## Task 4: Try Selected File Imports for ESS with SQLcl
 
 1. Use a SQLcl version with APEXlang selected file import support. Connect to the same parsing schema for the development workspace and confirm the ESS target in `deployments/default.json`.
 
-2. At the SQLcl prompt, change to the ESS project folder. Replace the sample path and filenames with your actual project and changed page files:
+2. At the SQLcl prompt, change to the ESS project directory. Replace the sample path with your project path.
 
     ```text
     cd /path/to/ess-project
+    ```
+
+3. Validate the project and resolve reported errors before import.
+
+    ```text
     apex validate -input .
+    ```
+
+4. Import one changed page. Replace the illustrative filename with your actual changed page filename.
+
+    ```text
     apex import -files pages/p00010-my-profile.apx
     ```
 
-3. Import several selected files together by listing their paths after `-files`:
+5. Import several selected files together by listing their paths after `-files`:
 
     ```text
     apex import -files pages/p00010-my-profile.apx pages/p00011-leave-request.apx pages/p00012-onboarding-task.apx
     ```
 
-4. Wait for success and repeat the relevant ESS runtime checks. These illustrative filenames are not fixed course page names. Paths are relative to the current SQLcl directory, and the application must already exist in the target workspace.
+6. Wait for success and repeat the relevant ESS runtime checks. These illustrative filenames are not fixed course page names. Paths are relative to the current SQLcl directory, and the application must already exist in the target workspace.
 
 ## Acknowledgements
 

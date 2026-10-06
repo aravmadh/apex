@@ -6,27 +6,37 @@ ESS already exists in the course workspace. Unlike TAP, it has not yet gone thro
 
 An existing application satisfies the selected file import prerequisite. You can apply page updates directly to the installed ESS application without importing the complete project first.
 
+Estimated Workshop Time: 10 minutes
+
 ### Objectives
+
+In this lab, you will learn how to:
 
 - Export the installed ESS application through SQL Developer for VS Code.
 - Check the exported application name and project structure.
 - Prepare the ESS project for Lab 3.
 
-Estimated Time: 10 minutes
-
 ## Task 1: Export the Current ESS Application
 
 1. In VS Code, open **Connections** and select the parsing-schema connection for your course workspace. Expand **APEX** and locate **Employee Self-Service Portal (ESS)**.
 
-2. Record the ESS Application ID and workspace. Right-click ESS and choose **Export…**.
+2. Record the ESS Application ID and workspace.
 
-3. Choose the **applications** folder as the export destination, then click **Apply**. Wait for the export to finish.
+    - Right-click ESS and choose **Export…**.
 
-    ![ESS export dialog with the destination folder and Apply button highlighted](images/task-01-step-export-application.png)
+3. Choose the **applications** folder as the export destination, then click **Apply**.
 
-4. In **Explorer**, open the exported **employee-self-service-portal** folder and select `application.apx`. Confirm the application name and locate the **pages** folder. Keep this project open for Lab 3.
+    - Wait for the export to finish.
 
-    ![Exported ESS project showing the application name and page folder](images/task-01-step-exported-application.png)
+    ![ESS export dialog with the destination folder and Apply button highlighted](images/task-01-step-03-export-application.png)
+
+4. In **Explorer**, open the exported **employee-self-service-portal** folder and select `application.apx`.
+
+    - Confirm the application name and locate the **pages** folder.
+
+    - Keep this project open for Lab 3.
+
+    ![Exported ESS project showing the application name and page folder](images/task-01-step-04-exported-application.png)
 
 ## Acknowledgements
 
