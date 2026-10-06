@@ -23,9 +23,9 @@ Module 11 adds the computations, validations, and DML processing that make these
 - Complete Module 5, including the TAP Offers page and base ESS Leave Request page.
 - Use the TMS schema created in Module 2.
 
-## Screenshot Placeholders
+## Screenshots
 
-Each lab contains text screenshot placeholders. Replace them with approved Oracle screenshots before publication.
+The labs include screenshots for the guided steps. Keep screenshot filenames and links aligned with the current task and step numbering when revising the instructions.
 
 Estimated Time: 20 minutes
 

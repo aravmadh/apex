@@ -17,11 +17,11 @@ In this lab, you will learn how to:
 
 ## Task 1: Create the check-in table
 
-1. In **SQL Workshop**, select **SQL Commands**.
+1. From the left navigation menu, open **SQL Workshop** and select **SQL Commands**.
 
     ![Task 1: SQL commands](images/task-01-step-01-sql-commands.png)
 
-2. Paste and run the following statement:
+2. Copy and paste the following SQL statement, then click **Run**:
 
     ```sql
     <copy>
@@ -38,33 +38,48 @@ In this lab, you will learn how to:
 
     ![Task 1: Run SQL DDL](images/task-01-step-02-run-ddl.png)
 
-3. Open **Object Browser**.
+3. From the left navigation menu, open **SQL Workshop** and select **Object Browser**.
 
     ![Task 1: Object browser](images/task-01-step-03-object-browser.png)
 
-4. Confirm that `TMS_EMPLOYEE_CHECKINS` appears in the table list.
+4. Expand **Tables** and search for `TMS_EMPLOYEE_CHECKINS`.
+
+    - Select the table to confirm that it exists and displays the expected columns.
 
     ![Task 1: Check table](images/task-01-step-04-check-table.png)
 
 ## Task 2: Create the report and form
 
-1. In ESS **App Builder**, select **Create Page**.
+1. From the left navigation menu, click the **App Builder** icon.
 
-    ![Task 2: Create page](images/task-02-step-01-create-page.png)
+2. Select the **Employee Self-Service Portal (ESS)** application.
 
-2. Select **Component**, then **Interactive Report**, and enable **Include Form Page**.
+3. On the application home page, click **Create Page**.
 
-    ![Task 2: Interactive Report form](images/task-02-step-02-ir-form.png)
+    ![Create Page action in ESS App Builder](images/task-02-step-03-create-page.png)
 
-3. Name the report page **My Check-In History** and the form page **Employee Check-In**.
+4. Under **Component**, select **Interactive Report**.
 
-    - Select `TMS_EMPLOYEE_CHECKINS` as the table.
-    ![Task 2: Report and form configuration](images/task-02-step-03-page-config.png)
+    ![Interactive Report option in the Create Page wizard](images/task-02-step-04-ir-form.png)
 
-4. Run **My Check-In History**.
+5. Enter or select the following attributes:
+
+    - **Name:** My Check-In History.
+    - **Include Form Page:** On.
+    - **Form Page Name:** Employee Check-In.
+    - **Table / View Name:** `TMS_EMPLOYEE_CHECKINS`.
+    - Click **Next**.
+
+    ![Report and form page names and source table](images/task-02-step-05-page-config.png)
+
+6. Confirm that **Primary Key Column 1** is `CHECKIN_ID`, then click **Create Page**.
+
+    ![CHECKIN_ID primary key and Create Page button](images/task-02-step-06-create-page.png)
+
+7. Click **Save and Run** for the **My Check-In History** page.
 
     - Click **Create** to open the **Employee Check-In** form.
-    ![Task 2: Run page](images/task-02-step-04-run-page.png)
+    ![Open the Employee Check-In form from My Check-In History](images/task-02-step-07-run-page.png)
 
 ## Task 3: Populate the employee ID and configure ratings in Employee Check-In form
 

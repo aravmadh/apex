@@ -26,31 +26,27 @@ In this lab, you will learn how to:
 
 ## Task 2: Create the ESS templates
 
-> **Screenshot guidance:** The template screenshots show **Leave Approved**. Use the same fields and creation process for the other templates, with the values supplied in their respective steps.
+> **Screenshot guidance:** The screenshots show **Leave Approved**. Follow the same field layout for each subsequent template, using the values and content provided in its numbered step.
 
-1. In ESS, open **Shared Components**.
+1. In **Employee Self-Service Portal (ESS)**, navigate to **Shared Components**.
 
     ![Task 2: Shared components](images/task-02-step-01-shared-components.png)
 
-2. Select **Email Templates**.
+2. Under **User Interface**, select **Email Templates**.
 
     ![Task 2: Email template](images/task-02-step-02-email-template.png)
 
-3. Select **Create Email Template**.
+3. Click **Create Email Template**.
 
     ![Task 2: Create email template](images/task-02-step-03-create-email-template-03.png)
 
-4. Create the **Leave Approved** email template using these values:
+4. Configure the following attributes:
 
-    - **Name:** Leave Approved
-    - **Static ID:** `leave-approved` (Auto-Generated)
-    - **Subject:** HR approved your leave request
+    - Under **Identification**:
+        - **Template Name:** Leave Approved
+        - **Email Subject:** HR approved your leave request
 
-    ![Task 2: Email template details](images/task-02-step-04-enter-details.png)
-
-5. Enter the HTML and plain-text content for **Leave Approved**:
-
-    - **HTML Format > Body:**
+    - **HTML Format** > **Body**: Copy and paste the following HTML code:
 
         ```html
         <copy><p>Hello <strong>#EMPLOYEE_NAME#</strong>,</p>
@@ -62,7 +58,9 @@ In this lab, you will learn how to:
         <p>HR Team</p></copy>
         ```
 
-    - **Plain-Text Format > Content:**
+    ![Leave Approved identification and HTML body settings](images/task-02-step-04-leave-approved-html.png)
+
+    - **Plain Text Format** > **Content**: Copy and paste the following text:
 
         ```text
         <copy>Hello #EMPLOYEE_NAME#,
@@ -74,17 +72,19 @@ In this lab, you will learn how to:
         HR Team</copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    ![Leave Approved plain-text content and Create Email Template button](images/task-02-step-04-leave-approved-plain-text.png)
 
-    ![Task 2: Email template content](images/task-02-step-05-enter-details-02.png)
+    - Under **Advanced**, confirm that **Static ID** is `leave-approved`.
+    - Click **Create Email Template** to save the template.
+    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
 
-6. Create the **Leave Rejected** email template using these values:
+5. Configure the following attributes:
 
-    - **Name:** Leave Rejected
-    - **Static ID:** `leave-rejected` (Auto-Generated)
-    - **Subject:** HR could not approve your leave request
+    - Under **Identification**:
+        - **Template Name:** Leave Rejected
+        - **Email Subject:** HR could not approve your leave request
 
-    - **HTML Format > Body:**
+    - **HTML Format** > **Body**: Copy and paste the following HTML code:
 
         ```html
         <copy><p>Hello <strong>#EMPLOYEE_NAME#</strong>,</p>
@@ -96,7 +96,7 @@ In this lab, you will learn how to:
         <p>If you believe this is an error or have questions, please contact HR.</p></copy>
         ```
 
-    - **Plain-Text Format > Content:**
+    - **Plain Text Format** > **Content**: Copy and paste the following text:
 
         ```text
         <copy>Hello #EMPLOYEE_NAME#,
@@ -108,15 +108,17 @@ In this lab, you will learn how to:
         If you have questions, please contact HR.</copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Under **Advanced**, confirm that **Static ID** is `leave-rejected`.
+    - Click **Create Email Template** to save the template.
+    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
 
-7. Create the **Task Overdue Notification** email template using these values:
+6. Configure the following attributes:
 
-    - **Name:** Task Overdue Notification
-    - **Static ID:** `task-overdue-notification` (Auto-Generated)
-    - **Subject:** Action needed: Overdue onboarding task
+    - Under **Identification**:
+        - **Template Name:** Task Overdue Notification
+        - **Email Subject:** Action needed: Overdue onboarding task
 
-    - **HTML Format > Body:**
+    - **HTML Format** > **Body**: Copy and paste the following HTML code:
 
         ```html
         <copy><p>Hello <strong>#EMPLOYEE_NAME#</strong>,</p>
@@ -126,7 +128,7 @@ In this lab, you will learn how to:
         <p>Please complete it as soon as possible or reach out to your manager if you need help.</p></copy>
         ```
 
-    - **Plain-Text Format > Content:**
+    - **Plain Text Format** > **Content**: Copy and paste the following text:
 
         ```text
         <copy>Hello #EMPLOYEE_NAME#,
@@ -136,15 +138,17 @@ In this lab, you will learn how to:
         Please complete it as soon as possible or reach out to your manager if you need help.</copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Under **Advanced**, confirm that **Static ID** is `task-overdue-notification`.
+    - Click **Create Email Template** to save the template.
+    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
 
-8. Create the **Welcome to Acme Corp** email template using these values:
+7. Configure the following attributes:
 
-    - **Name:** Welcome to Acme Corp
-    - **Static ID:** `welcome-to-acme-corp` (Auto-Generated)
-    - **Subject:** Welcome to Acme Corp, #EMPLOYEE_NAME#!
+    - Under **Identification**:
+        - **Template Name:** Welcome to Acme Corp
+        - **Email Subject:** Welcome to Acme Corp, #EMPLOYEE_NAME#!
 
-    - **HTML Format > Body:**
+    - **HTML Format** > **Body**: Copy and paste the following HTML code:
 
         ```html
         <copy><h2 style="margin-bottom:0">Welcome to Acme Corp, #EMPLOYEE_NAME#!</h2>
@@ -163,7 +167,7 @@ In this lab, you will learn how to:
         <p>HR Team</p></copy>
         ```
 
-    - **Plain-Text Format > Content:**
+    - **Plain Text Format** > **Content**: Copy and paste the following text:
 
         ```text
         <copy>WELCOME TO ACME CORP, #EMPLOYEE_NAME#!
@@ -180,15 +184,17 @@ In this lab, you will learn how to:
         HR Team</copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Under **Advanced**, confirm that **Static ID** is `welcome-to-acme-corp`.
+    - Click **Create Email Template** to save the template.
+    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
 
-9. Create the **Probation Alert** email template using these values:
+8. Configure the following attributes:
 
-    - **Name:** Probation Alert
-    - **Static ID:** `probation-alert` (Auto-Generated)
-    - **Subject:** Probation ends soon for #EMPLOYEE_NAME#
+    - Under **Identification**:
+        - **Template Name:** Probation Alert
+        - **Email Subject:** Probation ends soon for #EMPLOYEE_NAME#
 
-    - **HTML Format > Body:**
+    - **HTML Format** > **Body**: Copy and paste the following HTML code:
 
         ```html
         <copy><p><strong>Probation Review Reminder</strong></p>
@@ -202,7 +208,7 @@ In this lab, you will learn how to:
         <p>HR Team</p></copy>
         ```
 
-    - **Plain-Text Format > Content:**
+    - **Plain Text Format** > **Content**: Copy and paste the following text:
 
         ```text
         <copy>PROBATION REVIEW REMINDER
@@ -217,13 +223,14 @@ In this lab, you will learn how to:
         HR Team</copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Under **Advanced**, confirm that **Static ID** is `probation-alert`.
+    - Click **Create Email Template** to save the template.
 
-10. Return to **Email Templates** and confirm that all five static identifiers appear.
-    ![Task 2: Verify email templates](images/task-02-step-10-check-templates-exists.png)
+9. Return to **Email Templates** and confirm that all five static identifiers appear.
+    ![Task 2: Verify email templates](images/task-02-step-09-check-templates-exists.png)
 
-11. The static identifier is what you reference with `p_template_static_id` in `APEX_MAIL.SEND` or select in a native **Send E-Mail** action.
-    ![Task 2: Sample API usage](images/task-02-step-11-sample-api-usage.png)
+10. The static identifier is what you reference with `p_template_static_id` in `APEX_MAIL.SEND` or select in a native **Send E-Mail** action.
+    ![Task 2: Sample API usage](images/task-02-step-10-sample-api-usage.png)
 
 ## Acknowledgements
 

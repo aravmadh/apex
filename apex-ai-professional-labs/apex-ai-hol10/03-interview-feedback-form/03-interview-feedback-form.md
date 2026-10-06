@@ -11,7 +11,7 @@ Estimated Workshop Time: 5 minutes
 In this lab, you will learn how to:
 
 - Create an Interview Feedback form on `TMS_INTERVIEW_STAGES`.
-- Configure interviewer, date, rating, outcome, and notes items.
+- Configure candidate, interviewer, rating, and outcome items.
 - Open the form from the Interview Schedule interactive grid and refresh the grid after close.
 
 ## Task 1: Create the Interview Feedback page
@@ -20,7 +20,7 @@ In this lab, you will learn how to:
 
     ![Page Designer Create Page](images/task-01-step-01-page-designer-create-page.png)
 
-2. Select **Form** as the page type.
+2. Select **Form** as the page type and click **Next**.
 
     ![Create Page Form](images/task-01-step-02-create-page-form.png)
 
@@ -28,7 +28,10 @@ In this lab, you will learn how to:
 
     - Set **Page Mode** to **Modal Dialog**.
 
-    - Use page number `13` if it is available, and set `TMS_INTERVIEW_STAGES` as the data source.
+    - Use page number `13` if it is available.
+    - Set **Table / View Name** to `TMS_INTERVIEW_STAGES`.
+    - Click **Next**.
+
     ![Page Name Configuration](images/task-01-step-03-page-name-config.png)
 
 4. For **Primary Key Column 1**, select `STAGE_ID`, then click **Create Page**.
@@ -36,58 +39,79 @@ In this lab, you will learn how to:
     ![Interview Feedback form primary key and Create Page action](images/task-01-step-04-pk-create.png)
 
 5. Open the new page in **Page Designer**.
+
     ![Form Page Created](images/task-01-step-05-form-page-created.png)
 
 ## Task 2: Configure the form items
+
+> **Page numbers:** These examples use the `P13_` item prefix. If you created another page number, substitute that page’s item prefix throughout this lab.
 
 1. Select `P13_CANDIDATE_ID`.
 
     - Set its type to **Display Only**.
 
     - This non-enterable item displays the value that the **Interview Schedule** page passes in session state.
+
     ![Display Only](images/task-02-step-01-display-only.png)
 
 2. Select `P13_INTERVIEWER_ID`.
 
-    - Set its type to **Select List** and choose `TMS_INTERVIEWERS.NAME` as the LOV.
+    - Under **Identification**, set **Type** to **Select List**.
+    - Under **List of Values**, set **Type** to **Shared Component** and select `TMS_INTERVIEWERS.NAME`.
+
     ![Select List](images/task-02-step-02-select-list.png)
 
-3. Select `P13_SCHEDULED_DATE`.
+3. Select the rating item mapped to the `SCORE` database column.
 
-    - Set its type to **Date Picker**. The calendar icon lets users select a date, or they can enter the date directly.
-    ![Date Picker](images/task-02-step-03-date-picker.png)
+    - The wizard-generated item is `P13_SCORE`. The example screenshot uses the renamed item `P13_OVERALL_SCORE`; use the item mapped to `SCORE` in your form.
+    - Under **Identification**, set **Type** to **Star Rating**.
+    - Under **Settings**, set **Number of Stars** to `5`.
 
-4. Select `P13_OVERALL_SCORE`.
+    ![Star Rating](images/task-02-step-03-star-rating.png)
 
-    - Set its type to **Star Rating** and configure a range of 1 to 5 stars. A **Star Rating** item lets users click a star to set a numeric value.
-    ![Star Rating](images/task-02-step-04-star-rating.png)
+4. Select `P13_OUTCOME`.
 
-5. Select `P13_OUTCOME`.
+    - Under **Identification**, set **Type** to **Select List**.
+    - Under **List of Values**, select **Static Values** and enter the following display and return values:
 
-    - Set its type to **Select List** and create static values: `Proceed`, `Hold`, and `Reject`.
-    ![Select List Outcome](images/task-02-step-05-select-list-outcome.png)
+        | Display  | Return  |
+        | -------- | ------- |
+        | Proceed  | Proceed |
+        | Hold     | Hold    |
+        | Reject   | Rejected |
 
-6. Select `P13_FEEDBACK_NOTES`.
+    ![Select List Outcome](images/task-02-step-04-select-list-outcome.png)
 
-    - Set its type to **Textarea** and set **height** to `5` lines. A **Textarea** displays a multiple-row text area.
-    ![Text Area](images/task-02-step-06-text-area.png)
+5. In the left pane, select the page items for `CREATED_BY`, `CREATED_AT`, `UPDATED_BY`, and `UPDATED_AT`.
 
-7. **Delete** the audit items: `CREATED_BY`, `CREATED_AT`, `UPDATED_BY`, and `UPDATED_AT`.
-    ![Removed Audit Items](images/task-02-step-07-removed-audit-items.png)
+    - Hold **Ctrl** on Windows or **Command** on macOS to select multiple items.
+    - Right-click the selected items and choose **Delete**. Confirm deletion if prompted.
+
+    ![Removed Audit Items](images/task-02-step-05-removed-audit-items.png)
 
 ## Task 3: Link the form from Interview Schedule
 
-1. In **Page Designer**, use **Page Browse** to open the **Interview Schedule** page.
+1. In **Page Designer**, use **Page Browse** to open **Interview Schedule**.
+
+    - This is page `6` in the course application. If it was resequenced, select the page by name.
+
     ![Interview Schedule Page](images/task-03-step-01-interview-schedule-page.png)
 
-2. Select the **Interview Schedule** interactive grid region. In its attributes, disable **Add Row**.
+2. Select the **Interview Schedule** interactive grid region.
+
+    - On the **Attributes** tab, clear **Add Row**.
+
     ![Disable Add Row](images/task-03-step-02-disable-add-row.png)
 
-3. Right-click the **Breadcrumb** region and select **Add Button**.
+3. Right-click the **Breadcrumb** region and select **Create Button**.
 
     ![Add Button 01](images/task-03-step-03-add-button-01.png)
 
-4. Set **Name** to `ADD_FEEDBACK`, set **Slot** to **Next**, and enable **Hot**.
+4. Configure the new button:
+
+    - **Button Name:** `ADD_FEEDBACK`.
+    - **Slot:** Next.
+    - **Hot:** On.
 
     ![Add Button 02](images/task-03-step-04-add-button-02.png)
 
@@ -106,16 +130,19 @@ In this lab, you will learn how to:
     - Set **Event** to **Dialog Closed** and **Selection Type** to **Button**.
 
     - This event occurs on the calling page after the modal dialog closes.
+
     ![Add Dynamic Action Dialog Closed](images/task-03-step-07-add-da-dialog-closed.png)
 
 8. Add a true action of **Refresh**.
 
-    - Set **Selection Type** to **Region** and select the **Interview Stages** region.
+    - Set **Selection Type** to **Region** and select the Interview Schedule interactive grid region. The example screenshot names it **Interview Stages**.
+
     ![Refresh Region](images/task-03-step-08-refresh-region.png)
 
 9. Save and run the **Interview Schedule** page.
 
-    - Select **Add Feedback**, close the dialog, and confirm that the **Interview Stages** grid refreshes.
+    - Select **Add Feedback**, close the dialog, and confirm that the Interview Schedule interactive grid refreshes.
+
     ![Open Form](images/task-03-step-09-open-form.png)
 
 ## Acknowledgements

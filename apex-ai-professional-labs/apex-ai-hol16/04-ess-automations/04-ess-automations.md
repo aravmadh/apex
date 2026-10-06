@@ -16,26 +16,38 @@ In this lab, you will learn how to:
 
 ## Task 1: Create the Task Overdue automation
 
-1. In ESS, open **Shared Components**.
+1. In ESS, navigate to **Shared Components**.
 
-    ![Task 1: Shared components](images/task-01-step-01-shared-components.png)
+    ![Shared Components breadcrumb on the ESS Email Templates page](images/task-01-step-01-shared-components.png)
 
-2. Select **Automations**.
+2. Under **Workflows and Automations**, select **Automations**.
 
     ![Task 1: Automations](images/task-01-step-02-automations.png)
 
-3. Click **Create** and select **Scheduled**.
+3. Click **Create**.
 
     ![Task 1: Create automation](images/task-01-step-03-automations-create.png)
 
-4. Set **Name** to **Task Overdue**.
+4. In the **Create Automation** wizard, enter or select:
 
-    - Select **Scheduled**, **Query**, **Custom**, **Daily**, and an interval of `1`.
+    - **Name:** Task Overdue.
+    - **Type:** Scheduled.
+    - **Actions initiated on:** Query.
+    - **Execution Schedule:** Custom.
+    - **Frequency:** Daily.
+    - **Interval:** `1`.
+    - **Execution Time:** `08:00`.
+    - Click **Next**.
 
-    - Set **Execution Time** to `08:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=08;BYMINUTE=00` in the database server time zone.
-    ![Task 1: Task overdue automation](images/task-01-step-04-task-overdue-automation.png)
+    - The schedule runs in the database server time zone.
 
-5. Enter the source query, then select **Create**.
+    ![Task Overdue automation settings with Daily highlighted](images/task-01-step-04-task-overdue-automation-annotated.svg)
+
+5. Set **Source Type** to **SQL Query**.
+
+    ![SQL Query selected as the automation source type](images/task-01-step-05-source-type-sql-query.svg)
+
+6. For **Enter a SQL SELECT Statement**, copy and paste the following SQL query:
 
     ```sql
     <copy>
@@ -52,35 +64,49 @@ In this lab, you will learn how to:
        AND t.status NOT IN ('Completed', 'Cancelled', 'Overdue')
     </copy>
     ```
-    ![Task 1: Task overdue SQL query](images/task-01-step-05-task-overdue-sql-query.png)
 
-6. Add an **Execute Code** action named **Update Task**.
+    ![Task Overdue source query and Create button](images/task-01-step-06-task-overdue-sql-query.png)
 
-    ![Task 1: Task overdue add action](images/task-01-step-06-task-overdue-add-action-01.png)
+7. Click **Create** to create the automation.
 
-7. Enter the following code to mark the current task as overdue:
+8. Scroll down to **Actions** and click **Create Action**.
 
-    ```sql
-    <copy>
-        BEGIN
-        UPDATE tms_onboarding_tasks
-            SET status = 'Overdue'
-            WHERE task_id = :TASK_ID;
-        END;
-    </copy>
-    ```
+    ![Create Action control in the Task Overdue automation](images/task-01-step-08-create-action.png)
 
-    ![Task 1: Task overdue update task action](images/task-01-step-07-task-overdue-update-task-action-02.png)
+9. Enter or select the following attributes:
 
-8. Add a **Send E-Mail** action.
+    - **Name:** Update Task.
+    - **Type:** Execute Code.
+    - **Code:** Copy and paste the following PL/SQL code:
 
-    - Set **From** to `&APP_EMAIL.` and **To** to `&EMPLOYEE_EMAIL.`.
+        ```sql
+        <copy>
+            BEGIN
+            UPDATE tms_onboarding_tasks
+                SET status = 'Overdue'
+                WHERE task_id = :TASK_ID;
+            END;
+        </copy>
+        ```
 
-    - Select the **Task Overdue Notification** email template.
+    ![Update Task action name, PL/SQL code, and Create button](images/task-01-step-09-update-task.png)
 
-    ![Task 1: Task overdue send email action](images/task-01-step-08-task-overdue-send-email-action.png)
+10. Click **Create** to save the **Update Task** action.
 
-9. In the placeholder grid, set these values:
+11. Under **Actions**, click **Create Action** and configure the following:
+
+    - Under **Identification** (shown as **Action** in the screenshot):
+        - **Name:** Send Email.
+        - **Type:** Send E-Mail.
+    - Under **Send Email Settings**:
+        - **From:** `&APP_EMAIL.`.
+        - **To:** `&EMPLOYEE_EMAIL.`.
+        - **Email Template:** Task Overdue Notification.
+    - Click **Set Placeholder Values**.
+
+    ![Send E-Mail action type, recipient, template, and Set Placeholder Values button](images/task-01-step-11-send-email-settings.png)
+
+12. Enter the following values in the **Placeholder Grid**:
 
     | Placeholder | Value |
     | --- | --- |
@@ -88,22 +114,35 @@ In this lab, you will learn how to:
     | `TASK_NAME` | `&TASK_NAME.` |
     | `DUE_DATE` | `&DUE_DATE_TEXT.` |
 
-    ![Task 1: Task overdue send email action placeholders](images/task-01-step-09-task-overdue-send-email-action-placeholders.png)
+    - Click **Save**, then close the placeholder dialog.
 
-10. Set the schedule to **Active** and click **Save and Run**.
+    ![Email placeholder mappings with Save highlighted](images/task-01-step-12-email-placeholders.svg)
 
-    ![Task 1: Task overdue set active run](images/task-01-step-10-task-overdue-set-active-run.png)
+13. Click **Create** to save the email action.
+
+    ![Saved placeholder values and Create button for the email action](images/task-01-step-13-create-email-action.png)
+
+14. Set **Schedule Status** to **Active** and click **Save and Run**.
+
+    ![Task 1: Task overdue set active run](images/task-01-step-14-task-overdue-set-active-run.png)
 
 ## Task 2: Create Monthly Leave Accrual
 
-1. Create a second automation named **Monthly Leave Accrual**.
+1. Create a second automation. Navigate to **Automations**.
 
-    - Select **On Demand** and **Query**. You change it to **Scheduled** in the schedule configuration step below.
+    - Click **Create**.
+    - In the **Create Automation** wizard, enter or select:
+        - **Name:** Monthly Leave Accrual.
+        - **Type:** On Demand.
+        - **Actions initiated on:** Query.
+    - Click **Next**.
+    - After creating the automation, change its type to **Scheduled** as described below.
+
     ![Task 2: Monthly leave accrual](images/task-02-step-01-monthly-leave-accrual.png)
 
 2. Set **Source Type** to **SQL Query**.
 
-    - Enter:
+    - For **Enter a SQL SELECT Statement**, copy and paste the following SQL query:
 
         ```sql
         <copy>
@@ -114,16 +153,20 @@ In this lab, you will learn how to:
         ```
     ![Task 2: Monthly leave accrual SQL query](images/task-02-step-02-monthly-leave-accrual-sql-query.png)
 
-3. Change **Type** to **Scheduled**.
+3. Click **Create**.
+
+    ![Create button for the Monthly Leave Accrual automation](images/task-02-step-03-create-automation.svg)
+
+4. Change **Type** to **Scheduled**.
 
     - Enter this **Schedule Expression**:
 
         ```text
         FREQ=MONTHLY;BYMONTHDAY=1;BYHOUR=0;BYMINUTE=0;BYSECOND=0
         ```
-    ![Task 2: Monthly leave accrual schedule](images/task-02-step-03-monthly-leave-accrual-schedule.png)
+    ![Task 2: Monthly leave accrual schedule](images/task-02-step-04-monthly-leave-accrual-schedule.png)
 
-4. Add an **Execute Code** action named **Merge Leave Balances**.
+5. Add an **Execute Code** action named **Merge Leave Balances**.
 
     - This example uses the `MAX_LEAVE_DAYS` application setting and leave type ID `1`. Create or adjust them to match your application.
 
@@ -153,10 +196,10 @@ In this lab, you will learn how to:
 
         </copy>
         ```
-    ![Task 2: Monthly leave accrual add execute action](images/task-02-step-04-monthly-leave-accrual-add-execute-action.png)
+    ![Task 2: Monthly leave accrual add execute action](images/task-02-step-05-monthly-leave-accrual-add-execute-action.png)
 
-5. Set the schedule to **Active** and click **Save and Run**.
-    ![Task 2: Monthly leave accrual set active run](images/task-02-step-05-monthly-leave-accrual-set-active-run.png)
+6. Set the schedule to **Active** and click **Save and Run**.
+    ![Task 2: Monthly leave accrual set active run](images/task-02-step-06-monthly-leave-accrual-set-active-run.png)
 
 ## Task 3: Create Probation End Alert
 
