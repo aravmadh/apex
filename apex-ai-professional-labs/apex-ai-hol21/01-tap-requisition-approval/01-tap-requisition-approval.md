@@ -79,7 +79,7 @@ In this lab, you will learn how to:
 
     | Participant Type | Identity Type | Value Type | **SQL Query** |
     | --- | --- | --- | --- |
-    | **Potential Owner** | User | **SQL Query** | `SELECT e.email FROM tms_employees e JOIN tms_departments d ON d.manager_id = e.employee_id WHERE d.dept_id = (SELECT r.dept_id FROM tms_job_requisitions r WHERE r.req_id = :APEX$TASK_PK)` |
+    | **Potential Owner** | User | **SQL Query** | `SELECT UPPER(e.email) FROM tms_employees e JOIN tms_departments d ON d.manager_id = e.employee_id WHERE d.dept_id = (SELECT r.dept_id FROM tms_job_requisitions r WHERE r.req_id = :APEX$TASK_PK)` |
 
     ![Department Head Potential Owner SQL Query configuration](images/task-01-step-09-task-definitions-dep-add-participants.png)
 
@@ -268,13 +268,13 @@ In this lab, you will learn how to:
 
     ![Create Page wizard with Workflow Console selected](images/task-04-step-04-wf-console.png)
 
-5. Set **Name** to `Workflow Console`, **Report Context** to **My Workflows**, and enable **Include Dashboard Page**.
+5. Set **Name** to `Workflow Console`, **Report Context** to **Initiated by Me**, and enable **Include Dashboard Page**.
 
     - Name the generated dashboard `Workflow Dashboard` and the generated details page `Workflow Form`.
 
     - Enable navigation, then click **Create Page**.
 
-    ![Workflow Console page definition and report context](images/task-04-step-05-wf-console-det.png)
+    ![Workflow Console page configured with the Initiated by Me report context](images/task-04-step-05-wf-console-det.png)
 
 6. In **Page Designer**, apply authorization scheme `IS_TA_ADMIN` to the **Workflow Console** page.
 
@@ -295,21 +295,48 @@ In this lab, you will learn how to:
 
 ## Task 5: Test both approval routes
 
-1. Run TAP and submit a requisition with headcount `2`. Sign in as the department head for that department.
+### Test the Department Head route
 
-    - Open **My Approvals**, then approve the `Requisition Department Head Review` task.
+1. Sign in to TAP as `liam.chen@acme.example`. Open **Job Requisitions** and create a requisition with these values:
 
-2. Return to the requisition and confirm status `Open`. Sign in as `sofia.garcia@acme.example`, who must be both the workflow owner and an `IS_TA_ADMIN` user.
+    | Field | Value |
+    | --- | --- |
+    | Job | DevOps Engineer |
+    | Department | Engineering |
+    | Requested By | `liam.chen@acme.example` |
+    | Approved By | `liam.chen@acme.example` |
+    | Headcount | `2` |
+    | Status | Open |
 
-    - Open **Workflow Console** and confirm that the instance completed.
+    Select **Create**. A headcount of `2` follows the Department Head route.
 
-3. Submit another requisition with headcount `5`. Sign in as a TA administrator who can own the task.
+    ![Job Requisition form completed for the Department Head route](images/task-05-step-01-create-department-head-requisition.png)
 
-    - Open **My Approvals** and claim `Requisition HR Admin Review` if required. Approve or reject the task.
+2. Open **Tasks Initiated by Me**. Open the new `Requisition Department Head Review` task and confirm that APEX assigned it to `maya.patel@acme.example`.
 
-4. Verify that approval sets `TMS_JOB_REQUISITIONS.STATUS` to `Open`. Verify that rejection sets it to `Rejected`.
+    ![Initiated Department Head Review task with requisition details](images/task-05-step-02-view-initiated-task.png)
 
-    - Confirm that the workflow instance completed in **Workflow Console**.
+3. Sign out. Sign in as `maya.patel@acme.example`, open **My Approvals**, and select **Approve** for the `Requisition Department Head Review` task.
+
+    ![Maya Patel approving the Department Head Review task](images/task-05-step-03-maya-approves-task.png)
+
+4. Sign out and sign back in as `liam.chen@acme.example`. Open **Tasks Initiated by Me** and confirm that the task state is **Completed** and the outcome is **Approved**.
+
+    ![Completed Department Head Review task in Tasks Initiated by Me](images/task-05-step-04-verify-approved-task.png)
+
+5. Open **Workflow Console**, select the `Approve Job Requisition` workflow instance that you started, and confirm its state is **Completed**. Review the workflow diagram to confirm that the Department Head Review activity completed before **Update Requisition Status**.
+
+    ![Completed requisition workflow with the Department Head route](images/task-05-step-05-view-completed-workflow.png)
+
+### Test the HR Admin route
+
+6. Still signed in as `liam.chen@acme.example`, create another Job Requisition. Use a headcount greater than `3`, such as `4`. This value routes the workflow to **HR Admin Review**.
+
+7. Sign out and sign in as a TA administrator who matches authorization scheme `IS_TA_ADMIN`. Open **My Approvals**, claim the `Requisition HR Admin Review` task if necessary, and approve it.
+
+8. Sign back in as `liam.chen@acme.example`. Open **Workflow Console** and confirm that the HR Admin route instance progresses from **Active** to **Completed** after approval. Verify that the requisition status is **Open**.
+
+    ![Workflow Console showing active and completed requisition workflows](images/task-05-step-06-verify-outer-route.png)
 
 ## Acknowledgements
 

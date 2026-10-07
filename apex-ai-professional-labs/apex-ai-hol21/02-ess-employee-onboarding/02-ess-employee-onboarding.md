@@ -258,23 +258,28 @@ In this lab, you will learn how to:
 
 ## Task 5: Test parallel completion
 
-1. Sign in as an HR administrator ex:- `priya.nair@acme.example.com`.
+1. Sign in to ESS as `priya.nair@acme.example.com`. Navigate to **Start Employee Onboarding**.
 
-    - Open **Start Employee Onboarding**, select an employee, and click **Start Onboarding**.
+2. Select `Noah Reed` as the employee to onboard, then click **Start Onboarding**.
 
-2. Open **My Workflow Tasks**.
+    ![Priya Nair starting employee onboarding for Noah Reed](images/task-05-step-01-start-noah-reed-onboarding.png)
 
-    - Confirm that both tasks exist. Complete only **HR Documents**.
+3. Sign out, then sign in as `noah.reed@acme.example`. Open **My Workflow Tasks** and confirm that these two tasks are assigned to you:
 
-    - Confirm that the workflow remains active and the welcome email was not sent.
+    - **Complete HR Documents for Noah Reed**
+    - **Schedule Department Orientation for Noah Reed**
 
-3. Sign in as the department manager for the selected employee.
+    ![Noah Reed viewing the two assigned onboarding workflow tasks](images/task-05-step-02-noah-reed-workflow-tasks.png)
 
-    - Open **My Workflow Tasks**. Complete **Department Orientation**.
+4. Complete both tasks. Sign out, then sign back in as `priya.nair@acme.example.com`.
 
-4. Confirm that the **Parallel Flow** completes.
+5. Open **Workflow Console** and select the workflow instance for Noah Reed. Confirm that its state is **Completed**. In the activity list, verify that the welcome email shows **Email Sent** and the final **Stop** activity is **Completed**.
 
-    - Confirm that **Send Welcome Email** runs. Verify **Completed** status in the **Workflow Console**.
+    ![Completed employee onboarding workflow with Email Sent and Stop activities](images/task-05-step-03-completed-onboarding-workflow.png)
+
+6. Scroll to the bottom of the Workflow Form and expand the workflow diagram. Confirm that both parallel tasks, **HR Documents** and **Department Orientation**, are complete and that the overall workflow completed successfully.
+
+    ![Completed onboarding workflow diagram with both parallel tasks complete](images/task-05-step-04-completed-onboarding-workflow-diagram.png)
 
 ## Acknowledgements
 
