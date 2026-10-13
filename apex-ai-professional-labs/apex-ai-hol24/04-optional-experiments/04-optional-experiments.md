@@ -20,7 +20,10 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
 
 ## Task 1: Try More Prompts in TAP
 
-1. Open the TAP project in **Codex**. Choose one prompt below.
+1. Prepare a TAP prompt:
+
+    - Open the TAP project in **Codex**.
+    - Choose one of the prompts below.
 
     **Explore the application:**
 
@@ -54,35 +57,55 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     </copy>
     ```
 
-2. Review the changed files. Preserve existing business rules, component identifiers, and button actions.
+2. Review the proposed changes:
 
-    - If **Codex** adds a shared dependency, import that dependency before the page.
+    - Review the changed files.
+    - Preserve existing business rules, component identifiers, and button actions.
 
-3. Import the affected files through **Import File** and test the result. Extend this pattern to other page-level improvements in TAP.
+    - If **Codex** adds a shared dependency, import it first.
+    - Then import the affected page.
+
+3. Apply and test the changes:
+
+    - Import the affected files through **Import File**.
+    - Test the result.
+    - Extend this pattern to other page-level improvements in TAP.
 
 ## Task 2: Try Selected File Imports for TAP with SQLcl
 
-1. Use a SQLcl version that supports APEXlang selected file import. Connect to the parsing schema for the development workspace using the setup from Module 23.
+1. Prepare SQLcl:
+
+    - Use a version that supports APEXlang selected file import.
+    - Connect to the parsing schema for the development workspace using the setup from Module 23.
 
     - Confirm the TAP target in `deployments/default.json`.
 
-2. At the SQLcl prompt, change to the TAP project directory. Replace the sample path with your project path.
+2. At the SQLcl prompt:
 
-    ```text
-    cd /path/to/tap-project
-    ```
+    - Change to the TAP project directory.
+    - Replace the sample path with your project path:
 
-3. Validate the project and resolve reported errors before import.
+        ```text
+        cd /path/to/tap-project
+        ```
 
-    ```text
-    apex validate -input .
-    ```
+3. Validate and repair the project:
 
-4. Import one changed page. Replace the illustrative filename with your actual changed page filename.
+    - Run the validation command:
 
-    ```text
-    apex import -files pages/p00010-candidate-form.apx
-    ```
+        ```text
+        apex validate -input .
+        ```
+    - Resolve reported errors before import.
+
+4. Import one changed page:
+
+    - Replace the illustrative filename with your actual changed page filename.
+    - Run the import command:
+
+        ```text
+        apex import -files pages/p00010-candidate-form.apx
+        ```
 
 5. To import several changed files in one command, list their paths after `-files`, separated by spaces:
 
@@ -90,11 +113,18 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     apex import -files pages/p00010-candidate-form.apx pages/p00011-requisition-form.apx pages/p00012-offer-form.apx
     ```
 
-6. Wait for success and repeat the relevant runtime checks. Paths after `-files` are relative to the current SQLcl directory. Reimporting these pages is optional. The VS Code tasks in Lab 1 complete the TAP exercise.
+6. Verify the import:
+
+    - Wait for the success message.
+    - Repeat the relevant runtime checks.
+    - Remember that paths after `-files` are relative to the current SQLcl directory. Reimporting these pages is optional; the VS Code tasks in Lab 1 complete the TAP exercise.
 
 ## Task 3: Try More Prompts in ESS
 
-1. Open the ESS project in **Codex**. Choose one prompt below.
+1. Prepare an ESS prompt:
+
+    - Open the ESS project in **Codex**.
+    - Choose one of the prompts below.
 
     **Explore the application:**
 
@@ -128,35 +158,54 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     </copy>
     ```
 
-2. Review the edits and preserve existing leave rules, onboarding logic, and authorization checks.
+2. Review the proposed changes:
+
+    - Review the edits.
+    - Preserve existing leave rules, onboarding logic, and authorization checks.
 
     - If a prompt affects an interactive grid, review its row validations separately from page-item validations.
 
-3. Import the affected files through **Import File** and test the result.
+3. Apply and test the changes:
+
+    - Import the affected files through **Import File**.
+    - Test the result.
 
     - Use this workflow for other page-level improvements in ESS as well.
 
 ## Task 4: Try Selected File Imports for ESS with SQLcl
 
-1. Use a SQLcl version with APEXlang selected file import support. Connect to the same parsing schema for the development workspace and confirm the ESS target in `deployments/default.json`.
+1. Prepare SQLcl:
 
-2. At the SQLcl prompt, change to the ESS project directory. Replace the sample path with your project path.
+    - Use a version with APEXlang selected file import support.
+    - Connect to the same parsing schema for the development workspace.
+    - Confirm the ESS target in `deployments/default.json`.
 
-    ```text
-    cd /path/to/ess-project
-    ```
+2. At the SQLcl prompt:
 
-3. Validate the project and resolve reported errors before import.
+    - Change to the ESS project directory.
+    - Replace the sample path with your project path:
 
-    ```text
-    apex validate -input .
-    ```
+        ```text
+        cd /path/to/ess-project
+        ```
 
-4. Import one changed page. Replace the illustrative filename with your actual changed page filename.
+3. Validate and repair the project:
 
-    ```text
-    apex import -files pages/p00010-my-profile.apx
-    ```
+    - Run the validation command:
+
+        ```text
+        apex validate -input .
+        ```
+    - Resolve reported errors before import.
+
+4. Import one changed page:
+
+    - Replace the illustrative filename with your actual changed page filename.
+    - Run the import command:
+
+        ```text
+        apex import -files pages/p00010-my-profile.apx
+        ```
 
 5. Import several selected files together by listing their paths after `-files`:
 
@@ -164,7 +213,11 @@ Selected file imports in VS Code and SQLcl require **APEX 26.2 or later**. On AP
     apex import -files pages/p00010-my-profile.apx pages/p00011-leave-request.apx pages/p00012-onboarding-task.apx
     ```
 
-6. Wait for success and repeat the relevant ESS runtime checks. These illustrative filenames are not fixed course page names. Paths are relative to the current SQLcl directory, and the application must already exist in the target workspace.
+6. Verify the import:
+
+    - Wait for the success message.
+    - Repeat the relevant ESS runtime checks.
+    - These illustrative filenames are not fixed course page names. Paths are relative to the current SQLcl directory, and the application must already exist in the target workspace.
 
 ## Acknowledgements
 

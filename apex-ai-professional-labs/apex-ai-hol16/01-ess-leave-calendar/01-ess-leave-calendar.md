@@ -28,7 +28,8 @@ In this lab, you will learn how to:
 
 4. Enter **Leave Calendar** as the page name.
 
-    - Enable navigation and select **Leave** as the navigation parent.
+    - Enable navigation.
+    - Select **Leave** as the navigation parent.
 
     - For **Data Source**, select **Local Database** and **SQL Query**.
 
@@ -62,11 +63,13 @@ In this lab, you will learn how to:
 
 ## Task 2: Style and link calendar events
 
-1. In the left pane, Click on the Page Name and in the **Property Editor**, scroll down to **CSS** and update the following:
+1. Update the page CSS:
+
+    - In the left pane, select the page name.
+    - In the **Property Editor**, scroll to **CSS**.
+    - Under **Inline**, copy and paste the following CSS:
 
     ![Task 2: Calendar CSS settings, part 1](images/task-02-step-01-add-css-01.png)
-
-    - **Inline:** Copy and paste the following CSS:
 
         ```css
         <copy>
@@ -88,14 +91,18 @@ In this lab, you will learn how to:
             - **Target** > **Page:** `5`, **Leave Request**.
             - Set `P5_REQUEST_ID` to `&EVENT_ID.`.
             - Click **OK**.
-                ![Configure the Leave Request link target](images/task-02-step-02-edit-event.png)
+
+        ![Configure the Leave Request link target](images/task-02-step-02-edit-event.png)
 
         - **CSS Classes:** `CSS_CLASS`.
+
         ![Task 2: Select CSS class](images/task-02-step-02-select-css-class.png)
 
-3. Save and run the page.
+3. Verify the page results:
 
-    - Confirm that only the signed-in employee leave requests appear.
+    - Click **Save**.
+    - Run the page.
+    - Confirm that only the signed-in employee's leave requests appear.
 
 ## Acknowledgements
 

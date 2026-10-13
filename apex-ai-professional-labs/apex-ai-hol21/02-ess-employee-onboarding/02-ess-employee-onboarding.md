@@ -16,9 +16,12 @@ In this lab, you will learn how to:
 
 ## Task 1: Create the task definitions
 
-1. In ESS, open **Shared Components**, select **Task Definitions**, and click **Create**.
+1. In ESS:
 
-    - Set up the Department Orientation task definition with these values:
+    - Open **Shared Components**.
+    - Under **Workflows and Automations**, select **Task Definitions**.
+
+    - Configure the Department Orientation task definition with these values:
 
     | Field | Value |
     | --- | --- |
@@ -29,7 +32,11 @@ In this lab, you will learn how to:
 
     ![Department Orientation task definition details](images/task-01-step-01-task-def-hr-dept.png)
 
-2. Click **Create** to save the definition. On the **Task Definition** page, click **Add Participant** and configure the Department Orientation **Potential Owner**:
+2. Configure the Department Orientation potential owner:
+
+    - Click **Create** to save the definition.
+    - On the **Task Definition** page, click **Add Participant**.
+    - Configure the Department Orientation **Potential Owner** as shown:
 
     | Participant Type | Identity Type | Value Type | Task Parameter |
     | --- | --- | --- | --- |
@@ -37,9 +44,11 @@ In this lab, you will learn how to:
 
     ![Department Orientation Potential Owner participant configuration](images/task-01-step-02-task-def-hr-dept-add-participants.png)
 
-3. Add these task parameters.
+3. Add these task parameters:
 
-    - Set each data type to **String**, and set each parameter to **Required** and **Visible**.
+    - Set each data type to **String**.
+    - Set each parameter to **Required**.
+    - Set each parameter to **Visible**.
 
     | **Static ID** | Label | **Required** | **Visible** |
     | --- | --- | --- | --- |
@@ -50,12 +59,16 @@ In this lab, you will learn how to:
 
     ![Department Orientation task parameter definitions](images/task-01-step-03-task-def-hr-dept-add-parameters.png)
 
-4. Click **Create Task Details Page**, then save the Department Orientation task definition.
+4. Save the Department Orientation task definition:
+
+    - Click **Create Task Details Page**.
+    - Save the task definition.
     ![Created Department Orientation Task Details page](images/task-01-step-04-task-def-hr-dept-create-page.png)
 
-5. In **Task Definitions**, click **Create**.
+5. In **Task Definitions**:
 
-    - Set up the HR documents task definition with these values:
+    - Click **Create**.
+    - Configure the HR Documents task definition with these values:
 
     | Field | Value |
     | --- | --- |
@@ -66,7 +79,11 @@ In this lab, you will learn how to:
 
     ![HR Documents task definition details](images/task-01-step-05-task-def-hr-doc.png)
 
-6. Click **Create** to save the definition. On the **Task Definition** page, click **Add Participant** and configure the HR Documents **Potential Owner**:
+6. Configure the HR Documents potential owner:
+
+    - Click **Create** to save the definition.
+    - On the **Task Definition** page, click **Add Participant**.
+    - Configure the HR Documents **Potential Owner** as shown:
 
     | Participant Type | Identity Type | **Authorization Scheme** |
     | --- | --- | --- |
@@ -74,9 +91,11 @@ In this lab, you will learn how to:
 
     ![HR Documents Potential Owner participant configuration](images/task-01-step-06-task-def-hr-doc-add-participant.png)
 
-7. Add these task parameters.
+7. Add these task parameters:
 
-    - Set each data type to **String**, and set each parameter to **Required** and **Visible**.
+    - Set each data type to **String**.
+    - Set each parameter to **Required**.
+    - Set each parameter to **Visible**.
 
     | **Static ID** | Label | **Required** | **Visible** |
     | --- | --- | --- | --- |
@@ -86,21 +105,31 @@ In this lab, you will learn how to:
 
     ![HR Documents task parameter definitions](images/task-01-step-07-task-def-hr-doc-parameters.png)
 
-8. Click **Create Task Details Page**, then save the HR Documents task definition.
+8. Save the HR Documents task definition:
+
+    - Click **Create Task Details Page**.
+    - Save the task definition.
     ![Created HR Documents Task Details page](images/task-01-step-08-task-def-hr-doc-create-page.png)
 
 ## Task 2: Create the Onboard New Employee workflow
 
-1. In ESS, open **Shared Components** and select **Workflows**.
+1. In ESS:
+
+    - Open **Shared Components**.
+    - Select **Workflows**.
     ![Shared Components page with Workflows highlighted](images/task-02-step-01-shared-component.png)
 
-2. Click **Create**.
+2. Create and configure the workflow:
 
-    - Name the workflow `Onboard New Employee`, set its static ID to `onboard_new_employee`, and keep the version in **Development**.
+    - Click **Create**.
+    - Set the workflow name to `Onboard New Employee`.
+    - Set its static ID to `onboard_new_employee`.
+    - Keep the version in **Development**.
 
 3. Create the workflow parameter.
 
-    - Set **Direction** to **In** and leave **Required** off.
+    - Set **Direction** to **In**.
+    - Leave **Required** off.
 
     | **Static ID** | Label | **Data Type** | **Direction** | **Required** |
     | --- | --- | --- | --- | --- |
@@ -149,15 +178,22 @@ In this lab, you will learn how to:
 
     ![Load Employee Details Execute Code activity](images/task-02-step-06-load-emp-det.png)
 
-7. Add a **Parallel Flow** named `Complete Onboarding Setup` after the code activity. The flow creates two branches, and APEX continues after both branches complete.
+7. Add the parallel onboarding flow:
+
+    - Add a **Parallel Flow** named `Complete Onboarding Setup` after the code activity.
+    - The flow creates two branches, and APEX continues after both branches complete.
 
 ## Task 3: Configure the parallel activities and email
 
-1. In the first **Parallel Flow** branch, add a **Human Task - Create** activity named `HR Documents`.
+1. In the first **Parallel Flow** branch:
+
+    - Add a **Human Task - Create** activity.
+    - Name it `HR Documents`.
 
     - Select task definition `New Employee HR Documents`.
 
-    - Set **Outcome** to `TASK_OUTCOME` and configure the parameter mappings:
+    - Set **Outcome** to `TASK_OUTCOME`.
+    - Configure the parameter mappings:
 
     | Parameter | Value Type | Variable |
     | --- | --- | --- |
@@ -167,11 +203,15 @@ In this lab, you will learn how to:
 
     ![HR Documents Human Task activity parameter mapping](images/task-03-step-01-hr-docs.png)
 
-2. In the second **Parallel Flow** branch, add a **Human Task - Create** activity named `Department Orientation`.
+2. In the second **Parallel Flow** branch:
+
+    - Add a **Human Task - Create** activity.
+    - Name it `Department Orientation`.
 
     - Select task definition `New Employee Department Orientation`.
 
-    - Set **Outcome** to `TASK_OUTCOME` and configure the parameter mappings:
+    - Set **Outcome** to `TASK_OUTCOME`.
+    - Configure the parameter mappings:
 
     | Parameter | Value Type | Variable |
     | --- | --- | --- |
@@ -186,9 +226,11 @@ In this lab, you will learn how to:
 
     - Add a **Send E-Mail** activity named `Send Welcome Email`.
 
-    - Set **From** to `&APP_EMAIL.` and **To** to `&V_EMPLOYEE_EMAIL.`.
+    - Set **From** to `&APP_EMAIL.`.
+    - Set **To** to `&V_EMPLOYEE_EMAIL.`.
 
-    - Select the `Welcome to Acme Corp` email template, then map these placeholders:
+    - Select the `Welcome to Acme Corp` email template.
+    - Map these placeholders:
 
     | Placeholder | Value |
     | --- | --- |
@@ -207,23 +249,34 @@ In this lab, you will learn how to:
 
     ![Workflow participant configuration](images/task-03-step-04-wf-owner.png)
 
-5. Add a **Workflow End** activity named `End` after the email and set its end state to **Completed**.
+5. Add and configure the Workflow End activity:
 
-6. Save and activate the workflow.
+    - Add a **Workflow End** activity named `End` after the email.
+    - Set its end state to **Completed**.
+
+6. Save and activate the workflow:
+
+    - Save the workflow.
+    - Activate the workflow.
     ![Activated Onboard New Employee workflow version](images/task-03-step-06-activate-wf.png)
 
 ## Task 4: Add the inbox, console, and start page
 
-1. Create an ESS **Unified Task List** page named `My Workflow Tasks`.
+1. Create an ESS **Unified Task List** page:
+
+    - Set its name to `My Workflow Tasks`.
 
     - Set **Report Context** to **My Tasks**.
 
     - Add the page to ESS navigation.
     ![My Workflow Tasks Unified Task List page](images/task-04-step-01-unified-task-list.png)
 
-2. Create a **Workflow Console** page named `Workflow Console`.
+2. Create a **Workflow Console** page:
 
-    - Set **Report Context** to **My Workflows**, leave **Include Dashboard Page** off, and enable navigation.
+    - Set its name to `Workflow Console`.
+    - Set **Report Context** to **My Workflows**.
+    - Leave **Include Dashboard Page** off.
+    - Enable navigation.
     ![Workflow Console page configuration](images/task-04-step-02-worflow-console.png)
 
 3. Create a blank ESS page named `Start Employee Onboarding`.
@@ -232,7 +285,9 @@ In this lab, you will learn how to:
 4. In **Page Designer**, protect the page with authorization scheme `IS_HR_ADMIN`.
     ![Start Employee Onboarding page authorization](images/task-04-step-04-add-auth.png)
 
-5. Add select-list item `PXX_EMPLOYEE_ID`, where `XX` is your page number.
+5. Add a select-list item:
+
+    - Use `PXX_EMPLOYEE_ID` as the item name, where `XX` is your page number.
 
     - Use this LOV:
 
@@ -253,31 +308,60 @@ In this lab, you will learn how to:
 7. Add a **Workflow** process that starts `Onboard New Employee`.
     ![Workflow start process configuration](images/task-04-step-07-add-process.png)
 
-8. Under **Parameters**, select **Employee ID** and map `V_EMPLOYEE_ID` to `PXX_EMPLOYEE_ID`.
+8. Under **Parameters**:
+
+    - Select **Employee ID**.
+    - Map `V_EMPLOYEE_ID` to `PXX_EMPLOYEE_ID`.
     ![Workflow start process parameter mapping](images/task-04-step-08-add-process-parameter.png)
 
 ## Task 5: Test parallel completion
 
-1. Sign in to ESS as `priya.nair@acme.example.com`. Navigate to **Start Employee Onboarding**.
+1. Sign in to ESS as `priya.nair@acme.example`:
 
-2. Select `Noah Reed` as the employee to onboard, then click **Start Onboarding**.
+    - Navigate to **Start Employee Onboarding**.
+
+2. Start Noah Reed's onboarding:
+
+    - Select `Noah Reed` as the employee to onboard.
+    - Click **Start Onboarding**.
 
     ![Priya Nair starting employee onboarding for Noah Reed](images/task-05-step-01-start-noah-reed-onboarding.png)
 
-3. Sign out, then sign in as `noah.reed@acme.example`. Open **My Workflow Tasks** and confirm that these two tasks are assigned to you:
+3. Check the assigned tasks as Noah Reed:
+
+    - Sign out as Priya.
+    - Sign in as `noah.reed@acme.example`.
+    - Open **My Workflow Tasks**.
+    - Confirm that these two tasks are assigned to you:
 
     - **Complete HR Documents for Noah Reed**
     - **Schedule Department Orientation for Noah Reed**
 
     ![Noah Reed viewing the two assigned onboarding workflow tasks](images/task-05-step-02-noah-reed-workflow-tasks.png)
 
-4. Complete both tasks. Sign out, then sign back in as `priya.nair@acme.example.com`.
+4. Complete the onboarding tasks and return to the HR administrator account:
 
-5. Open **Workflow Console** and select the workflow instance for Noah Reed. Confirm that its state is **Completed**. In the activity list, verify that the welcome email shows **Email Sent** and the final **Stop** activity is **Completed**.
+    - Complete both tasks.
+    - Sign out as Noah.
+    - Sign back in as `priya.nair@acme.example`.
+
+5. Verify Noah Reed's workflow:
+
+    - Open **Workflow Console**.
+    - Select the workflow instance for Noah Reed.
+    - Confirm that its state is **Completed**.
+    - In the activity list, verify that the welcome email shows **Email Sent**.
+    - Confirm that the final **Stop** activity is **Completed**.
 
     ![Completed employee onboarding workflow with Email Sent and Stop activities](images/task-05-step-03-completed-onboarding-workflow.png)
 
-6. Scroll to the bottom of the Workflow Form and expand the workflow diagram. Confirm that both parallel tasks, **HR Documents** and **Department Orientation**, are complete and that the overall workflow completed successfully.
+6. Verify the workflow diagram:
+
+    - Scroll to the bottom of the Workflow Form.
+    - Expand the workflow diagram.
+    - Confirm that **HR Documents** is complete.
+    - Confirm that **Department Orientation** is complete.
+    - Confirm that the overall workflow completed successfully.
 
     ![Completed onboarding workflow diagram with both parallel tasks complete](images/task-05-step-04-completed-onboarding-workflow-diagram.png)
 

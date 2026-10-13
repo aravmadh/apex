@@ -30,9 +30,14 @@ In this lab, you will learn how to:
 
 4. Name the automation **Interview Reminder**.
 
-    - Select **Scheduled**, **Query**, **Custom**, **Daily**, and an interval of `1`.
+    - Select **Scheduled**.
+    - Select **Query**.
+    - Select **Custom**.
+    - Select **Daily**.
+    - Set the interval to `1`.
 
     - Set **Execution Time** to `07:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=7;BYMINUTE=0` in the database server time zone.
+    
     ![Task 1: Interview Reminder settings](images/task-01-step-04-automations-details.png)
 
 5. Enter this query:
@@ -60,7 +65,10 @@ In this lab, you will learn how to:
 
     ![Task 1: Edit action](images/task-01-step-06-edit-action.png)
 
-7. Set **From** to `&APP_EMAIL.` and **To** to `&INTERVIEWER_EMAIL.`.
+7. Configure the sender and recipient:
+
+    - Set **From** to `&APP_EMAIL.`.
+    - Set **To** to `&INTERVIEWER_EMAIL.`.
 
     - Select the **Interview Reminder** email template.
 
@@ -77,16 +85,27 @@ In this lab, you will learn how to:
 
     ![Task 1: Send email placeholders](images/task-01-step-08-send-email-placeholders.png)
 
-9. Set the schedule to **Active**, then select **Save and Run**.
+9. Activate and run the automation:
+
+    - Set the schedule to **Active**.
+    - Select **Save and Run**.
     ![Task 1: Set active run](images/task-01-step-09-set-active-run.png)
 
 ## Task 2: Create Offer Expiry Alert
 
-1. Create a second automation named **Offer Expiry Alert** and select **Scheduled**.
+1. Create the **Offer Expiry Alert** automation:
+
+    - Create a second automation named **Offer Expiry Alert**.
+    - Select **Scheduled**.
 
     ![Task 2: Create automation](images/task-02-step-01-create-automation.png)
 
-2. Select **Query**, **Custom**, **Daily**, and an interval of `1`.
+2. Configure the automation schedule:
+
+    - Select **Query**.
+    - Select **Custom**.
+    - Select **Daily**.
+    - Set the interval to `1`.
 
     - Set **Execution Time** to `08:00`.
 
@@ -115,7 +134,10 @@ In this lab, you will learn how to:
 
     ![Task 2: Edit action](images/task-02-step-04-edit-action.png)
 
-5. Set **From** to `&APP_EMAIL.` and **To** to `&RECRUITER_EMAIL.`.
+5. Configure the sender and recipient:
+
+    - Set **From** to `&APP_EMAIL.`.
+    - Set **To** to `&RECRUITER_EMAIL.`.
 
     - Set **Subject** to **Offer expiring soon: &CANDIDATE_NAME.**.
 
@@ -133,17 +155,28 @@ In this lab, you will learn how to:
 
     ![Task 2: Send email action](images/task-02-step-05-send-email-action.png)
 
-6. Set the schedule to **Active**, then select **Save and Run**.
+6. Activate and run the automation:
+
+    - Set the schedule to **Active**.
+    - Select **Save and Run**.
 
     ![Task 2: Set active run](images/task-02-step-06-set-active-run.png)
 
-7. Return to **Automations** and confirm that both TAP automations are listed.
+7. Verify both TAP automations:
+
+    - Return to **Automations**.
+    - Confirm that both automations are listed.
 
     ![Task 2: All automations](images/task-02-step-07-all-automations.png)
 
 ## Task 3: Review logs
 
-1. Open **Shared Components**, select **Automations**, then select **Execution Log**. After each **Save and Run**, confirm that the status is **Succeeded**.
+1. Open the execution log:
+
+    - Open **Shared Components**.
+    - Select **Automations**.
+    - Select **Execution Log**.
+    - After each **Save and Run**, confirm that the status is **Succeeded**.
 
     - Review the timestamp, successful rows, error rows, and messages.
     ![Task 3: Execution log](images/task-03-step-01-execution-log.png)

@@ -15,10 +15,18 @@ In this lab, you will learn how to:
 
 ## Task 1: Create the Interview Calendar
 
-1. In TAP **App Builder**, select **Create Page**, then select **Component** and **Calendar**.
+1. In TAP **App Builder**:
+
+    - Select **Create Page**.
+    - Under **Component**, select **Calendar**.
+
     ![Task 1: Select calendar page](images/task-01-step-01-select-calendar-page.png)
 
-2. Name the page **Interview Calendar** and select **Local Database** and **SQL Query**.
+2. Configure the page name and data source:
+
+    - Enter **Interview Calendar** as the page name.
+    - Select **Local Database**.
+    - Select **SQL Query**.
 
     - Enter:
 
@@ -39,7 +47,9 @@ In this lab, you will learn how to:
 
 3. Enable navigation.
 
-    - Set **Hiring Process** as the navigation parent and select the `fa-calendar` icon.
+    - Set **Hiring Process** as the navigation parent.
+    - Select the `fa-calendar` icon.
+
     ![Task 1: Navigation icon](images/task-01-step-03-navigation-icon.png)
 
 4. Map `EVENT_TITLE` to **Display Column**.
@@ -47,6 +57,7 @@ In this lab, you will learn how to:
     - Map `START_DATE` and `END_DATE` to the Calendar date columns.
 
     - Leave **Primary Key Column** unselected.
+
     ![Task 1: Calendar column mapping](images/task-01-step-04-calendar-page-details.png)
 
 5. In the Calendar **Attributes**, open **View/Edit Link**.
@@ -59,9 +70,12 @@ In this lab, you will learn how to:
 
     ![Task 1: Calendar event link target](images/task-01-step-06-page-attr-det.png)
 
-7. Save and run the page.
+7. Verify the page:
 
+    - Save the page.
+    - Run the page.
     - Confirm that each interviewer sees only their assigned interviews.
+    
     ![Task 1: Final page](images/task-01-step-07-final-page.png)
 
 ## Acknowledgements

@@ -24,11 +24,28 @@ In this workshop, you will learn how to:
 
 > **Free Developer Tier:** Direct database connections from Oracle SQL Developer for VS Code are not supported for Oracle APEX Free Developer Tier workspaces. If you are using this tier, you can skip this module.
 
-1. Complete **Module 4, Lab 1: Export and Inspect an Application with APEXlang**. Configure SQL Developer for VS Code to connect to the parsing schema for your workspace.
-2. Complete Module 23, including Codex setup, Oracle APEXlang skills installation, and the complete TAP import.
-3. For single-file import, use **Oracle APEX 26.2 or later** and **SQL Developer for VS Code 26.3.0 or later**. Export the projects from APEX 26.2 or later. On APEX 26.1, use full application import as learned in Module 23.
+1. Complete **Module 4, Lab 1: Export and Inspect an Application with APEXlang**.
+
+    - Configure SQL Developer for VS Code to connect to the parsing schema for your workspace.
+
+2. Complete Module 23:
+
+    - Set up Codex.
+    - Install Oracle APEXlang skills.
+    - Import the complete TAP application.
+
+3. Prepare for single-file import:
+
+    - Use **Oracle APEX 26.2 or later** and **SQL Developer for VS Code 26.3.0 or later**.
+    - Export the projects from APEX 26.2 or later.
+    - On APEX 26.1, use full application import as learned in Module 23.
+
 4. Have the course TAP and ESS applications, their existing schema objects, and test accounts available in the development workspace.
-5. Keep the current TAP source folder available. If you move from APEX 26.1 to 26.2, export TAP again from the 26.2 environment before editing. Use the course TAP with Candidate Search Help, rather than the comparison app from Module 4.
+5. Use the course TAP project:
+
+    - Keep the current TAP source folder available.
+    - If you move from APEX 26.1 to 26.2, export TAP again from the 26.2 environment before editing.
+    - Use the course TAP with Candidate Search Help, not the comparison app from Module 4.
 
 ### Workshop Outline
 

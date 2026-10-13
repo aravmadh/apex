@@ -25,6 +25,7 @@ In this lab, you will learn how to:
     ![Task 1: Email templates](images/task-01-step-02-email-templates.png)
 
 3. Select **Create Email Template**.
+
     ![Task 1: Create email template](images/task-01-step-03-create-email-template.png)
 
 ## Task 2: Create the TAP templates
@@ -73,7 +74,8 @@ In this lab, you will learn how to:
         </copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Select **Create Email Template** to save this template.
+    - Start the next template.
 
     ![Task 2: Offer Sent template, part 2](images/task-02-step-02-offer-sent-02.png)
 
@@ -111,7 +113,8 @@ In this lab, you will learn how to:
         </copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Select **Create Email Template** to save this template.
+    - Start the next template.
 
     ![Task 2: Offer Accepted template, part 2](images/task-02-step-04-offer-accepted-02.png)
 
@@ -155,11 +158,16 @@ In this lab, you will learn how to:
         </copy>
         ```
 
-    - Select **Create Email Template** to save this template before starting the next one.
+    - Select **Create Email Template** to save this template.
+    - Start the next template.
 
     ![Task 2: Interview Reminder template, part 2](images/task-02-step-06-interview-reminder-02.png)
 
-7. Return to **Email Templates** and confirm that `offer-sent`, `offer-accepted`, and `interview-reminder` appear in the **Static ID** column.
+7. Verify the static identifiers:
+
+    - Return to **Email Templates**.
+    - Confirm that `offer-sent`, `offer-accepted`, and `interview-reminder` appear in the **Static ID** column.
+    
     ![Task 2: Email templates](images/task-02-step-07-email-templates.png)
 
 8. Use `offer-sent` after you generate an offer.

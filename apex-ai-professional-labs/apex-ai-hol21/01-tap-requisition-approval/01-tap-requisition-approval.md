@@ -16,13 +16,18 @@ In this lab, you will learn how to:
 
 ## Task 1: Create the task definitions
 
-1. In TAP, open **Shared Components**.
+1. In TAP:
+
+    - Open **Shared Components**.
+    - Under **Workflows and Automations**, select **Task Definitions**.
+
     ![Shared Components page with Task Definitions highlighted](images/task-01-step-01-task-definitions.png)
 
-2. Select **Task Definitions**, then click **Create**.
+2. Click **Create**.
+
     ![Task Definitions page with the Create button](images/task-01-step-02-task-definitions-create.png)
 
-3. Create the HR administration task definition with these values:
+3. Create the HR administration task definition with the below values:
 
     **Requisition HR Admin Review**
 
@@ -35,10 +40,17 @@ In this lab, you will learn how to:
 
     ![HR Admin Review task definition details](images/task-01-step-03-task-definitions-details.png)
 
-4. Set **Due On Type** to **Expression** and set **Due On** to `SYSDATE + 2`.
+4. Configure the due date:
+
+    - Set **Due On Type** to **Expression**.
+    - Set **Due On** to `SYSDATE + 2`.
+
     ![Task deadline expression and Add Participant controls](images/task-01-step-04-task-definitions-expression-add-participants.png)
 
-5. Click **Add Participant** and configure the participant as follows:
+5. Add and configure the participant:
+
+    - Click **Add Participant**.
+    - Set the participant values as follows:
 
     | Participant Type | Identity Type | Value |
     | --- | --- | --- |
@@ -48,7 +60,8 @@ In this lab, you will learn how to:
 
 6. Add the following task parameters. The static IDs support the subject substitutions.
 
-    - Set each parameter data type to **String** and provide a readable label.
+    - Set each parameter data type to **String**.
+    - Provide a readable label for each parameter.
 
     | **Static ID** | Label | **Required** | **Visible** |
     | --- | --- | --- | --- |
@@ -61,10 +74,12 @@ In this lab, you will learn how to:
 
 7. Keep **Initiator Can Complete** off.
 
-    - Click **Create Task Details Page**, then save the task definition.
+    - Click **Create Task Details Page**.
+    - Save the task definition.
+
     ![HR Admin Review settings with Initiator Can Complete off and Create Task Details Page available](images/task-01-step-07-create-task-definitions-page.png)
 
-8. Create the `Requisition Department Head Review` task definition with these values, then click **Create**:
+8. Configure the `Requisition Department Head Review` task definition with these values:
 
     | Field | Value |
     | --- | --- |
@@ -73,9 +88,13 @@ In this lab, you will learn how to:
     | Priority | Medium |
     | Subject | `Approve Requisition &P_REQ_ID. for &P_REQUESTED_HEADCOUNT. headcount` |
 
+    - Click **Create** to save the task definition.
+
     ![Department Head Review task definition details](images/task-01-step-08-task-definitions-dep-hr-add.png)
 
-9. On the **Task Definition** page, click **Add Participant** and configure the Department Head **Potential Owner** as follows:
+9. On the **Task Definition** page, configure the Department Head **Potential Owner**:
+
+    - Click **Add Participant**.
 
     | Participant Type | Identity Type | Value Type | **SQL Query** |
     | --- | --- | --- | --- |
@@ -85,7 +104,8 @@ In this lab, you will learn how to:
 
 10. Add the same task parameters to this definition. The static IDs support the subject substitutions.
 
-    - Set each parameter data type to **String** and provide a readable label.
+    - Set each parameter data type to **String**.
+    - Provide a readable label for each parameter.
 
     | **Static ID** | Label | **Required** | **Visible** |
     | --- | --- | --- | --- |
@@ -98,12 +118,18 @@ In this lab, you will learn how to:
 
 11. Keep **Initiator Can Complete** off.
 
-    - Click **Create Task Details Page**, then save the task definition.
+    - Click **Create Task Details Page**.
+    - Save the task definition.
+
     ![Department Head Task Details page creation](images/task-01-step-11-task-definitions-dep-create-task-details.png)
 
 ## Task 2: Create the requisition workflow
 
-1. In TAP, open **Shared Components** and select **Workflows**.
+1. In TAP:
+
+    - Open **Shared Components**.
+    - Select **Workflows**.
+
     ![Shared Components page with Workflows highlighted](images/task-02-step-01-wf-shared.png)
 
 2. Click **Create**.
@@ -178,6 +204,7 @@ In this lab, you will learn how to:
            AND headcount > 3
         </copy>
         ```
+
     ![Headcount Review Route switch configuration](images/task-03-step-01-add-if-els-switch.png)
 
 2. On the true route, add a **Human Task - Create** activity named `HR Admin Review`.
@@ -208,9 +235,11 @@ In this lab, you will learn how to:
     ![Department Head Review Human Task activity configuration](images/task-03-step-03-dep-head-review.png)
 
 4. Connect the true route from `Headcount Review Route` to **HR Admin Review**. Label the connection **HR Admin**.
+
     ![True connection to the HR Admin Review activity](images/task-03-step-04-true-connector-hr-admin.png)
 
 5. Connect the false route from `Headcount Review Route` to **Department Head Review**. Label the connection **Department Head**.
+
     ![False connection to the Department Head Review activity](images/task-03-step-05-false-connector-dept-head.png)
 
 6. Connect both Human Task activities to an **Execute Code** activity named `Update Requisition Status`.
@@ -233,63 +262,102 @@ In this lab, you will learn how to:
 
     ![Update Requisition Status Execute Code activity](images/task-03-step-06-update-req-status.png)
 
-7. Create a workflow participant and set the workflow owner to `sofia.garcia@acme.example`.
+7. Create a workflow participant:
+
+    - Set the workflow owner to `sofia.garcia@acme.example`.
+
     ![Workflow participant configuration for the workflow owner](images/task-03-step-07-wf-owner.png)
 
 8. Add a **Workflow End** activity named `End` after **Update Requisition Status**.
 
     - Set its end state to **Completed**.
+
     ![Workflow End activity configuration](images/task-03-step-08-wf-end.png)
 
-9. Save and activate the workflow version.
+9. Save and activate the workflow version:
+
+    - Save the workflow version.
+    - Activate the workflow version.
+
     ![Activated workflow version](images/task-03-step-09-wf-activate.png)
 
 ## Task 4: Add task and monitoring pages
 
-1. In **App Builder**, click **Create Page**, then select **Unified Task List**.
+1. In **App Builder**:
+
+    - Click **Create Page**.
+    - Select **Unified Task List**.
 
     ![Create Page wizard with Unified Task List selected](images/task-04-step-01-create-page.png)
 
-2. Set **Page Name** to `My Approvals` and **Report Context** to **My Tasks**.
+2. Configure the **My Approvals** page:
 
-    - Enable navigation, then click **Create Page**.
+    - Set **Page Name** to `My Approvals`.
+    - Set **Report Context** to **My Tasks**.
+
+    - Enable navigation.
+    - Click **Create Page**.
 
     ![My Approvals Unified Task List page configuration](images/task-04-step-02-unified-task-list.png)
 
 3. Create a second **Unified Task List** page.
 
-    - Set its name to `Tasks Initiated by Me` and **Report Context** to **Initiated by Me**.
+    - Set its name to `Tasks Initiated by Me`.
+    - Set **Report Context** to **Initiated by Me**.
 
-    - Enable navigation, then create the page.
+    - Enable navigation.
+    - Create the page.
 
     ![Tasks Initiated by Me Unified Task List page configuration](images/task-04-step-03-unified-task-list-initiated-by-me.png)
 
-4. Click **Create Page**, then select **Workflow Console**.
+4. In **App Builder**:
+
+    - Click **Create Page**.
+    - Select **Workflow Console**.
 
     ![Create Page wizard with Workflow Console selected](images/task-04-step-04-wf-console.png)
 
-5. Set **Name** to `Workflow Console`, **Report Context** to **Initiated by Me**, and enable **Include Dashboard Page**.
+5. Configure the Workflow Console page:
 
-    - Name the generated dashboard `Workflow Dashboard` and the generated details page `Workflow Form`.
+    - Set **Name** to `Workflow Console`.
+    - Set **Report Context** to **Initiated by Me**.
+    - Enable **Include Dashboard Page**.
 
-    - Enable navigation, then click **Create Page**.
+    - Name the generated dashboard `Workflow Dashboard`.
+    - Name the generated details page `Workflow Form`.
+
+    - Enable navigation.
+    - Click **Create Page**.
 
     ![Workflow Console page configured with the Initiated by Me report context](images/task-04-step-05-wf-console-det.png)
 
 6. In **Page Designer**, apply authorization scheme `IS_TA_ADMIN` to the **Workflow Console** page.
 
-7. In **Page Designer**, open the TAP **Job Requisition Form** and select **Processing**. Create a **Workflow** page process after the **Form DML** process.
+7. In **Page Designer**, add a workflow process to the TAP **Job Requisition Form**:
+
+    - Open the **Job Requisition Form**.
+    - Select **Processing**.
+    - Create a **Workflow** page process after the **Form DML** process.
+
     ![Workflow page process created after Form DML](images/task-04-step-07-add-wf-process.png)
 
-8. Set **Workflow** to `Approve Job Requisition` and **Operation** to **Start**.
+8. Configure the workflow process:
+
+    - Set **Workflow** to `Approve Job Requisition`.
+    - Set **Operation** to **Start**.
+
     ![Approve Job Requisition Workflow process settings](images/task-04-step-08-add-wf-process-02.png)
 
-9. Under **Parameters**, select **Requisition ID** and map it to page item `PXX_REQ_ID`.
+9. Under **Parameters**:
+
+    - Select **Requisition ID**.
+    - Map it to page item `PXX_REQ_ID`.
     ![Workflow process parameter mapping for requisition ID](images/task-04-step-09-add-param.png)
 
 10. Add a server-side condition to the Workflow process.
 
-    - Run it only when the Create button is pressed and `PXX_STATUS` equals `Open`.
+    - Set the condition to run only when the **Create** button is pressed.
+    - Set the `PXX_STATUS` condition to `Open`.
 
     ![Workflow process server-side condition](images/task-04-step-10-server-side.png)
 
@@ -297,7 +365,10 @@ In this lab, you will learn how to:
 
 ### Test the Department Head route
 
-1. Sign in to TAP as `liam.chen@acme.example`. Open **Job Requisitions** and create a requisition with these values:
+1. Sign in to TAP as `liam.chen@acme.example`:
+
+    - Open **Job Requisitions**.
+    - Create a requisition with these values:
 
     | Field | Value |
     | --- | --- |
@@ -308,33 +379,68 @@ In this lab, you will learn how to:
     | Headcount | `2` |
     | Status | Open |
 
-    Select **Create**. A headcount of `2` follows the Department Head route.
+    - Click **Create**.
+    - A headcount of `2` follows the Department Head route.
 
     ![Job Requisition form completed for the Department Head route](images/task-05-step-01-create-department-head-requisition.png)
 
-2. Open **Tasks Initiated by Me**. Open the new `Requisition Department Head Review` task and confirm that APEX assigned it to `maya.patel@acme.example`.
+2. Check the initiated task:
+
+    - Open **Tasks Initiated by Me**.
+    - Open the new `Requisition Department Head Review` task.
+    - Confirm that APEX assigned it to `maya.patel@acme.example`.
 
     ![Initiated Department Head Review task with requisition details](images/task-05-step-02-view-initiated-task.png)
 
-3. Sign out. Sign in as `maya.patel@acme.example`, open **My Approvals**, and select **Approve** for the `Requisition Department Head Review` task.
+3. Complete the Department Head approval:
+
+    - Sign out as Liam.
+    - Sign in as `maya.patel@acme.example`.
+    - Open **My Approvals**.
+    - Select **Approve** for the `Requisition Department Head Review` task.
 
     ![Maya Patel approving the Department Head Review task](images/task-05-step-03-maya-approves-task.png)
 
-4. Sign out and sign back in as `liam.chen@acme.example`. Open **Tasks Initiated by Me** and confirm that the task state is **Completed** and the outcome is **Approved**.
+4. Check the completed task as the requester:
+
+    - Sign out as Maya.
+    - Sign in as `liam.chen@acme.example`.
+    - Open **Tasks Initiated by Me**.
+    - Confirm that the task state is **Completed**.
+    - Confirm that the outcome is **Approved**.
 
     ![Completed Department Head Review task in Tasks Initiated by Me](images/task-05-step-04-verify-approved-task.png)
 
-5. Open **Workflow Console**, select the `Approve Job Requisition` workflow instance that you started, and confirm its state is **Completed**. Review the workflow diagram to confirm that the Department Head Review activity completed before **Update Requisition Status**.
+5. Verify the workflow in **Workflow Console**:
+
+    - Select the `Approve Job Requisition` workflow instance that you started.
+    - Confirm that its state is **Completed**.
+    - Review the workflow diagram.
+    - Confirm that the Department Head Review activity completed before **Update Requisition Status**.
 
     ![Completed requisition workflow with the Department Head route](images/task-05-step-05-view-completed-workflow.png)
 
 ### Test the HR Admin route
 
-6. Still signed in as `liam.chen@acme.example`, create another Job Requisition. Use a headcount greater than `3`, such as `4`. This value routes the workflow to **HR Admin Review**.
+6. While signed in as `liam.chen@acme.example`, create another Job Requisition:
 
-7. Sign out and sign in as a TA administrator who matches authorization scheme `IS_TA_ADMIN`. Open **My Approvals**, claim the `Requisition HR Admin Review` task if necessary, and approve it.
+    - Set the headcount to a value greater than `3`, such as `4`.
+    - Create the requisition. This value routes the workflow to **HR Admin Review**.
 
-8. Sign back in as `liam.chen@acme.example`. Open **Workflow Console** and confirm that the HR Admin route instance progresses from **Active** to **Completed** after approval. Verify that the requisition status is **Open**.
+7. Sign in as a TA administrator who matches authorization scheme `IS_TA_ADMIN`:
+
+    - Sign out as Liam.
+    - Sign in as the TA administrator.
+    - Open **My Approvals**.
+    - Claim the `Requisition HR Admin Review` task if necessary.
+    - Approve the task.
+
+8. Verify the HR Admin route:
+
+    - Sign back in as `liam.chen@acme.example`.
+    - Open **Workflow Console**.
+    - Confirm that the HR Admin route instance progresses from **Active** to **Completed** after approval.
+    - Verify that the requisition status is **Open**.
 
     ![Workflow Console showing active and completed requisition workflows](images/task-05-step-06-verify-outer-route.png)
 

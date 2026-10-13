@@ -20,7 +20,9 @@ In this lab, you will learn how to:
 
     ![Shared Components breadcrumb on the ESS Email Templates page](images/task-01-step-01-shared-components.png)
 
-2. Under **Workflows and Automations**, select **Automations**.
+2. Under **Workflows and Automations**:
+
+    - Select **Automations**.
 
     ![Task 1: Automations](images/task-01-step-02-automations.png)
 
@@ -47,7 +49,9 @@ In this lab, you will learn how to:
 
     ![SQL Query selected as the automation source type](images/task-01-step-05-source-type-sql-query.svg)
 
-6. For **Enter a SQL SELECT Statement**, copy and paste the following SQL query:
+6. For **Enter a SQL SELECT Statement**:
+
+    - Copy and paste the following SQL query.
 
     ```sql
     <copy>
@@ -69,7 +73,10 @@ In this lab, you will learn how to:
 
 7. Click **Create** to create the automation.
 
-8. Scroll down to **Actions** and click **Create Action**.
+8. Open the action editor:
+
+    - Scroll down to **Actions**.
+    - Click **Create Action**.
 
     ![Create Action control in the Task Overdue automation](images/task-01-step-08-create-action.png)
 
@@ -93,7 +100,10 @@ In this lab, you will learn how to:
 
 10. Click **Create** to save the **Update Task** action.
 
-11. Under **Actions**, click **Create Action** and configure the following:
+11. Under **Actions**, configure the email action:
+
+    - Click **Create Action**.
+    - Enter or select the following attributes:
 
     - Under **Identification** (shown as **Action** in the screenshot):
         - **Name:** Send Email.
@@ -114,7 +124,8 @@ In this lab, you will learn how to:
     | `TASK_NAME` | `&TASK_NAME.` |
     | `DUE_DATE` | `&DUE_DATE_TEXT.` |
 
-    - Click **Save**, then close the placeholder dialog.
+    - Click **Save**.
+    - Close the placeholder dialog.
 
     ![Email placeholder mappings with Save highlighted](images/task-01-step-12-email-placeholders.svg)
 
@@ -122,21 +133,25 @@ In this lab, you will learn how to:
 
     ![Saved placeholder values and Create button for the email action](images/task-01-step-13-create-email-action.png)
 
-14. Set **Schedule Status** to **Active** and click **Save and Run**.
+14. Activate and run the automation:
+
+    - Set **Schedule Status** to **Active**.
+    - Click **Save and Run**.
 
     ![Task 1: Task overdue set active run](images/task-01-step-14-task-overdue-set-active-run.png)
 
 ## Task 2: Create Monthly Leave Accrual
 
-1. Create a second automation. Navigate to **Automations**.
+1. Create the second automation:
 
+    - Navigate to **Automations**.
     - Click **Create**.
     - In the **Create Automation** wizard, enter or select:
         - **Name:** Monthly Leave Accrual.
         - **Type:** On Demand.
         - **Actions initiated on:** Query.
     - Click **Next**.
-    - After creating the automation, change its type to **Scheduled** as described below.
+    - Change its type to **Scheduled** in Step 4.
 
     ![Task 2: Monthly leave accrual](images/task-02-step-01-monthly-leave-accrual.png)
 
@@ -198,16 +213,23 @@ In this lab, you will learn how to:
         ```
     ![Task 2: Monthly leave accrual add execute action](images/task-02-step-05-monthly-leave-accrual-add-execute-action.png)
 
-6. Set the schedule to **Active** and click **Save and Run**.
+6. Activate and run the automation:
+
+    - Set the schedule to **Active**.
+    - Click **Save and Run**.
     ![Task 2: Monthly leave accrual set active run](images/task-02-step-06-monthly-leave-accrual-set-active-run.png)
 
 ## Task 3: Create Probation End Alert
 
-1. Create a scheduled automation named **Probation End Alert**.
+1. Create and configure the **Probation End Alert** automation:
+
+    - Create a scheduled automation named **Probation End Alert**.
 
     - Select **Query**, **Custom**, **Daily**, and an interval of `1`.
 
-    - Set **Execution Time** to `07:00`. The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=7;BYMINUTE=0` in the database server time zone.
+    - Set **Execution Time** to `07:00`.
+    - The resulting schedule expression is `FREQ=DAILY;INTERVAL=1;BYHOUR=7;BYMINUTE=0` in the database server time zone.
+
     ![Task 3: Probation end alert](images/task-03-step-01-probation-end-alert.png)
 
 2. Set **Source Type** to **SQL Query**.
@@ -232,7 +254,10 @@ In this lab, you will learn how to:
 
     ![Task 3: Probation alert email action, part 1](images/task-03-step-03-probation-end-alert-send-email-action-01.png)
 
-4. Set **From** to `&APP_EMAIL.` and **To** to `apex_app_setting.get_value('SUPPORT_EMAIL')`.
+4. Configure the sender and recipient:
+
+    - Set **From** to `&APP_EMAIL.`.
+    - Set **To** to `apex_app_setting.get_value('SUPPORT_EMAIL')`.
 
     - Select the **Probation Alert** email template.
 
@@ -248,21 +273,33 @@ In this lab, you will learn how to:
 
     ![Task 3: Probation alert email action, part 3](images/task-03-step-05-probation-end-alert-send-email-action-03.png)
 
-6. Set the schedule to **Active** and click **Save and Run**.
+6. Activate and run the automation:
+
+    - Set the schedule to **Active**.
+    - Click **Save and Run**.
+
     ![Task 3: Probation end alert set active](images/task-03-step-06-probation-end-alert-set-active.png)
 
 ## Task 4: Monitor automation runs
 
-1. Open **Shared Components**, select **Automations**, then select **Execution Log**.
+1. Open the execution log:
+
+    - Open **Shared Components**.
+    - Select **Automations**.
+    - Select **Execution Log**.
 
     - Review the run history and messages for each automation.
+    
     ![Task 4: Execution log](images/task-04-step-01-execution-log.png)
 
-2. Open the **System Logs** page from next lab (Lab 5) for an HR administrator.
+2. Open the **System Logs** page from the next lab (Lab 5) for an HR administrator.
 
     - Confirm that it displays the same automation-run data from `APEX_AUTOMATION_LOG`.
 
-3. If an email does not arrive, check `APEX_MAIL_LOG` and the mail queue to identify the failure.
+3. If an email does not arrive, check the mail status:
+
+    - Check `APEX_MAIL_LOG`.
+    - Check the mail queue for the failure.
 
 ## Acknowledgements
 

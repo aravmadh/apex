@@ -22,23 +22,35 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
 
 ## Task 1: Check the ESS Project and Export Version
 
-1. Open the ESS APEXlang project from Lab 2 in VS Code. In **Explorer**, locate the exported ESS application folder.
+1. Open the ESS APEXlang project from Lab 2 in VS Code:
+
+    - In **Explorer**, locate the exported ESS application folder.
 
     ![ESS application folder and project files in VS Code Explorer](images/task-01-step-01-ess-application.png)
 
-2. Open `.apex/apexlang.json` inside that folder and check the **mmdVersion** value. Single-file import requires a version of `26.2` or later. The build number after `+` may differ in your environment.
+2. Check the APEXlang export version:
+
+    - Open `.apex/apexlang.json` inside the exported folder.
+    - Check the **mmdVersion** value. Single-file import requires a version of `26.2` or later.
+    - The build number after `+` may differ in your environment.
 
     ![ESS metadata file showing mmdVersion 26.2.0+3479](images/task-01-step-02-mmd-version.png)
 
 ## Task 2: Add Bulk Validations
 
-1. Click the **Codex** icon in the VS Code Activity Bar to open the chat.
+1. Open Codex in VS Code:
+
+    - Click the **Codex** icon in the Activity Bar.
+    - Open the chat.
 
     - Use the Oracle APEXlang skills configured in Module 23.
 
     ![Codex icon highlighted in the VS Code Activity Bar](images/task-02-step-01-codex.png)
 
-2. Add the exported ESS application folder to the chat context. Paste the following prompt and click **Send**:
+2. Submit the validation prompt for the ESS project:
+
+    - Add the exported ESS application folder to the chat context.
+    - Paste the following prompt:
 
     ```text
     <copy>
@@ -48,17 +60,28 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
     </copy>
     ```
 
+    - Click **Send**.
+
     ![ESS project attached to the Codex chat with the validation prompt](images/task-02-step-02-codex-prompt.png)
 
-3. Review the response, then click **View changes** to inspect the edited page files.
+3. Review Codex's response:
 
-    - Confirm that **Codex** found the existing forms and used the correct items. Reuse equivalent checks rather than adding duplicate validations.
+    - Review the response.
+    - Click **View changes** to inspect the edited page files.
+
+    - Confirm that **Codex** found the existing forms.
+    - Confirm that it used the correct items.
+    - Reuse equivalent checks rather than adding duplicate validations.
 
     ![Codex response listing three edited ESS forms and the onboarding validation diff](images/task-02-step-03-validations.png)
 
-4. Open the edited form files and review the validation rules and error messages.
+4. Review the edited form files:
 
-    - Keep the edits local for now. You will test the validations after import.
+    - Open the files.
+    - Review the validation rules and error messages.
+
+    - Keep the edits local for now.
+    - Test the validations after import.
 
     ![Onboarding Task source with completed-date and timestamp validations](images/task-02-step-04-page3-validations.png)
 
@@ -71,15 +94,25 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
     </copy>
     ```
 
+    - Click **Send**.
+
     ![Button prominence prompt and Codex response for ESS](images/task-03-step-01-buttons.png)
 
-2. Review the response and wait for **Codex** to finish updating the buttons. Check which pages changed and how the proposed styles fit the existing theme.
+2. Review Codex's button updates:
+
+    - Review the response.
+    - Wait for **Codex** to finish updating the buttons.
+    - Check which pages changed and how the proposed styles fit the existing theme.
 
     ![Codex summary of button updates across ESS pages](images/task-03-step-02-buttons-updated-codex.png)
 
-3. Open an edited page and review the button appearance settings.
+3. Review the button appearance settings:
 
-    - Confirm that button actions and conditions remain intact. You will check the visual result after import.
+    - Open an edited page.
+    - Review its button appearance settings.
+
+    - Confirm that button actions and conditions remain intact.
+    - Check the visual result after import.
 
     ![Delete button appearance settings in the Onboarding Task source](images/task-03-step-03-buttons-updated-page.png)
 
@@ -95,7 +128,8 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
 
 2. In **APEXlang Differences**, review the files marked **modified**.
 
-    - Confirm that the connection and application shown at the top are your intended ESS targets. Reconcile any unexpected differences before import.
+    - Confirm that the connection and application shown at the top are your intended ESS targets.
+    - Reconcile any unexpected differences before import.
 
     ![APEXlang Differences view listing modified ESS files](images/task-04-step-02-changes.png)
 
@@ -103,11 +137,15 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
 
     - Review its added validation and button changes.
 
-    - Keep existing leave rules, onboarding logic, and authorization checks intact.
+    - Keep existing leave rules intact.
+    - Preserve onboarding logic and authorization checks.
 
     ![Remote and local Leave Request source showing button and reason-validation changes](images/task-04-step-03-leave-request-changes.png)
 
-4. Open the edited **Leave Request** page file in the regular editor tab and save your edits.
+4. Prepare the edited **Leave Request** page for import:
+
+    - Open the page file in the regular editor tab.
+    - Save your edits.
 
     - Confirm the selected connection and target Application ID.
 
@@ -119,31 +157,46 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
 
     > **Note:** **Import File** imports only the open file.
 
-5. Run ESS and open **Leave Request**.
+5. Open and test **Leave Request**:
 
-    - Enter valid dates, leave **Reason** blank, and click **Submit Leave**.
+    - Run ESS.
+    - Open **Leave Request**.
+
+    - Enter valid dates.
+    - Leave **Reason** blank.
+    - Click **Submit Leave**.
 
     - Confirm that the reason validation prevents submission.
 
-    - Enter a reason and verify that valid data passes the check.
+    - Enter a reason.
+    - Verify that valid data passes the check.
 
-    Also check the existing date validation by entering an **End Date** earlier than **Start Date**. The screenshot below shows that date error, rather than the new reason error.
+    - Check the existing date validation by entering an **End Date** earlier than **Start Date**. The screenshot below shows that date error rather than the new reason error.
 
     ![Leave Request form showing the existing end-date validation error](images/task-04-step-05-end-application.png)
 
 ## Task 5: Import the Complete Application and Verify the Remaining Changes
 
-1. The button updates may affect multiple ESS page files. Save your edits, then click **Import Application** in the editor toolbar to apply the remaining changes.
+1. Import the remaining button updates:
+
+    - Save your edits.
+    - Click **Import Application** in the editor toolbar.
 
     - This imports the entire ESS application into the connected workspace.
 
 2. Wait for the **Application successfully imported** message.
 
-    - If the import reports an error, click **Show Import Logs**, correct the reported issue, and retry.
+    - If the import reports an error, click **Show Import Logs**.
+    - Correct the reported issue.
+    - Retry the import.
 
     ![Import Application icon and successful ESS application import notification](images/task-05-step-02-import-application.png)
 
-3. Run ESS and review the updated buttons across the affected pages. Check **Create**, **Cancel**, **Delete**, and the update buttons where available.
+3. Verify updated buttons in ESS:
+
+    - Run ESS.
+    - Review the affected pages.
+    - Check **Create**, **Cancel**, **Delete**, and the update buttons where available.
 
     - Confirm that their appearance fits the theme and that their actions still work.
 
@@ -151,17 +204,28 @@ On **APEX 26.1**, you can still follow the editing tasks. Skip the single-file i
 
     ![Employee Check-ins form with prominent Cancel, Delete, and Apply Changes buttons](images/task-05-step-03-prominent-buttons.png)
 
-4. Test the validations on the other updated forms. Blank editable names or email addresses on **My Profile** should fail validation. On **Onboarding Task**, select a completed status without a **Completed Date** and try to save.
+4. Test validations on the other updated forms:
+
+    - On **My Profile**, leave an editable name blank and submit the form.
+    - Confirm that validation fails.
+    - Leave an editable email address blank and submit the form.
+    - Confirm that validation fails.
+    - On **Onboarding Task**, select a completed status.
+    - Leave **Completed Date** blank.
+    - Try to save.
 
     - Confirm that the check prevents saving.
 
     - Use **Done** or **Completed**, as available in your application.
 
-5. Correct the invalid values and confirm that valid submissions succeed.
+5. Correct the invalid values:
+
+    - Confirm that valid submissions succeed.
 
     - **Try More Changes:**
 
-    - Lab 4 provides optional prompts for TAP and ESS. Extend the same edit, review, import, and test workflow to other validations and page improvements.
+    - Lab 4 provides optional prompts for TAP and ESS.
+    - Extend the same edit, review, import, and test workflow to other validations and page improvements.
 
 ## Acknowledgements
 

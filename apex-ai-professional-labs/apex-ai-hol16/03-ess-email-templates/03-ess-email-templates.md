@@ -16,7 +16,10 @@ In this lab, you will learn how to:
 
 ## Task 1: Set up instance email
 
-1. Ask your instance administrator to configure the SMTP host and port in **Administration Services**. Ask them to set a default From address, such as `noreply@acmecorp.com`.
+1. Ask your instance administrator to configure instance email:
+
+    - In **Administration Services**, configure the SMTP host and port.
+    - Set a default From address, such as `noreply@acme.example`.
 
 2. Follow the [Oracle email setup guidance](https://docs.oracle.com/en/database/oracle/apex/26.1/aeadm/configuring-email.html) for your instance.
 
@@ -26,7 +29,7 @@ In this lab, you will learn how to:
 
 ## Task 2: Create the ESS templates
 
-> **Screenshot guidance:** The screenshots show **Leave Approved**. Follow the same field layout for each subsequent template, using the values and content provided in its numbered step.
+> **Note:** The screenshots show **Leave Approved**. Follow the same field layout for each subsequent template, using the values and content provided in its numbered step.
 
 1. In **Employee Self-Service Portal (ESS)**, navigate to **Shared Components**.
 
@@ -76,7 +79,8 @@ In this lab, you will learn how to:
 
     - Under **Advanced**, confirm that **Static ID** is `leave-approved`.
     - Click **Create Email Template** to save the template.
-    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
+    - Return to **Email Templates**.
+    - Click **Create Email Template** to begin the next template.
 
 5. Configure the following attributes:
 
@@ -110,7 +114,8 @@ In this lab, you will learn how to:
 
     - Under **Advanced**, confirm that **Static ID** is `leave-rejected`.
     - Click **Create Email Template** to save the template.
-    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
+    - Return to **Email Templates**.
+    - Click **Create Email Template** to begin the next template.
 
 6. Configure the following attributes:
 
@@ -140,7 +145,8 @@ In this lab, you will learn how to:
 
     - Under **Advanced**, confirm that **Static ID** is `task-overdue-notification`.
     - Click **Create Email Template** to save the template.
-    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
+    - Return to **Email Templates**.
+    - Click **Create Email Template** to begin the next template.
 
 7. Configure the following attributes:
 
@@ -186,7 +192,8 @@ In this lab, you will learn how to:
 
     - Under **Advanced**, confirm that **Static ID** is `welcome-to-acme-corp`.
     - Click **Create Email Template** to save the template.
-    - Return to **Email Templates** and click **Create Email Template** to begin the next template.
+    - Return to **Email Templates**.
+    - Click **Create Email Template** to begin the next template.
 
 8. Configure the following attributes:
 
@@ -226,10 +233,15 @@ In this lab, you will learn how to:
     - Under **Advanced**, confirm that **Static ID** is `probation-alert`.
     - Click **Create Email Template** to save the template.
 
-9. Return to **Email Templates** and confirm that all five static identifiers appear.
+9. Verify the static identifiers:
+
+    - Return to **Email Templates**.
+    - Confirm that all five static identifiers appear.
+    
     ![Task 2: Verify email templates](images/task-02-step-09-check-templates-exists.png)
 
 10. The static identifier is what you reference with `p_template_static_id` in `APEX_MAIL.SEND` or select in a native **Send E-Mail** action.
+
     ![Task 2: Sample API usage](images/task-02-step-10-sample-api-usage.png)
 
 ## Acknowledgements

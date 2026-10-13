@@ -11,80 +11,92 @@ Estimated Workshop Time: 5 minutes
 In this lab, you will learn how to:
 
 - Set the offered-salary number format.
+
 - Display the selected requisition’s salary band.
+
 - Configure date and status page items.
 
-## Task 1: Open the Offer Management form
+## Task 1: Open the Form on Offers
 
-1. In TAP **App Builder**, open the **Offer Management form** page created from the `TMS_OFFERS` table in Module 5.
+1. In TAP **App Builder**, open the **Form on Offers** page created from the `TMS_OFFERS` table in Module 5.
 
     ![Page Designer](images/task-01-step-01-page-designer.png)
 
-2. In the left pane, select the **Offer Management form** region.
+2. In the left pane, select the **Form on Offers** region.
 
     ![Offer Management Region](images/task-01-step-02-offer-managment-region.png)
 
 ## Task 2: Configure the offer fields
 
-> **Page numbers:** The examples use form page `9` and item names beginning with `P9_`. If your form has a different page number, use its item names throughout this task.
+> **Note:** The examples use form page `9` and item names beginning with `P9_`. If your form has a different page number, use its item names throughout this task.
 
-1. Select the `P9_OFFERED_SALARY` item.
+1. Select the **P9\_OFFERED\_SALARY** page item. In the Property Editor, enter/select the following:
 
-    - In the **Property Editor**, under **Appearance**, set **Format Mask** to the following value:
-        ```
-        <copy>FML999G999G999G999G990D00</copy>
-        ```
+    - Appearance > Format Mask:  **FML999G999G999G999G990D00**
 
     ![Offered Salary Page Item](images/task-02-step-01-offered-sal-page-item.png)
 
-2. Right-click **Offer Management form** and select **Create Page Item**.
+2. Right-click **Form on Offers** and select **Create Page Item**.
 
     ![Create Page Item](images/task-02-step-02-create-page-item.png)
 
-    - In the **Property Editor**, enter or select the following:
-        - **Name:** `P9_SALARY_BAND_DISPLAY`.
-        - **Identification** > **Type:** **Display Only**.
-        - Under **Default**:
-            - **Type:** **SQL Query**.
-            - **SQL Query:** Copy and paste the following query:
+3. In the **Property Editor**, enter/select the following:
 
-                ```sql
+    - Under Identification:
+
+        - Name: **P9\_SALARY\_BAND\_DISPLAY**
+
+        - Type: **Display Only**
+
+    - Under Default:
+
+        - Type: **SQL Query**
+
+        - SQL Query: Copy and paste the following query:
+
+            ```sql
                 <copy>SELECT 'Band: $' || min_salary || ' – $' || max_salary
                   FROM tms_jobs j
                   JOIN tms_job_requisitions r
                     ON j.job_id = r.job_id
-                 WHERE r.req_id = :P9_REQ_ID</copy>
+                 WHERE r.req_id = :P9_REQ_ID
+                </copy>
                 ```
 
-            - If your requisition item has a different name, replace `:P9_REQ_ID` with that item name.
+    *Note: If your requisition item has a different name, replace `:P9_REQ_ID` with that item name.*
 
     ![Salary Band Page Item](images/task-02-step-02-sal-band-page-item.png)
 
     ![SQL Query Default Value](images/task-02-step-02-sql-query-default-value.png)
 
-3. Select `P9_START_DATE`.
+4. Select **P9\_START\_DATE** page item. In the Property Editor, enter/select the following:
 
-    - In the **Property Editor**, under **Appearance**, set **Format Mask** to `DD-MON-YYYY`.
+    - Appearance > Format Mask: **DD-MON-YYYY**
 
     ![Start Date Format Mask](images/task-02-step-03-start-date-format-mask.png)
 
-4. Select `P9_STATUS`.
+5. Select **P9\_STATUS** page item. In the Property Editor, enter/select the following:
 
-    - Under **Identification**, set **Type** to **Select List**.
+    - Identification > Type: **Select List**.
 
-    - Under **List of Values**, set **Type** to **Shared Component** and select `TMS_OFFER.STATUS`.
+    - Under List of Values:
 
-    - Set **Null Display Value** to `--Select Offer Status--`.
+        - Type: **Shared Component**
+
+        - List of Values: **TMS\_OFFER.STATUS**
+
+        - Null Display Value: **--Select Offer Status--**
 
     ![Status Select List](images/task-02-step-04-status-select-list.png)
 
-5. Save the page and run it.
+6. Click **Save and Run**.
 
-    - Select an offer record to confirm that the salary band, date picker, and status list display correctly.
+7. Select an offer record to confirm that the salary band, date picker, and status list display correctly.
 
     ![Rendered Page](images/task-02-step-05-rendered-page.png)
 
 ## Acknowledgements
 
- - **Author -** Aravind Madhavan, Senior Product Manager.
- - **Last Updated By/Date** - Aravind Madhavan, Senior Product Manager, July 2026
+- **Author -** Aravind Madhavan, Senior Product Manager
+
+- **Last Updated By/Date** - Aravind Madhavan, Senior Product Manager, July 2026
